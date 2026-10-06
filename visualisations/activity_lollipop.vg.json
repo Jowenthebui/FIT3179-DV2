@@ -1,0 +1,138 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 500,
+  "height": 360,
+
+  "title": {
+    "text": "How Australia Gets Outdoors",
+    "subtitle": "Participation in selected outdoor activities among Australian adults, 2025",
+    "anchor": "start",
+    "fontSize": 22,
+    "subtitleFontSize": 13,
+    "subtitleFontWeight": "normal",
+    "subtitlePadding": 8
+  },
+
+  "data": {
+    "url": "../data/activity_participation.csv"
+  },
+
+  "encoding": {
+    "y": {
+      "field": "activity",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Walking (Recreational)",
+        "Bush walking",
+        "Running/jogging",
+        "Swimming",
+        "Cycling",
+        "Golf",
+        "Surfing",
+        "Fishing (recreational)",
+        "Canoeing/Kayaking",
+        "Ski & snowboard",
+        "Mountain biking",
+        "Rock climbing/Abseiling/Caving"
+      ],
+      "axis": {
+        "domain": false,
+        "ticks": false,
+        "labelFontSize": 12,
+        "labelPadding": 8,
+        "labelLimit": 220
+      }
+    },
+
+    "x": {
+      "field": "participation_rate",
+      "type": "quantitative",
+      "title": "Participation Rate (%)",
+      "scale": {
+        "domain": [0, 55]
+      },
+      "axis": {
+        "grid": false,
+        "tickCount": 6,
+        "labelFontSize": 11,
+        "titleFontSize": 12,
+        "titlePadding": 10
+      }
+    },
+
+    "tooltip": [
+      {
+        "field": "activity",
+        "type": "nominal",
+        "title": "Activity"
+      },
+      {
+        "field": "participation_rate",
+        "type": "quantitative",
+        "title": "Participation Rate (%)",
+        "format": ".1f"
+      }
+    ]
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 1.5,
+        "color": "#C5C5C5"
+      }
+    },
+
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 110
+      },
+
+      "encoding": {
+        "color": {
+          "condition": {
+            "test": "datum.activity === 'Walking (Recreational)'",
+            "value": "#2F6B4F"
+          },
+          "value": "#8BA99A"
+        }
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.activity === 'Walking (Recreational)'"
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 10,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#2F6B4F"
+      },
+
+      "encoding": {
+        "text": {
+          "value": "50.2%"
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Arial"
+  }
+}

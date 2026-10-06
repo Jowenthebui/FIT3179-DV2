@@ -1,0 +1,149 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 500,
+  "height": 390,
+
+  "title": {
+    "text": "Why Do Australians Get Active?",
+    "subtitle": "Motivations for sport and physical activity participation among Australian adults, 2025",
+    "anchor": "start",
+    "fontSize": 22,
+    "subtitleFontSize": 13,
+    "subtitleFontWeight": "normal",
+    "subtitlePadding": 8
+  },
+
+  "data": {
+    "url": "../data/motivation_participation.csv"
+  },
+
+  "transform": [
+    {
+      "calculate": "datum.motivation === 'To be outdoors / to enjoy nature' ? 'Outdoor motivation' : 'Other motivations'",
+      "as": "motivation_type"
+    },
+    {
+      "calculate": "datum.motivation === 'Physical health or fitness' ? 'Health & fitness' : datum.motivation === 'Fun/enjoyment' ? 'Enjoyment' : datum.motivation === 'To lose weight / keep weight off / tone' ? 'Weight management' : datum.motivation === 'To be outdoors / to enjoy nature' ? 'Enjoying nature' : datum.motivation === 'Social reasons' ? 'Social' : datum.motivation === 'Psychological / mental health / therapy' ? 'Mental health' : datum.motivation === 'Sense of achievement' ? 'Achievement' : datum.motivation === 'Hobby' ? 'Hobby' : datum.motivation === 'Training purposes' ? 'Training' : datum.motivation === 'Walk the dog' ? 'Dog walking' : datum.motivation === 'Learn a new skill' ? 'Learning a skill' : datum.motivation === 'Performance or competition' ? 'Competition' : datum.motivation === 'Way of getting around' ? 'Transport' : datum.motivation",
+      "as": "motivation_label"
+    }
+  ],
+
+  "encoding": {
+    "y": {
+      "field": "motivation_label",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Health & fitness",
+        "Enjoyment",
+        "Weight management",
+        "Enjoying nature",
+        "Social",
+        "Mental health",
+        "Achievement",
+        "Hobby",
+        "Training",
+        "Dog walking",
+        "Learning a skill",
+        "Competition",
+        "Transport"
+      ],
+      "axis": {
+        "labelLimit": 160,
+        "labelFontSize": 11
+      }
+    },
+
+    "x": {
+      "field": "participation_rate",
+      "type": "quantitative",
+      "title": "Adults reporting motivation (%)",
+      "scale": {
+        "domain": [0, 70]
+      },
+      "axis": {
+        "grid": true,
+        "tickCount": 8
+      }
+    }
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 3
+      },
+
+      "encoding": {
+        "color": {
+          "field": "motivation_type",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Outdoor motivation",
+              "Other motivations"
+            ],
+            "range": [
+              "#2E7D32",
+              "#B8C7B8"
+            ]
+          },
+          "legend": null
+        },
+
+        "tooltip": [
+          {
+            "field": "motivation",
+            "type": "nominal",
+            "title": "Original motivation"
+          },
+          {
+            "field": "participation_rate",
+            "type": "quantitative",
+            "title": "Adults (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.motivation === 'To be outdoors / to enjoy nature'"
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 7,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#2E7D32"
+      },
+
+      "encoding": {
+        "text": {
+          "expr": "format(datum.participation_rate, '.1f') + '%'"
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+
+    "font": "Arial",
+
+    "axis": {
+      "titleFontSize": 12,
+      "labelFontSize": 11
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 500,
+  "height": 420,
+  "background": "#FFFFFF",
+
+  "title": {
+    "text": "Who Participates?",
+    "subtitle": "Gender composition of Australian adult participants, 2025",
+    "anchor": "start",
+    "fontSize": 22,
+    "fontWeight": "bold",
+    "subtitleFontSize": 13,
+    "subtitleFontWeight": "normal",
+    "subtitleColor": "#666666",
+    "subtitlePadding": 8
+  },
+
+  "data": {
+    "sequence": {
+      "start": 1,
+      "stop": 101,
+      "as": "person"
+    }
+  },
+
+  "transform": [
+    {
+      "calculate": "9615629",
+      "as": "male_participants"
+    },
+    {
+      "calculate": "9746360",
+      "as": "female_participants"
+    },
+    {
+      "calculate": "datum.male_participants + datum.female_participants",
+      "as": "total_participants"
+    },
+    {
+      "calculate": "datum.male_participants / datum.total_participants * 100",
+      "as": "male_percentage"
+    },
+    {
+      "calculate": "datum.female_participants / datum.total_participants * 100",
+      "as": "female_percentage"
+    },
+    {
+      "calculate": "(datum.person - 1) % 10",
+      "as": "column"
+    },
+    {
+      "calculate": "floor((datum.person - 1) / 10)",
+      "as": "row"
+    },
+    {
+      "calculate": "datum.person <= round(datum.male_percentage) ? 'Male' : 'Female'",
+      "as": "gender"
+    },
+    {
+      "calculate": "datum.gender == 'Male' ? '♂' : '♀'",
+      "as": "icon"
+    }
+  ],
+
+  "mark": {
+    "type": "text",
+    "fontSize": 31
+  },
+
+  "encoding": {
+    "x": {
+      "field": "column",
+      "type": "ordinal",
+      "axis": null,
+      "scale": {
+        "paddingInner": 0.25,
+        "paddingOuter": 0.15
+      }
+    },
+
+    "y": {
+      "field": "row",
+      "type": "ordinal",
+      "axis": null,
+      "sort": "descending",
+      "scale": {
+        "paddingInner": 0.45,
+        "paddingOuter": 0.2
+      }
+    },
+
+    "text": {
+      "field": "icon"
+    },
+
+    "color": {
+      "field": "gender",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Male",
+          "Female"
+        ],
+        "range": [
+          "#4C78A8",
+          "#E78AC3"
+        ]
+      },
+      "legend": {
+        "title": "Gender",
+        "orient": "right",
+        "direction": "vertical",
+        "labelFontSize": 13,
+        "titleFontSize": 13,
+        "symbolSize": 180,
+        "offset": 25
+      }
+    },
+
+    "tooltip": [
+      {
+        "field": "gender",
+        "type": "nominal",
+        "title": "Gender"
+      },
+      {
+        "field": "male_percentage",
+        "type": "quantitative",
+        "title": "Male Share",
+        "format": ".1f"
+      },
+      {
+        "field": "female_percentage",
+        "type": "quantitative",
+        "title": "Female Share",
+        "format": ".1f"
+      }
+    ]
+  },
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Arial"
+  }
+}

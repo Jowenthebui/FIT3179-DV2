@@ -1,0 +1,184 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 500,
+  "height": 320,
+
+  "title": {
+    "text": "Does Gender Shape How Australians Get Outdoors?",
+    "subtitle": "Male and female participation rates in selected outdoor activities, 2025",
+    "anchor": "start",
+    "fontSize": 22,
+    "subtitleFontSize": 13,
+    "subtitleFontWeight": "normal",
+    "subtitlePadding": 8
+  },
+
+  "data": {
+    "url": "../data/gender_activity_participation.csv"
+  },
+
+  "encoding": {
+    "y": {
+      "field": "activity",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Walking (Recreational)",
+        "Bush walking",
+        "Swimming",
+        "Running/jogging",
+        "Cycling",
+        "Golf",
+        "Surfing",
+        "Canoeing/Kayaking"
+      ],
+      "axis": {
+        "domain": false,
+        "ticks": false,
+        "labelFontSize": 12,
+        "labelPadding": 8,
+        "labelLimit": 220
+      }
+    }
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 2,
+        "color": "#C5C5C5"
+      },
+      "encoding": {
+        "x": {
+          "field": "male",
+          "type": "quantitative",
+          "title": "Participation Rate (%)",
+          "scale": {
+            "domain": [0, 60]
+          },
+          "axis": {
+            "grid": false,
+            "tickCount": 7,
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "titlePadding": 10
+          }
+        },
+        "x2": {
+          "field": "female"
+        }
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "fold": ["male", "female"],
+          "as": ["gender", "participation_rate"]
+        },
+        {
+          "calculate": "datum.gender === 'male' ? 'Male' : 'Female'",
+          "as": "Gender"
+        }
+      ],
+
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "on": "mouseover",
+            "clear": "mouseout",
+            "fields": ["activity", "Gender"]
+          }
+        }
+      ],
+
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 130
+      },
+
+      "encoding": {
+        "x": {
+          "field": "participation_rate",
+          "type": "quantitative"
+        },
+
+        "color": {
+            "field": "Gender",
+            "type": "nominal",
+            "scale": {
+                "domain": ["Male", "Female"],
+                "range": ["#4C78A8", "#E07B84"]
+            },
+            "legend": {
+                "title": "Gender",
+                "orient": "right",
+                "direction": "vertical",
+                "symbolType": "circle",
+                "symbolSize": 100,
+                "labelFontSize": 12,
+                "titleFontSize": 12,
+                "titleFontWeight": "bold",
+                "offset": 25,
+                "padding": 10
+            }
+        },
+
+        "stroke": {
+          "condition": {
+            "param": "hover",
+            "value": "#333333"
+          },
+          "value": null
+        },
+
+        "strokeWidth": {
+          "condition": {
+            "param": "hover",
+            "value": 2
+          },
+          "value": 0
+        },
+
+        "size": {
+          "condition": {
+            "param": "hover",
+            "value": 190
+          },
+          "value": 130
+        },
+
+        "tooltip": [
+          {
+            "field": "activity",
+            "type": "nominal",
+            "title": "Activity"
+          },
+          {
+            "field": "Gender",
+            "type": "nominal",
+            "title": "Gender"
+          },
+          {
+            "field": "participation_rate",
+            "type": "quantitative",
+            "title": "Participation Rate (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Arial"
+  }
+}

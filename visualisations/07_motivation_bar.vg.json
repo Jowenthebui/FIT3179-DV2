@@ -97,7 +97,7 @@
           {
             "field": "motivation",
             "type": "nominal",
-            "title": "Original motivation"
+            "title": "Motivation"
           },
           {
             "field": "participation_rate",
@@ -113,6 +113,10 @@
       "transform": [
         {
           "filter": "datum.motivation === 'To be outdoors / to enjoy nature'"
+        },
+        {
+          "calculate": "format(datum.participation_rate, '.1f') + '%  —  More than half cite nature and the outdoors'",
+          "as": "annotation"
         }
       ],
 
@@ -120,15 +124,15 @@
         "type": "text",
         "align": "left",
         "baseline": "middle",
-        "dx": 7,
-        "fontSize": 12,
+        "dx": 8,
+        "fontSize": 10,
         "fontWeight": "bold",
         "color": "#2E7D32"
       },
 
       "encoding": {
         "text": {
-          "expr": "format(datum.participation_rate, '.1f') + '%'"
+          "field": "annotation"
         }
       }
     }
@@ -143,7 +147,12 @@
 
     "axis": {
       "titleFontSize": 12,
-      "labelFontSize": 11
+      "labelFontSize": 11,
+      "labelColor": "#444444",
+      "titleColor": "#333333",
+      "gridColor": "#E5E7E2",
+      "domainColor": "#999999",
+      "tickColor": "#999999"
     }
   }
 }

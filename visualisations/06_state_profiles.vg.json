@@ -1,0 +1,331 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 720,
+  "height": 360,
+  "background": "#FFFFFF",
+
+  "title": {
+    "text": "Different States, Different Ways to Get Outside",
+    "subtitle": "Walking dominates nationwide, while other outdoor activities reveal stronger regional differences",
+    "anchor": "start",
+    "fontSize": 24,
+    "fontWeight": "bold",
+    "color": "#222222",
+    "subtitleFontSize": 13,
+    "subtitleFontWeight": "normal",
+    "subtitleColor": "#666666",
+    "subtitlePadding": 8
+  },
+
+  "data": {
+    "url": "../data/state_activity_participation.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "Walking (Recreational)": "number",
+        "Bush walking": "number",
+        "Running/jogging": "number",
+        "Swimming": "number",
+        "Cycling": "number",
+        "Golf": "number",
+        "Surfing": "number",
+        "Canoeing/Kayaking": "number"
+      }
+    }
+  },
+
+  "transform": [
+    {
+      "fold": [
+        "Walking (Recreational)",
+        "Bush walking",
+        "Running/jogging",
+        "Swimming",
+        "Cycling",
+        "Golf",
+        "Surfing",
+        "Canoeing/Kayaking"
+      ],
+      "as": [
+        "Activity",
+        "Participation"
+      ]
+    },
+    {
+      "calculate": "datum.Activity == 'Walking (Recreational)' ? 'Walking' : datum.Activity == 'Running/jogging' ? 'Running' : datum.Activity == 'Canoeing/Kayaking' ? 'Canoeing / Kayaking' : datum.Activity",
+      "as": "ActivityLabel"
+    }
+  ],
+
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "cornerRadius": 3,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 2
+      },
+
+      "encoding": {
+        "x": {
+          "field": "ActivityLabel",
+          "type": "ordinal",
+          "sort": [
+            "Walking",
+            "Bush walking",
+            "Running",
+            "Swimming",
+            "Cycling",
+            "Golf",
+            "Surfing",
+            "Canoeing / Kayaking"
+          ],
+          "title": null,
+          "axis": {
+            "orient": "top",
+            "labelAngle": -25,
+            "labelFontSize": 11,
+            "labelColor": "#444444",
+            "labelPadding": 8,
+            "labelLimit": 130,
+            "ticks": false,
+            "domain": false
+          }
+        },
+
+        "y": {
+          "field": "state_code",
+          "type": "ordinal",
+          "sort": [
+            "ACT",
+            "NSW",
+            "NT",
+            "QLD",
+            "SA",
+            "TAS",
+            "VIC",
+            "WA"
+          ],
+          "title": null,
+          "axis": {
+            "labelFontSize": 12,
+            "labelFontWeight": "bold",
+            "labelColor": "#444444",
+            "labelPadding": 10,
+            "ticks": false,
+            "domain": false
+          }
+        },
+
+        "color": {
+          "field": "Participation",
+          "type": "quantitative",
+          "title": "Participation (%)",
+          "scale": {
+            "domain": [
+              0,
+              60
+            ],
+            "range": [
+              "#F3F6EE",
+              "#DDE8D4",
+              "#B7D1AD",
+              "#82AF7C",
+              "#4F8A5B",
+              "#245C38"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "gradientLength": 280,
+            "gradientThickness": 12,
+            "titleFontSize": 11,
+            "titleFontWeight": "bold",
+            "titleColor": "#444444",
+            "labelFontSize": 10,
+            "labelColor": "#666666",
+            "values": [
+              0,
+              10,
+              20,
+              30,
+              40,
+              50,
+              60
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold"
+      },
+
+      "encoding": {
+        "x": {
+          "field": "ActivityLabel",
+          "type": "ordinal",
+          "sort": [
+            "Walking",
+            "Bush walking",
+            "Running",
+            "Swimming",
+            "Cycling",
+            "Golf",
+            "Surfing",
+            "Canoeing / Kayaking"
+          ],
+          "axis": null
+        },
+
+        "y": {
+          "field": "state_code",
+          "type": "ordinal",
+          "sort": [
+            "ACT",
+            "NSW",
+            "NT",
+            "QLD",
+            "SA",
+            "TAS",
+            "VIC",
+            "WA"
+          ],
+          "axis": null
+        },
+
+        "text": {
+          "field": "Participation",
+          "type": "quantitative",
+          "format": ".1f"
+        },
+
+        "color": {
+          "condition": {
+            "test": "datum.Participation >= 30",
+            "value": "#FFFFFF"
+          },
+          "value": "#2B2B2B"
+        }
+      }
+    },
+
+    {
+      "params": [
+        {
+          "name": "cell_hover",
+          "select": {
+            "type": "point",
+            "fields": [
+              "state_code",
+              "Activity"
+            ],
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ],
+
+      "mark": {
+        "type": "rect",
+        "fillOpacity": 0,
+        "cornerRadius": 3
+      },
+
+      "encoding": {
+        "x": {
+          "field": "ActivityLabel",
+          "type": "ordinal",
+          "sort": [
+            "Walking",
+            "Bush walking",
+            "Running",
+            "Swimming",
+            "Cycling",
+            "Golf",
+            "Surfing",
+            "Canoeing / Kayaking"
+          ],
+          "axis": null
+        },
+
+        "y": {
+          "field": "state_code",
+          "type": "ordinal",
+          "sort": [
+            "ACT",
+            "NSW",
+            "NT",
+            "QLD",
+            "SA",
+            "TAS",
+            "VIC",
+            "WA"
+          ],
+          "axis": null
+        },
+
+        "stroke": {
+          "condition": {
+            "param": "cell_hover",
+            "empty": false,
+            "value": "#173D27"
+          },
+          "value": null
+        },
+
+        "strokeWidth": {
+          "condition": {
+            "param": "cell_hover",
+            "empty": false,
+            "value": 4
+          },
+          "value": 0
+        },
+
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State / Territory"
+          },
+          {
+            "field": "Activity",
+            "type": "nominal",
+            "title": "Activity"
+          },
+          {
+            "field": "Participation",
+            "type": "quantitative",
+            "title": "Participation rate (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+
+    "font": "Arial",
+
+    "axis": {
+      "labelColor": "#444444",
+      "titleColor": "#444444"
+    },
+
+    "legend": {
+      "labelColor": "#555555",
+      "titleColor": "#444444"
+    }
+  }
+}

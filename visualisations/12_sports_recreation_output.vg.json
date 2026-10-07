@@ -1,0 +1,253 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 700,
+  "height": 400,
+  "background": "#FFFFFF",
+
+  "title": {
+    "text": "Sports & Recreation Tourism Has Rebounded",
+    "subtitle": "Tourism output from sports and recreation services, Australia, 2016–17 to 2023–24",
+    "anchor": "start",
+    "fontSize": 24,
+    "fontWeight": "bold",
+    "color": "#222222",
+    "subtitleFontSize": 13,
+    "subtitleFontWeight": "normal",
+    "subtitleColor": "#666666",
+    "subtitlePadding": 8
+  },
+
+  "data": {
+    "url": "../data/sports_recreation_tourism_output.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "tourism_output_million": "number"
+      }
+    }
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3,
+        "color": "#3F704D",
+        "point": {
+          "filled": true,
+          "fill": "#FFFFFF",
+          "stroke": "#3F704D",
+          "strokeWidth": 2,
+          "size": 75
+        }
+      },
+
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": null,
+          "sort": [
+            "2016-17",
+            "2017-18",
+            "2018-19",
+            "2019-20",
+            "2020-21",
+            "2021-22",
+            "2022-23",
+            "2023-24"
+          ],
+          "axis": {
+            "labelFontSize": 11,
+            "labelColor": "#555555",
+            "labelAngle": 0,
+            "labelPadding": 8,
+            "ticks": false,
+            "domain": false
+          }
+        },
+
+        "y": {
+          "field": "tourism_output_million",
+          "type": "quantitative",
+          "title": "Tourism output ($ billion)",
+          "scale": {
+            "domain": [
+              0,
+              5500
+            ]
+          },
+          "axis": {
+            "titleFontSize": 12,
+            "titleFontWeight": "normal",
+            "titleColor": "#555555",
+            "titlePadding": 12,
+            "labelFontSize": 11,
+            "labelColor": "#666666",
+            "labelExpr": "'$' + format(datum.value / 1000, '.1f') + 'b'",
+            "grid": true,
+            "gridColor": "#E8E8E8",
+            "gridWidth": 1,
+            "ticks": false,
+            "domain": false
+          }
+        },
+
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "tourism_output_million",
+            "type": "quantitative",
+            "title": "Tourism output ($m)",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.year == '2020-21'"
+        }
+      ],
+
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 120,
+        "color": "#B26A4A"
+      },
+
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "sort": [
+            "2016-17",
+            "2017-18",
+            "2018-19",
+            "2019-20",
+            "2020-21",
+            "2021-22",
+            "2022-23",
+            "2023-24"
+          ]
+        },
+
+        "y": {
+          "field": "tourism_output_million",
+          "type": "quantitative"
+        }
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.year == '2020-21'"
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "top",
+        "dx": -12,
+        "dy": 18,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#8A523A"
+      },
+
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "sort": [
+            "2016-17",
+            "2017-18",
+            "2018-19",
+            "2019-20",
+            "2020-21",
+            "2021-22",
+            "2022-23",
+            "2023-24"
+          ]
+        },
+
+        "y": {
+          "field": "tourism_output_million",
+          "type": "quantitative"
+        },
+
+        "text": {
+          "value": "Pandemic low: $2.36b"
+        }
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.year == '2023-24'"
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": -8,
+        "dy": -12,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#2E6B3E"
+      },
+
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "sort": [
+            "2016-17",
+            "2017-18",
+            "2018-19",
+            "2019-20",
+            "2020-21",
+            "2021-22",
+            "2022-23",
+            "2023-24"
+          ]
+        },
+
+        "y": {
+          "field": "tourism_output_million",
+          "type": "quantitative"
+        },
+
+        "text": {
+          "value": "$5.06b"
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+
+    "font": "Arial",
+
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  }
+}

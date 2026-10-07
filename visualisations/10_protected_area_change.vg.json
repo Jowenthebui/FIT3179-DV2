@@ -1,0 +1,478 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "background": "#FFFFFF",
+
+  "title": {
+    "text": "Australia's Protected Landscape Over Time",
+    "subtitle": "CAPAD snapshots show the changing footprint of terrestrial protected areas, 2008–2024",
+    "anchor": "start",
+    "fontSize": 24,
+    "fontWeight": "bold",
+    "color": "#222222",
+    "subtitleFontSize": 13,
+    "subtitleFontWeight": "normal",
+    "subtitleColor": "#666666",
+    "subtitlePadding": 8
+  },
+
+  "vconcat": [
+    {
+      "hconcat": [
+        {
+          "width": 300,
+          "height": 230,
+
+          "title": {
+            "text": "2008",
+            "fontSize": 17,
+            "fontWeight": "bold",
+            "color": "#2E6B3E",
+            "anchor": "middle"
+          },
+
+          "projection": {
+            "type": "mercator"
+          },
+
+          "layer": [
+            {
+              "data": {
+                "url": "../data/australia_states.geojson",
+                "format": {
+                  "type": "json",
+                  "property": "features"
+                }
+              },
+
+              "mark": {
+                "type": "geoshape",
+                "fill": "#F3F1E9",
+                "stroke": "#C9C8C2",
+                "strokeWidth": 0.8
+              }
+            },
+
+            {
+              "data": {
+                "url": "../data/capad_history/capad2008_australia.geojson",
+                "format": {
+                  "type": "json",
+                  "property": "geometries"
+                }
+              },
+
+              "mark": {
+                "type": "geoshape",
+                "fill": "#4F7D4A",
+                "opacity": 0.9
+              }
+            }
+          ]
+        },
+
+        {
+          "width": 300,
+          "height": 230,
+
+          "title": {
+            "text": "2012",
+            "fontSize": 17,
+            "fontWeight": "bold",
+            "color": "#2E6B3E",
+            "anchor": "middle"
+          },
+
+          "projection": {
+            "type": "mercator"
+          },
+
+          "layer": [
+            {
+              "data": {
+                "url": "../data/australia_states.geojson",
+                "format": {
+                  "type": "json",
+                  "property": "features"
+                }
+              },
+
+              "mark": {
+                "type": "geoshape",
+                "fill": "#F3F1E9",
+                "stroke": "#C9C8C2",
+                "strokeWidth": 0.8
+              }
+            },
+
+            {
+              "data": {
+                "url": "../data/capad_history/capad2012_australia.geojson",
+                "format": {
+                  "type": "json",
+                  "property": "geometries"
+                }
+              },
+
+              "mark": {
+                "type": "geoshape",
+                "fill": "#4F7D4A",
+                "opacity": 0.9
+              }
+            }
+          ]
+        },
+
+        {
+          "width": 300,
+          "height": 230,
+
+          "title": {
+            "text": "2016",
+            "fontSize": 17,
+            "fontWeight": "bold",
+            "color": "#2E6B3E",
+            "anchor": "middle"
+          },
+
+          "projection": {
+            "type": "mercator"
+          },
+
+          "layer": [
+            {
+              "data": {
+                "url": "../data/australia_states.geojson",
+                "format": {
+                  "type": "json",
+                  "property": "features"
+                }
+              },
+
+              "mark": {
+                "type": "geoshape",
+                "fill": "#F3F1E9",
+                "stroke": "#C9C8C2",
+                "strokeWidth": 0.8
+              }
+            },
+
+            {
+              "data": {
+                "url": "../data/capad_history/capad2016_australia.geojson",
+                "format": {
+                  "type": "json",
+                  "property": "geometries"
+                }
+              },
+
+              "mark": {
+                "type": "geoshape",
+                "fill": "#4F7D4A",
+                "opacity": 0.9
+              }
+            }
+          ]
+        }
+      ],
+
+      "spacing": 18
+    },
+
+    {
+      "hconcat": [
+        {
+          "width": 300,
+          "height": 230,
+
+          "title": {
+            "text": "2020",
+            "fontSize": 17,
+            "fontWeight": "bold",
+            "color": "#2E6B3E",
+            "anchor": "middle"
+          },
+
+          "projection": {
+            "type": "mercator"
+          },
+
+          "layer": [
+            {
+              "data": {
+                "url": "../data/australia_states.geojson",
+                "format": {
+                  "type": "json",
+                  "property": "features"
+                }
+              },
+
+              "mark": {
+                "type": "geoshape",
+                "fill": "#F3F1E9",
+                "stroke": "#C9C8C2",
+                "strokeWidth": 0.8
+              }
+            },
+
+            {
+              "data": {
+                "url": "../data/capad_history/capad2020_australia.geojson",
+                "format": {
+                  "type": "json",
+                  "property": "geometries"
+                }
+              },
+
+              "mark": {
+                "type": "geoshape",
+                "fill": "#4F7D4A",
+                "opacity": 0.9
+              }
+            }
+          ]
+        },
+
+        {
+          "width": 300,
+          "height": 230,
+
+          "title": {
+            "text": "2022",
+            "fontSize": 17,
+            "fontWeight": "bold",
+            "color": "#2E6B3E",
+            "anchor": "middle"
+          },
+
+          "projection": {
+            "type": "mercator"
+          },
+
+          "layer": [
+            {
+              "data": {
+                "url": "../data/australia_states.geojson",
+                "format": {
+                  "type": "json",
+                  "property": "features"
+                }
+              },
+
+              "mark": {
+                "type": "geoshape",
+                "fill": "#F3F1E9",
+                "stroke": "#C9C8C2",
+                "strokeWidth": 0.8
+              }
+            },
+
+            {
+              "data": {
+                "url": "../data/capad_history/capad2022_australia.geojson",
+                "format": {
+                  "type": "json",
+                  "property": "geometries"
+                }
+              },
+
+              "mark": {
+                "type": "geoshape",
+                "fill": "#4F7D4A",
+                "opacity": 0.9
+              }
+            }
+          ]
+        },
+
+        {
+          "width": 300,
+          "height": 230,
+
+          "title": {
+            "text": "2024",
+            "fontSize": 17,
+            "fontWeight": "bold",
+            "color": "#2E6B3E",
+            "anchor": "middle"
+          },
+
+          "projection": {
+            "type": "mercator"
+          },
+
+          "layer": [
+            {
+              "data": {
+                "url": "../data/australia_states.geojson",
+                "format": {
+                  "type": "json",
+                  "property": "features"
+                }
+              },
+
+              "mark": {
+                "type": "geoshape",
+                "fill": "#F3F1E9",
+                "stroke": "#C9C8C2",
+                "strokeWidth": 0.8
+              }
+            },
+
+            {
+              "data": {
+                "url": "../data/capad_history/capad2024_australia.geojson",
+                "format": {
+                  "type": "json",
+                  "property": "geometries"
+                }
+              },
+
+              "mark": {
+                "type": "geoshape",
+                "fill": "#4F7D4A",
+                "opacity": 0.9
+              }
+            },
+
+            {
+              "data": {
+                "values": [
+                  {
+                    "longitude": 116.5,
+                    "latitude": -31.5,
+                    "label": "WA shows one of the clearest\nexpansions in protected coverage"
+                  }
+                ]
+              },
+
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "dx": 8,
+                "fontSize": 10,
+                "fontWeight": "bold",
+                "color": "#2E6B3E",
+                "lineBreak": "\n",
+                "lineHeight": 13
+              },
+
+              "encoding": {
+                "longitude": {
+                  "field": "longitude",
+                  "type": "quantitative"
+                },
+
+                "latitude": {
+                  "field": "latitude",
+                  "type": "quantitative"
+                },
+
+                "text": {
+                  "field": "label"
+                }
+              }
+            }
+          ]
+        }
+      ],
+
+      "spacing": 18
+    },
+
+    {
+      "width": 936,
+      "height": 24,
+
+      "data": {
+        "values": [
+          {
+            "x": 10,
+            "y": 12,
+            "label": "Terrestrial protected area"
+          }
+        ]
+      },
+
+      "layer": [
+        {
+          "mark": {
+            "type": "square",
+            "size": 130,
+            "color": "#4F7D4A"
+          },
+
+          "encoding": {
+            "x": {
+              "field": "x",
+              "type": "quantitative",
+              "axis": null,
+              "scale": {
+                "domain": [0, 100]
+              }
+            },
+
+            "y": {
+              "field": "y",
+              "type": "quantitative",
+              "axis": null,
+              "scale": {
+                "domain": [0, 24]
+              }
+            }
+          }
+        },
+
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "dx": 13,
+            "fontSize": 11,
+            "color": "#555555"
+          },
+
+          "encoding": {
+            "x": {
+              "field": "x",
+              "type": "quantitative",
+              "axis": null,
+              "scale": {
+                "domain": [0, 100]
+              }
+            },
+
+            "y": {
+              "field": "y",
+              "type": "quantitative",
+              "axis": null,
+              "scale": {
+                "domain": [0, 24]
+              }
+            },
+
+            "text": {
+              "field": "label"
+            }
+          }
+        }
+      ]
+    }
+  ],
+
+  "spacing": 18,
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+
+    "font": "Arial",
+
+    "title": {
+      "font": "Arial"
+    }
+  }
+}

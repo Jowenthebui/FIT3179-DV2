@@ -1,0 +1,185 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "background": "#FFFFFF",
+
+  "title": {
+    "text": "Australia's Protected Landscape Has Expanded",
+    "subtitle": "Protected terrestrial area as a percentage of each state or territory, CAPAD 2008–2024",
+    "anchor": "start",
+    "fontSize": 24,
+    "fontWeight": "bold",
+    "color": "#222222",
+    "subtitleFontSize": 13,
+    "subtitleFontWeight": "normal",
+    "subtitleColor": "#666666",
+    "subtitlePadding": 8
+  },
+
+  "repeat": [
+    "2008",
+    "2012",
+    "2016",
+    "2020",
+    "2022",
+    "2024"
+  ],
+
+  "columns": 3,
+
+  "spec": {
+    "width": 280,
+    "height": 240,
+
+    "projection": {
+      "type": "mercator"
+    },
+
+    "layer": [
+      {
+        "data": {
+          "url": "../data/australia_states.geojson",
+          "format": {
+            "type": "json",
+            "property": "features"
+          }
+        },
+
+        "mark": {
+          "type": "geoshape",
+          "fill": "#EEEEEA",
+          "stroke": "#FFFFFF",
+          "strokeWidth": 1
+        }
+      },
+
+      {
+        "data": {
+          "url": "../data/protected_area_by_state.csv",
+          "format": {
+            "type": "csv"
+          }
+        },
+
+        "transform": [
+          {
+            "lookup": "state",
+            "from": {
+              "data": {
+                "url": "../data/australia_states.geojson",
+                "format": {
+                  "type": "json",
+                  "property": "features"
+                }
+              },
+              "key": "properties.STATE_NAME"
+            },
+            "as": "geo"
+          }
+        ],
+
+        "mark": {
+          "type": "geoshape",
+          "stroke": "#FFFFFF",
+          "strokeWidth": 1
+        },
+
+        "encoding": {
+          "shape": {
+            "field": "geo",
+            "type": "geojson"
+          },
+
+          "color": {
+            "field": {
+              "repeat": "repeat"
+            },
+            "type": "quantitative",
+
+            "scale": {
+              "domain": [0, 60],
+              "scheme": "greens"
+            },
+
+            "legend": {
+              "title": "Protected area (%)",
+              "orient": "right",
+              "gradientLength": 140,
+              "gradientThickness": 12,
+              "titleFontSize": 11,
+              "titleFontWeight": "normal",
+              "labelFontSize": 10
+            }
+          },
+
+          "tooltip": [
+            {
+              "field": "state",
+              "type": "nominal",
+              "title": "State / Territory"
+            },
+            {
+              "field": {
+                "repeat": "repeat"
+              },
+              "type": "quantitative",
+              "title": "Protected area (%)",
+              "format": ".1f"
+            }
+          ]
+        }
+      },
+
+      {
+        "data": {
+          "values": [
+            {
+              "2008": "2008",
+              "2012": "2012",
+              "2016": "2016",
+              "2020": "2020",
+              "2022": "2022",
+              "2024": "2024"
+            }
+          ]
+        },
+
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "baseline": "top",
+          "x": 8,
+          "y": 8,
+          "fontSize": 16,
+          "fontWeight": "bold",
+          "color": "#2E6B3E"
+        },
+
+        "encoding": {
+          "text": {
+            "field": {
+              "repeat": "repeat"
+            }
+          }
+        }
+      }
+    ]
+  },
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+
+    "font": "Arial",
+
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    },
+
+    "concat": {
+      "spacing": 15
+    }
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 650,
+  "height": 520,
+  "background": "#FFFFFF",
+
+  "title": {
+    "text": "Australia's Wild Places",
+    "subtitle": "Explore the 30 largest national parks by area, CAPAD 2024",
+    "anchor": "start",
+    "fontSize": 24,
+    "fontWeight": "bold",
+    "color": "#222222",
+    "subtitleFontSize": 13,
+    "subtitleFontWeight": "normal",
+    "subtitleColor": "#666666",
+    "subtitlePadding": 8
+  },
+
+  "projection": {
+    "type": "mercator"
+  },
+
+  "params": [
+    {
+      "name": "StateSelection",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "name": "Filter by state: ",
+        "options": [
+          "All",
+          "WA",
+          "SA",
+          "NT",
+          "QLD",
+          "NSW",
+          "VIC",
+          "TAS",
+          "ACT"
+        ]
+      }
+    }
+  ],
+
+  "layer": [
+    {
+      "data": {
+        "url": "../data/australia_states.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+
+      "mark": {
+        "type": "geoshape",
+        "fill": "#F4F2EA",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.2
+      }
+    },
+
+    {
+      "data": {
+        "url": "../data/national_parks_top30_capad2024.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "AREA_KM2": "number",
+            "LONGITUDE": "number",
+            "LATITUDE": "number",
+            "RANK": "number"
+          }
+        }
+      },
+
+      "transform": [
+        {
+          "filter": "StateSelection == 'All' || datum.STATE == StateSelection"
+        },
+        {
+          "calculate": "datum.AREA_KM2 > 30000 ? 'Largest park' : datum.AREA_KM2 >= 10000 ? 'Very large parks' : 'Other top 30 parks'",
+          "as": "ParkCategory"
+        }
+      ],
+
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ],
+
+      "mark": {
+        "type": "circle",
+        "stroke": "#FFFFFF"
+      },
+
+      "encoding": {
+        "longitude": {
+          "field": "LONGITUDE",
+          "type": "quantitative"
+        },
+
+        "latitude": {
+          "field": "LATITUDE",
+          "type": "quantitative"
+        },
+
+        "size": {
+          "field": "AREA_KM2",
+          "type": "quantitative",
+          "title": "Park area (km²)",
+
+          "scale": {
+            "type": "sqrt",
+            "domain": [
+              0,
+              36054
+            ],
+            "range": [
+              40,
+              2200
+            ]
+          },
+
+          "legend": {
+            "title": "Park area (km²)",
+            "orient": "right",
+
+            "values": [
+              10000,
+              30000
+            ],
+
+            "format": ",.0f",
+
+            "titleFontSize": 12,
+            "titleFontWeight": "bold",
+            "titleColor": "#333333",
+            "titlePadding": 14,
+
+            "labelFontSize": 11,
+            "labelColor": "#555555",
+            "labelOffset": 12,
+
+            "symbolFillColor": "#4F8A5B",
+            "symbolStrokeColor": "#FFFFFF",
+            "symbolOpacity": 0.9,
+
+            "offset": 35
+          }
+        },
+
+        "color": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": "#0B3D20"
+          },
+
+          "field": "ParkCategory",
+          "type": "nominal",
+
+          "scale": {
+            "domain": [
+              "Largest park",
+              "Very large parks",
+              "Other top 30 parks"
+            ],
+
+            "range": [
+              "#145A32",
+              "#4F8A5B",
+              "#A8CBAA"
+            ]
+          },
+
+          "legend": null
+        },
+
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": 1
+          },
+          "value": 0.9
+        },
+
+        "strokeWidth": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": 2.5
+          },
+          "value": 0.8
+        },
+
+        "order": {
+          "field": "AREA_KM2",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+
+        "tooltip": [
+          {
+            "field": "NAME",
+            "type": "nominal",
+            "title": "National Park"
+          },
+          {
+            "field": "STATE",
+            "type": "nominal",
+            "title": "State / Territory"
+          },
+          {
+            "field": "AREA_KM2",
+            "type": "quantitative",
+            "title": "Area (km²)",
+            "format": ",.0f"
+          },
+          {
+            "field": "RANK",
+            "type": "quantitative",
+            "title": "Size Rank",
+            "format": ".0f"
+          }
+        ]
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+
+    "font": "Arial",
+
+    "legend": {
+      "orient": "right",
+      "direction": "vertical",
+      "padding": 10,
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    }
+  }
+}

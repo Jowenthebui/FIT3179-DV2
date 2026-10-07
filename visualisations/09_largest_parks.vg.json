@@ -1,0 +1,212 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 620,
+  "height": 520,
+  "background": "#FFFFFF",
+
+  "title": {
+    "text": "Australia's Largest National Parks",
+    "subtitle": "Explore the largest national parks by area, CAPAD 2024",
+    "anchor": "start",
+    "fontSize": 24,
+    "fontWeight": "bold",
+    "color": "#222222",
+    "subtitleFontSize": 13,
+    "subtitleFontWeight": "normal",
+    "subtitleColor": "#666666",
+    "subtitlePadding": 8
+  },
+
+  "data": {
+    "url": "../data/national_parks_top30_capad2024.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "AREA_KM2": "number"
+      }
+    }
+  },
+
+  "params": [
+    {
+      "name": "TopN",
+      "value": 10,
+      "bind": {
+        "input": "select",
+        "name": "Show parks: ",
+        "options": [10, 20, 30],
+        "labels": [
+          "Top 10",
+          "Top 20",
+          "Top 30"
+        ]
+      }
+    }
+  ],
+
+  "transform": [
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "ParkRank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "AREA_KM2",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "filter": "datum.ParkRank <= TopN"
+    }
+  ],
+
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 3
+      },
+
+      "encoding": {
+        "y": {
+          "field": "NAME",
+          "type": "nominal",
+          "sort": {
+            "field": "AREA_KM2",
+            "op": "max",
+            "order": "descending"
+          },
+          "title": null,
+          "axis": {
+            "labelFontSize": 12,
+            "labelColor": "#333333",
+            "labelLimit": 230,
+            "labelPadding": 8,
+            "ticks": false,
+            "domain": false
+          }
+        },
+
+        "x": {
+          "field": "AREA_KM2",
+          "type": "quantitative",
+          "title": "Park area (km²)",
+          "scale": {
+            "domain": [0, 38000]
+          },
+          "axis": {
+            "titleFontSize": 12,
+            "titleFontWeight": "normal",
+            "titleColor": "#555555",
+            "titlePadding": 12,
+            "labelFontSize": 11,
+            "labelColor": "#666666",
+            "format": ",.0f",
+            "grid": true,
+            "gridColor": "#E8E8E8",
+            "gridWidth": 1,
+            "domain": false,
+            "ticks": false
+          }
+        },
+
+        "color": {
+          "condition": {
+            "test": "datum.ParkRank == 1",
+            "value": "#2E6B3E"
+          },
+          "value": "#A8CBAA"
+        },
+
+        "opacity": {
+          "value": 0.9
+        },
+
+        "tooltip": [
+          {
+            "field": "ParkRank",
+            "type": "quantitative",
+            "title": "Rank",
+            "format": ".0f"
+          },
+          {
+            "field": "NAME",
+            "type": "nominal",
+            "title": "National Park"
+          },
+          {
+            "field": "STATE",
+            "type": "nominal",
+            "title": "State / Territory"
+          },
+          {
+            "field": "AREA_KM2",
+            "type": "quantitative",
+            "title": "Area (km²)",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.ParkRank == 1"
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 10,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#2E6B3E"
+      },
+
+      "encoding": {
+        "y": {
+          "field": "NAME",
+          "type": "nominal",
+          "sort": {
+            "field": "AREA_KM2",
+            "op": "max",
+            "order": "descending"
+          },
+          "title": null
+        },
+
+        "x": {
+          "field": "AREA_KM2",
+          "type": "quantitative"
+        },
+
+        "text": {
+          "field": "AREA_KM2",
+          "type": "quantitative",
+          "format": ",.0f"
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+
+    "font": "Arial",
+
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  }
+}

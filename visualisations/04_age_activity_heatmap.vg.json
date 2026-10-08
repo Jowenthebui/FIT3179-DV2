@@ -7,7 +7,7 @@
   "background": "transparent",
 
   "padding": {
-    "left": 35,
+    "left": 0,
     "right": 90,
     "top": 5,
     "bottom": 5
@@ -29,7 +29,8 @@
     "subtitleColor": "#666666",
     "subtitlePadding": 8,
 
-    "offset": 16
+    "offset": 16,
+    "dx": -35
   },
 
   "data": {

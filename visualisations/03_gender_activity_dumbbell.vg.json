@@ -2,9 +2,16 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "width": "container",
-  "height": 500,
+  "height": 320,
 
   "background": "transparent",
+
+  "padding": {
+    "left": 35,
+    "right": 10,
+    "top": 5,
+    "bottom": 5
+  },
 
   "title": {
     "text": "Does Gender Shape How Australians Get Outdoors?",
@@ -90,6 +97,7 @@
             "titleFontSize": 13,
             "titleFontWeight": 600,
             "titleColor": "#333333",
+
             "titlePadding": 12
           }
         },
@@ -232,6 +240,7 @@
     "view": {
       "stroke": null
     },
+
     "font": "Source Sans 3"
   }
 }

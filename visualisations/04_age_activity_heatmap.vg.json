@@ -6,6 +6,13 @@
 
   "background": "transparent",
 
+  "padding": {
+    "left": 35,
+    "right": 90,
+    "top": 5,
+    "bottom": 5
+  },
+
   "title": {
     "text": "Who Gets Outdoors?",
     "subtitle": "Outdoor participation patterns shift across age groups, 2025",
@@ -112,6 +119,7 @@
         "labelColor": "#333333",
 
         "labelPadding": 10,
+        "labelLimit": 220,
 
         "ticks": false,
         "domain": false
@@ -121,7 +129,7 @@
     "color": {
       "field": "participation_rate",
       "type": "quantitative",
-      "title": "Participation Rate (%)",
+      "title": "Participation (%)",
 
       "scale": {
         "scheme": "yellowgreenblue",
@@ -129,6 +137,14 @@
       },
 
       "legend": {
+        "orient": "right",
+        "direction": "vertical",
+
+        "gradientLength": 220,
+        "gradientThickness": 14,
+
+        "offset": 18,
+
         "titleFont": "Source Sans 3",
         "titleFontSize": 13,
         "titleFontWeight": 600,

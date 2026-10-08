@@ -1,38 +1,53 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "width": 650,
-  "height": 480,
+  "width": "container",
+  "height": 570,
 
-  "background": "#FFFFFF",
+  "background": "transparent",
+
+  "padding": {
+    "left": 20,
+    "right": 20,
+    "top": 5,
+    "bottom": 5
+  },
 
   "title": {
     "text": "One Country, Different Ways to Get Outside",
     "subtitle": "Explore how outdoor participation varies across Australian states and territories, 2025",
     "anchor": "start",
+
+    "font": "Source Sans 3",
     "fontSize": 24,
-    "fontWeight": "bold",
+    "fontWeight": 700,
     "color": "#222222",
-    "subtitleFontSize": 13,
+
+    "subtitleFont": "Source Sans 3",
+    "subtitleFontSize": 14,
     "subtitleFontWeight": "normal",
     "subtitleColor": "#666666",
-    "subtitlePadding": 8
+    "subtitlePadding": 8,
+
+    "offset": 16
   },
 
   "projection": {
     "type": "mercator",
     "center": [134, -28],
-    "scale": 580,
-    "translate": [280, 250]
+    "scale": 780,
+    "translate": [470, 300]
   },
 
   "params": [
     {
       "name": "ActivitySelection",
       "value": "Walking (Recreational)",
+
       "bind": {
         "input": "select",
         "name": "Choose activity: ",
+
         "options": [
           "Walking (Recreational)",
           "Bush walking",
@@ -49,6 +64,7 @@
 
   "data": {
     "url": "../data/australia_states.geojson",
+
     "format": {
       "type": "json",
       "property": "features"
@@ -58,11 +74,14 @@
   "transform": [
     {
       "lookup": "properties.STATE_NAME",
+
       "from": {
         "data": {
           "url": "../data/state_activity_participation.csv"
         },
+
         "key": "state",
+
         "fields": [
           "state_code",
           "Walking (Recreational)",
@@ -76,6 +95,7 @@
         ]
       }
     },
+
     {
       "calculate": "ActivitySelection == 'Walking (Recreational)' ? datum['Walking (Recreational)'] : ActivitySelection == 'Bush walking' ? datum['Bush walking'] : ActivitySelection == 'Running/jogging' ? datum['Running/jogging'] : ActivitySelection == 'Swimming' ? datum['Swimming'] : ActivitySelection == 'Cycling' ? datum['Cycling'] : ActivitySelection == 'Golf' ? datum['Golf'] : ActivitySelection == 'Surfing' ? datum['Surfing'] : datum['Canoeing/Kayaking']",
       "as": "Participation"
@@ -84,7 +104,7 @@
 
   "mark": {
     "type": "geoshape",
-    "stroke": "#FFFFFF",
+    "stroke": "#FBFAF4",
     "strokeWidth": 1.5
   },
 
@@ -92,23 +112,32 @@
     "color": {
       "field": "Participation",
       "type": "quantitative",
-      "title": "Participation Rate (%)",
+
+      "title": "Participation (%)",
+
       "scale": {
         "scheme": "yellowgreenblue"
       },
+
       "legend": {
         "orient": "right",
         "direction": "vertical",
-        "gradientLength": 190,
-        "gradientThickness": 15,
-        "titleFontSize": 12,
-        "titleFontWeight": "bold",
+
+        "gradientLength": 220,
+        "gradientThickness": 14,
+
+        "offset": 24,
+
+        "titleFont": "Source Sans 3",
+        "titleFontSize": 13,
+        "titleFontWeight": 600,
         "titleColor": "#333333",
         "titlePadding": 10,
-        "labelFontSize": 11,
+
+        "labelFont": "Source Sans 3",
+        "labelFontSize": 12,
         "labelColor": "#555555",
-        "labelOffset": 6,
-        "offset": 20
+        "labelOffset": 6
       }
     },
 
@@ -118,10 +147,11 @@
         "type": "nominal",
         "title": "State / Territory"
       },
+
       {
         "field": "Participation",
         "type": "quantitative",
-        "title": "Participation (%)",
+        "title": "Participation Rate (%)",
         "format": ".1f"
       }
     ]
@@ -132,6 +162,11 @@
       "stroke": null
     },
 
-    "font": "Arial"
+    "font": "Source Sans 3",
+
+    "legend": {
+      "labelFont": "Source Sans 3",
+      "titleFont": "Source Sans 3"
+    }
   }
 }

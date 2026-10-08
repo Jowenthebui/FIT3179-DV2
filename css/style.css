@@ -1,5 +1,3 @@
-/* Global */
-
 * {
   box-sizing: border-box;
 }
@@ -10,23 +8,18 @@ html {
 
 body {
   margin: 0;
-
   font-family: "Source Sans 3", Arial, sans-serif;
-
   color: #222222;
   background-color: #fbfaf4;
-
   overflow-x: hidden;
 }
 
 
-/* Hero Section */
+/* Hero */
 
 .hero {
   width: 100%;
-
   padding: 72px 8% 58px;
-
   background-color: #244b36;
   color: #ffffff;
 }
@@ -34,85 +27,56 @@ body {
 .hero-content {
   width: 100%;
   max-width: 1100px;
-
   margin: 0 auto;
 }
 
-
-/* Hero Title */
-
 .hero-title {
   margin: 0;
-
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: 800;
-
   line-height: 0.95;
   letter-spacing: -2px;
-
   color: #ffffff;
 }
 
 .title-first {
   display: block;
-
   margin-bottom: 10px;
-
   font-size: clamp(42px, 4.5vw, 68px);
   font-weight: 700;
 }
 
 .title-second {
   display: block;
-
   font-size: clamp(58px, 7vw, 100px);
   font-weight: 800;
-
   color: #ffffff;
-
   white-space: nowrap;
 }
-
-
-/* Hero Divider */
 
 .hero-divider {
   width: 70px;
   height: 4px;
-
   margin-top: 38px;
-
   background-color: #a8c7a2;
   border-radius: 2px;
 }
 
-
-/* Hero Subtitle */
-
 .hero-subtitle {
   max-width: 760px;
-
   margin: 30px 0 0;
-
   font-size: 21px;
   font-weight: 600;
   line-height: 1.45;
-
   color: #ffffff;
 }
 
-
-/* Hero Introduction */
-
 .hero-intro {
   max-width: 720px;
-
   margin: 22px 0 0;
-
   font-size: 17px;
   font-weight: 400;
   line-height: 1.6;
-
   color: #dce7de;
 }
 
@@ -120,27 +84,17 @@ body {
   display: block;
 }
 
-
-/* Explore Link */
-
 .explore-link {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-
   margin-top: 32px;
-
   font-size: 14px;
   font-weight: 600;
-
   color: #ffffff;
   text-decoration: none;
-
   opacity: 0.85;
-
-  transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .explore-link:hover {
@@ -154,66 +108,50 @@ body {
 }
 
 
-/* Story Sections */
+/* Sections */
 
 .story-section {
   width: 100%;
-
   padding: 90px 8% 100px;
-
   background-color: #fbfaf4;
-
   overflow-x: hidden;
 }
 
 .section-container {
   width: 100%;
   max-width: 1100px;
-
   margin: 0 auto;
 }
 
-
-/* Section Header */
-
 .section-header {
-  max-width: 760px;
-
+  max-width: 800px;
   margin-bottom: 52px;
 }
 
 .section-number {
   margin: 0 0 18px;
-
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 1.5px;
-
   color: #4f7d5b;
 }
 
 .section-header h2 {
   margin: 0;
-
   font-family: "Montserrat", Arial, sans-serif;
   font-size: clamp(40px, 5vw, 64px);
   font-weight: 800;
-
   line-height: 1.05;
   letter-spacing: -1.5px;
-
   color: #244b36;
 }
 
 .section-intro {
   max-width: 650px;
-
   margin: 26px 0 0;
-
   font-size: 19px;
   font-weight: 400;
   line-height: 1.6;
-
   color: #555555;
 }
 
@@ -222,35 +160,12 @@ body {
 }
 
 
-/* Section 1 - 80 / 20 Chart Layout */
-
-.chart-layout-split {
-  width: 100%;
-
-  display: grid;
-  grid-template-columns: minmax(0, 4fr) minmax(180px, 1fr);
-  gap: 42px;
-
-  align-items: center;
-
-  margin-top: 52px;
-}
-
-.chart-column,
-.finding-column {
-  min-width: 0;
-}
-
-.chart-column {
-  width: 100%;
-}
-
-
 /* Visualisations */
 
 .visualisation {
   width: 100%;
   max-width: 100%;
+  min-width: 0;
 }
 
 .visualisation .vega-embed {
@@ -269,47 +184,78 @@ body {
 }
 
 
-/* Key Finding */
+/* Key findings */
 
 .key-finding {
   width: 100%;
-
   padding: 26px 24px;
-
   background-color: rgba(79, 125, 91, 0.09);
-
   border-left: 4px solid #4f7d5b;
   border-radius: 0 8px 8px 0;
 }
 
 .finding-label {
   margin: 0 0 14px;
-
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.4px;
-
   color: #3f704d;
 }
 
 .finding-text {
   margin: 0;
-
   font-size: 14px;
   font-weight: 400;
   line-height: 1.55;
-
   color: #666666;
+}
+
+.finding-text strong {
+  font-weight: 700;
+  color: #555555;
 }
 
 .finding-support {
   margin: 12px 0 0;
-
   font-size: 14px;
   font-weight: 400;
   line-height: 1.55;
-
   color: #666666;
+}
+
+.finding-narrow {
+  max-width: 760px;
+}
+
+.finding-instruction {
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(79, 125, 91, 0.18);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #4f7d5b;
+}
+
+
+/* Section 1 */
+
+.chart-layout-split {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(180px, 1fr);
+  gap: 42px;
+  align-items: center;
+  margin-top: 52px;
+}
+
+.chart-column,
+.finding-column {
+  min-width: 0;
+}
+
+.chart-column {
+  width: 100%;
 }
 
 
@@ -319,65 +265,90 @@ body {
   padding-top: 100px;
 }
 
-
-/* Section 2 - Alternating Chart Rows */
-
 .demographic-row {
   width: 100%;
-
   display: grid;
-  gap: 42px;
-
-  align-items: center;
-}
-
-
-/* Chart 2 - Finding Left */
-
-.demographic-row.finding-left {
-  grid-template-columns: minmax(180px, 1fr) minmax(0, 4fr);
-}
-
-
-/* Chart 3 - Finding Right */
-
-.demographic-row.finding-right {
   grid-template-columns: minmax(0, 4fr) minmax(180px, 1fr);
-
-  margin-top: 85px;
+  gap: 42px;
+  align-items: center;
+  margin-top: 76px;
 }
 
-
-/* Section 2 Columns */
+.demographic-row:first-of-type {
+  margin-top: 52px;
+}
 
 .demographic-chart,
 .demographic-finding {
-  width: 100%;
   min-width: 0;
 }
 
-
-/* Chart 4 - Full Width */
+.demographic-chart {
+  width: 100%;
+}
 
 .demographic-full {
   width: 100%;
-
-  margin-top: 85px;
+  margin-top: 90px;
 }
-
-
-/* Chart 4 Key Finding */
 
 .demographic-full-finding {
   width: 100%;
-
-  margin-top: 32px;
+  margin-top: 34px;
 }
 
-.demographic-full-finding .key-finding {
-  width: 100%;
 
-  padding: 24px 28px;
+/* Section 3 */
+
+.section-states {
+  padding-top: 100px;
+}
+
+.state-map-wrapper {
+  width: 100%;
+  margin-top: 52px;
+}
+
+.state-map {
+  width: 100%;
+}
+
+.state-finding {
+  width: 100%;
+  margin-top: 36px;
+}
+
+
+/* Vega controls */
+
+.vega-bindings {
+  margin-bottom: 20px;
+  font-family: "Source Sans 3", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.vega-bindings select {
+  margin-left: 8px;
+  padding: 7px 30px 7px 10px;
+  font-family: "Source Sans 3", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333333;
+  background-color: #fbfaf4;
+  border: 1px solid #b8c5bb;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.vega-bindings select:hover {
+  border-color: #4f7d5b;
+}
+
+.vega-bindings select:focus {
+  outline: 2px solid rgba(79, 125, 91, 0.2);
+  border-color: #4f7d5b;
 }
 
 
@@ -397,54 +368,39 @@ body {
     padding: 75px 7% 85px;
   }
 
-
-  /* Section 1 */
-
-  .chart-layout-split {
-    grid-template-columns: minmax(0, 3fr) minmax(180px, 1fr);
-
-    gap: 28px;
-  }
-
-
-  /* Section 2 */
-
+  .chart-layout-split,
   .demographic-row {
+    grid-template-columns: minmax(0, 3fr) minmax(180px, 1fr);
     gap: 28px;
   }
 
-  .demographic-row.finding-left {
-    grid-template-columns: minmax(170px, 1fr) minmax(0, 3fr);
+  .section-demographics,
+  .section-states {
+    padding-top: 85px;
   }
-
-  .demographic-row.finding-right {
-    grid-template-columns: minmax(0, 3fr) minmax(170px, 1fr);
-
-    margin-top: 70px;
-  }
-
-  .demographic-full {
-    margin-top: 70px;
-  }
-
 }
 
 
-/* Mobile */
+/* Small tablet */
 
 @media (max-width: 700px) {
 
-  /* Section 1 */
+  .chart-layout-split,
+  .demographic-row {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 
   .chart-layout-split {
-    grid-template-columns: 1fr;
-
-    gap: 30px;
-
     margin-top: 40px;
   }
 
-  .finding-column {
+  .demographic-row {
+    margin-top: 64px;
+  }
+
+  .finding-column,
+  .demographic-finding {
     width: 100%;
   }
 
@@ -452,56 +408,31 @@ body {
     width: 100%;
   }
 
-
-  /* Section 2 */
-
-  .demographic-row.finding-left,
-  .demographic-row.finding-right {
-    grid-template-columns: 1fr;
-
-    gap: 28px;
-  }
-
-
-  /* Chart 2 - Chart First on Mobile */
-
-  .demographic-row.finding-left .demographic-chart {
+  .demographic-chart {
     order: 1;
   }
 
-  .demographic-row.finding-left .demographic-finding {
+  .demographic-finding {
     order: 2;
-  }
-
-
-  /* Chart 3 - Chart First on Mobile */
-
-  .demographic-row.finding-right .demographic-chart {
-    order: 1;
-  }
-
-  .demographic-row.finding-right .demographic-finding {
-    order: 2;
-  }
-
-  .demographic-row.finding-right {
-    margin-top: 60px;
   }
 
   .demographic-full {
-    margin-top: 60px;
+    margin-top: 70px;
   }
 
-  .demographic-full-finding {
-    margin-top: 28px;
+  .state-map-wrapper {
+    margin-top: 40px;
   }
 
+  .state-finding {
+    margin-top: 30px;
+  }
 }
 
 
-@media (max-width: 600px) {
+/* Mobile */
 
-  /* Hero */
+@media (max-width: 600px) {
 
   .hero {
     padding: 48px 6% 44px;
@@ -509,7 +440,6 @@ body {
 
   .title-first {
     margin-bottom: 7px;
-
     font-size: 38px;
   }
 
@@ -524,7 +454,6 @@ body {
 
   .hero-subtitle {
     margin-top: 26px;
-
     font-size: 18px;
   }
 
@@ -537,11 +466,17 @@ body {
     margin-top: 28px;
   }
 
-
-  /* Story Sections */
-
   .story-section {
     padding: 60px 6% 70px;
+  }
+
+  .section-demographics,
+  .section-states {
+    padding-top: 70px;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
   }
 
   .section-number {
@@ -555,12 +490,8 @@ body {
 
   .section-intro {
     margin-top: 22px;
-
     font-size: 17px;
   }
-
-
-  /* Key Findings */
 
   .key-finding {
     padding: 20px 22px;
@@ -571,23 +502,39 @@ body {
     font-size: 14px;
   }
 
+  .finding-instruction {
+    font-size: 13px;
+  }
 
-  /* Section 2 */
-
-  .demographic-row.finding-right {
-    margin-top: 52px;
+  .demographic-row {
+    margin-top: 56px;
   }
 
   .demographic-full {
-    margin-top: 52px;
+    margin-top: 64px;
   }
 
   .demographic-full-finding {
-    margin-top: 24px;
+    margin-top: 26px;
   }
 
-  .demographic-full-finding .key-finding {
-    padding: 20px 22px;
+  .state-map-wrapper {
+    margin-top: 36px;
   }
 
+  .state-finding {
+    margin-top: 26px;
+  }
+
+  .vega-bindings {
+    margin-bottom: 16px;
+    font-size: 13px;
+  }
+
+  .vega-bindings select {
+    margin-top: 6px;
+    margin-left: 0;
+    max-width: 100%;
+    font-size: 13px;
+  }
 }

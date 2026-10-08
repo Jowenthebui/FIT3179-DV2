@@ -50,6 +50,7 @@
         "strokeWidth": 2,
         "color": "#C5C5C5"
       },
+
       "encoding": {
         "x": {
           "field": "male",
@@ -66,6 +67,7 @@
             "titlePadding": 10
           }
         },
+
         "x2": {
           "field": "female"
         }
@@ -75,8 +77,14 @@
     {
       "transform": [
         {
-          "fold": ["male", "female"],
-          "as": ["gender", "participation_rate"]
+          "fold": [
+            "male",
+            "female"
+          ],
+          "as": [
+            "gender",
+            "participation_rate"
+          ]
         },
         {
           "calculate": "datum.gender === 'male' ? 'Male' : 'Female'",
@@ -91,7 +99,10 @@
             "type": "point",
             "on": "mouseover",
             "clear": "mouseout",
-            "fields": ["activity", "Gender"]
+            "fields": [
+              "activity",
+              "Gender"
+            ]
           }
         }
       ],
@@ -109,24 +120,30 @@
         },
 
         "color": {
-            "field": "Gender",
-            "type": "nominal",
-            "scale": {
-                "domain": ["Male", "Female"],
-                "range": ["#4C78A8", "#E07B84"]
-            },
-            "legend": {
-                "title": "Gender",
-                "orient": "right",
-                "direction": "vertical",
-                "symbolType": "circle",
-                "symbolSize": 100,
-                "labelFontSize": 12,
-                "titleFontSize": 12,
-                "titleFontWeight": "bold",
-                "offset": 25,
-                "padding": 10
-            }
+          "field": "Gender",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Male",
+              "Female"
+            ],
+            "range": [
+              "#4C78A8",
+              "#E78AC3"
+            ]
+          },
+          "legend": {
+            "title": "Gender",
+            "orient": "right",
+            "direction": "vertical",
+            "symbolType": "circle",
+            "symbolSize": 100,
+            "labelFontSize": 12,
+            "titleFontSize": 12,
+            "titleFontWeight": "bold",
+            "offset": 25,
+            "padding": 10
+          }
         },
 
         "stroke": {

@@ -16,365 +16,331 @@
     "subtitlePadding": 8
   },
 
-  "vconcat": [
+  "hconcat": [
     {
-      "hconcat": [
+      "vconcat": [
         {
-          "width": 300,
-          "height": 230,
-
-          "title": {
-            "text": "2008",
-            "fontSize": 17,
-            "fontWeight": "bold",
-            "color": "#2E6B3E",
-            "anchor": "middle"
-          },
-
-          "projection": {
-            "type": "mercator"
-          },
-
-          "layer": [
+          "hconcat": [
             {
-              "data": {
-                "url": "../data/australia_states.geojson",
-                "format": {
-                  "type": "json",
-                  "property": "features"
-                }
-              },
+              "width": 300,
+              "height": 230,
 
-              "mark": {
-                "type": "geoshape",
-                "fill": "#F3F1E9",
-                "stroke": "#C9C8C2",
-                "strokeWidth": 0.8
-              }
-            },
-
-            {
-              "data": {
-                "url": "../data/capad_history/capad2008_australia.geojson",
-                "format": {
-                  "type": "json",
-                  "property": "geometries"
-                }
-              },
-
-              "mark": {
-                "type": "geoshape",
-                "fill": "#4F7D4A",
-                "opacity": 0.9
-              }
-            }
-          ]
-        },
-
-        {
-          "width": 300,
-          "height": 230,
-
-          "title": {
-            "text": "2012",
-            "fontSize": 17,
-            "fontWeight": "bold",
-            "color": "#2E6B3E",
-            "anchor": "middle"
-          },
-
-          "projection": {
-            "type": "mercator"
-          },
-
-          "layer": [
-            {
-              "data": {
-                "url": "../data/australia_states.geojson",
-                "format": {
-                  "type": "json",
-                  "property": "features"
-                }
-              },
-
-              "mark": {
-                "type": "geoshape",
-                "fill": "#F3F1E9",
-                "stroke": "#C9C8C2",
-                "strokeWidth": 0.8
-              }
-            },
-
-            {
-              "data": {
-                "url": "../data/capad_history/capad2012_australia.geojson",
-                "format": {
-                  "type": "json",
-                  "property": "geometries"
-                }
-              },
-
-              "mark": {
-                "type": "geoshape",
-                "fill": "#4F7D4A",
-                "opacity": 0.9
-              }
-            }
-          ]
-        },
-
-        {
-          "width": 300,
-          "height": 230,
-
-          "title": {
-            "text": "2016",
-            "fontSize": 17,
-            "fontWeight": "bold",
-            "color": "#2E6B3E",
-            "anchor": "middle"
-          },
-
-          "projection": {
-            "type": "mercator"
-          },
-
-          "layer": [
-            {
-              "data": {
-                "url": "../data/australia_states.geojson",
-                "format": {
-                  "type": "json",
-                  "property": "features"
-                }
-              },
-
-              "mark": {
-                "type": "geoshape",
-                "fill": "#F3F1E9",
-                "stroke": "#C9C8C2",
-                "strokeWidth": 0.8
-              }
-            },
-
-            {
-              "data": {
-                "url": "../data/capad_history/capad2016_australia.geojson",
-                "format": {
-                  "type": "json",
-                  "property": "geometries"
-                }
-              },
-
-              "mark": {
-                "type": "geoshape",
-                "fill": "#4F7D4A",
-                "opacity": 0.9
-              }
-            }
-          ]
-        }
-      ],
-
-      "spacing": 18
-    },
-
-    {
-      "hconcat": [
-        {
-          "width": 300,
-          "height": 230,
-
-          "title": {
-            "text": "2020",
-            "fontSize": 17,
-            "fontWeight": "bold",
-            "color": "#2E6B3E",
-            "anchor": "middle"
-          },
-
-          "projection": {
-            "type": "mercator"
-          },
-
-          "layer": [
-            {
-              "data": {
-                "url": "../data/australia_states.geojson",
-                "format": {
-                  "type": "json",
-                  "property": "features"
-                }
-              },
-
-              "mark": {
-                "type": "geoshape",
-                "fill": "#F3F1E9",
-                "stroke": "#C9C8C2",
-                "strokeWidth": 0.8
-              }
-            },
-
-            {
-              "data": {
-                "url": "../data/capad_history/capad2020_australia.geojson",
-                "format": {
-                  "type": "json",
-                  "property": "geometries"
-                }
-              },
-
-              "mark": {
-                "type": "geoshape",
-                "fill": "#4F7D4A",
-                "opacity": 0.9
-              }
-            }
-          ]
-        },
-
-        {
-          "width": 300,
-          "height": 230,
-
-          "title": {
-            "text": "2022",
-            "fontSize": 17,
-            "fontWeight": "bold",
-            "color": "#2E6B3E",
-            "anchor": "middle"
-          },
-
-          "projection": {
-            "type": "mercator"
-          },
-
-          "layer": [
-            {
-              "data": {
-                "url": "../data/australia_states.geojson",
-                "format": {
-                  "type": "json",
-                  "property": "features"
-                }
-              },
-
-              "mark": {
-                "type": "geoshape",
-                "fill": "#F3F1E9",
-                "stroke": "#C9C8C2",
-                "strokeWidth": 0.8
-              }
-            },
-
-            {
-              "data": {
-                "url": "../data/capad_history/capad2022_australia.geojson",
-                "format": {
-                  "type": "json",
-                  "property": "geometries"
-                }
-              },
-
-              "mark": {
-                "type": "geoshape",
-                "fill": "#4F7D4A",
-                "opacity": 0.9
-              }
-            }
-          ]
-        },
-
-        {
-          "width": 300,
-          "height": 230,
-
-          "title": {
-            "text": "2024",
-            "fontSize": 17,
-            "fontWeight": "bold",
-            "color": "#2E6B3E",
-            "anchor": "middle"
-          },
-
-          "projection": {
-            "type": "mercator"
-          },
-
-          "layer": [
-            {
-              "data": {
-                "url": "../data/australia_states.geojson",
-                "format": {
-                  "type": "json",
-                  "property": "features"
-                }
-              },
-
-              "mark": {
-                "type": "geoshape",
-                "fill": "#F3F1E9",
-                "stroke": "#C9C8C2",
-                "strokeWidth": 0.8
-              }
-            },
-
-            {
-              "data": {
-                "url": "../data/capad_history/capad2024_australia.geojson",
-                "format": {
-                  "type": "json",
-                  "property": "geometries"
-                }
-              },
-
-              "mark": {
-                "type": "geoshape",
-                "fill": "#4F7D4A",
-                "opacity": 0.9
-              }
-            },
-
-            {
-              "data": {
-                "values": [
-                  {
-                    "longitude": 116.5,
-                    "latitude": -31.5,
-                    "label": "WA shows one of the clearest\nexpansions in protected coverage"
-                  }
-                ]
-              },
-
-              "mark": {
-                "type": "text",
-                "align": "left",
-                "baseline": "middle",
-                "dx": 8,
-                "fontSize": 10,
+              "title": {
+                "text": "2008",
+                "fontSize": 17,
                 "fontWeight": "bold",
                 "color": "#2E6B3E",
-                "lineBreak": "\n",
-                "lineHeight": 13
+                "anchor": "middle"
               },
 
-              "encoding": {
-                "longitude": {
-                  "field": "longitude",
-                  "type": "quantitative"
+              "projection": {
+                "type": "mercator"
+              },
+
+              "layer": [
+                {
+                  "data": {
+                    "url": "../data/australia_states.geojson",
+                    "format": {
+                      "type": "json",
+                      "property": "features"
+                    }
+                  },
+
+                  "mark": {
+                    "type": "geoshape",
+                    "fill": "#F3F1E9",
+                    "stroke": "#C9C8C2",
+                    "strokeWidth": 0.8
+                  }
                 },
 
-                "latitude": {
-                  "field": "latitude",
-                  "type": "quantitative"
-                },
+                {
+                  "data": {
+                    "url": "../data/capad_history/capad2008_australia.geojson",
+                    "format": {
+                      "type": "json",
+                      "property": "geometries"
+                    }
+                  },
 
-                "text": {
-                  "field": "label"
+                  "mark": {
+                    "type": "geoshape",
+                    "fill": "#4F7D4A",
+                    "opacity": 0.9
+                  }
                 }
-              }
+              ]
+            },
+
+            {
+              "width": 300,
+              "height": 230,
+
+              "title": {
+                "text": "2012",
+                "fontSize": 17,
+                "fontWeight": "bold",
+                "color": "#2E6B3E",
+                "anchor": "middle"
+              },
+
+              "projection": {
+                "type": "mercator"
+              },
+
+              "layer": [
+                {
+                  "data": {
+                    "url": "../data/australia_states.geojson",
+                    "format": {
+                      "type": "json",
+                      "property": "features"
+                    }
+                  },
+
+                  "mark": {
+                    "type": "geoshape",
+                    "fill": "#F3F1E9",
+                    "stroke": "#C9C8C2",
+                    "strokeWidth": 0.8
+                  }
+                },
+
+                {
+                  "data": {
+                    "url": "../data/capad_history/capad2012_australia.geojson",
+                    "format": {
+                      "type": "json",
+                      "property": "geometries"
+                    }
+                  },
+
+                  "mark": {
+                    "type": "geoshape",
+                    "fill": "#4F7D4A",
+                    "opacity": 0.9
+                  }
+                }
+              ]
+            },
+
+            {
+              "width": 300,
+              "height": 230,
+
+              "title": {
+                "text": "2016",
+                "fontSize": 17,
+                "fontWeight": "bold",
+                "color": "#2E6B3E",
+                "anchor": "middle"
+              },
+
+              "projection": {
+                "type": "mercator"
+              },
+
+              "layer": [
+                {
+                  "data": {
+                    "url": "../data/australia_states.geojson",
+                    "format": {
+                      "type": "json",
+                      "property": "features"
+                    }
+                  },
+
+                  "mark": {
+                    "type": "geoshape",
+                    "fill": "#F3F1E9",
+                    "stroke": "#C9C8C2",
+                    "strokeWidth": 0.8
+                  }
+                },
+
+                {
+                  "data": {
+                    "url": "../data/capad_history/capad2016_australia.geojson",
+                    "format": {
+                      "type": "json",
+                      "property": "geometries"
+                    }
+                  },
+
+                  "mark": {
+                    "type": "geoshape",
+                    "fill": "#4F7D4A",
+                    "opacity": 0.9
+                  }
+                }
+              ]
             }
-          ]
+          ],
+
+          "spacing": 18
+        },
+
+        {
+          "hconcat": [
+            {
+              "width": 300,
+              "height": 230,
+
+              "title": {
+                "text": "2020",
+                "fontSize": 17,
+                "fontWeight": "bold",
+                "color": "#2E6B3E",
+                "anchor": "middle"
+              },
+
+              "projection": {
+                "type": "mercator"
+              },
+
+              "layer": [
+                {
+                  "data": {
+                    "url": "../data/australia_states.geojson",
+                    "format": {
+                      "type": "json",
+                      "property": "features"
+                    }
+                  },
+
+                  "mark": {
+                    "type": "geoshape",
+                    "fill": "#F3F1E9",
+                    "stroke": "#C9C8C2",
+                    "strokeWidth": 0.8
+                  }
+                },
+
+                {
+                  "data": {
+                    "url": "../data/capad_history/capad2020_australia.geojson",
+                    "format": {
+                      "type": "json",
+                      "property": "geometries"
+                    }
+                  },
+
+                  "mark": {
+                    "type": "geoshape",
+                    "fill": "#4F7D4A",
+                    "opacity": 0.9
+                  }
+                }
+              ]
+            },
+
+            {
+              "width": 300,
+              "height": 230,
+
+              "title": {
+                "text": "2022",
+                "fontSize": 17,
+                "fontWeight": "bold",
+                "color": "#2E6B3E",
+                "anchor": "middle"
+              },
+
+              "projection": {
+                "type": "mercator"
+              },
+
+              "layer": [
+                {
+                  "data": {
+                    "url": "../data/australia_states.geojson",
+                    "format": {
+                      "type": "json",
+                      "property": "features"
+                    }
+                  },
+
+                  "mark": {
+                    "type": "geoshape",
+                    "fill": "#F3F1E9",
+                    "stroke": "#C9C8C2",
+                    "strokeWidth": 0.8
+                  }
+                },
+
+                {
+                  "data": {
+                    "url": "../data/capad_history/capad2022_australia.geojson",
+                    "format": {
+                      "type": "json",
+                      "property": "geometries"
+                    }
+                  },
+
+                  "mark": {
+                    "type": "geoshape",
+                    "fill": "#4F7D4A",
+                    "opacity": 0.9
+                  }
+                }
+              ]
+            },
+
+            {
+              "width": 300,
+              "height": 230,
+
+              "title": {
+                "text": "2024",
+                "fontSize": 17,
+                "fontWeight": "bold",
+                "color": "#2E6B3E",
+                "anchor": "middle"
+              },
+
+              "projection": {
+                "type": "mercator"
+              },
+
+              "layer": [
+                {
+                  "data": {
+                    "url": "../data/australia_states.geojson",
+                    "format": {
+                      "type": "json",
+                      "property": "features"
+                    }
+                  },
+
+                  "mark": {
+                    "type": "geoshape",
+                    "fill": "#F3F1E9",
+                    "stroke": "#C9C8C2",
+                    "strokeWidth": 0.8
+                  }
+                },
+
+                {
+                  "data": {
+                    "url": "../data/capad_history/capad2024_australia.geojson",
+                    "format": {
+                      "type": "json",
+                      "property": "geometries"
+                    }
+                  },
+
+                  "mark": {
+                    "type": "geoshape",
+                    "fill": "#4F7D4A",
+                    "opacity": 0.9
+                  }
+                }
+              ]
+            }
+          ],
+
+          "spacing": 18
         }
       ],
 
@@ -382,14 +348,14 @@
     },
 
     {
-      "width": 936,
-      "height": 24,
+      "width": 175,
+      "height": 478,
 
       "data": {
         "values": [
           {
-            "x": 10,
-            "y": 12,
+            "x": 15,
+            "y": 239,
             "label": "Terrestrial protected area"
           }
         ]
@@ -418,7 +384,7 @@
               "type": "quantitative",
               "axis": null,
               "scale": {
-                "domain": [0, 24]
+                "domain": [0, 478]
               }
             }
           }
@@ -449,7 +415,7 @@
               "type": "quantitative",
               "axis": null,
               "scale": {
-                "domain": [0, 24]
+                "domain": [0, 478]
               }
             },
 
@@ -462,7 +428,7 @@
     }
   ],
 
-  "spacing": 18,
+  "spacing": 25,
 
   "config": {
     "view": {

@@ -406,19 +406,73 @@ body {
   margin: 0;
 }
 
+
+/* Section 6 */
+
+.section-protected-coverage {
+  padding-top: 100px;
+}
+
 .protected-change-wrapper {
   width: 100%;
-  margin-top: 100px;
+  margin-top: 52px;
+  display: flex;
+  justify-content: center;
 }
 
 .protected-change-chart {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.protected-change-chart .vega-embed,
+.protected-change-chart .vega-embed {
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 .protected-change-chart .vega-embed > div {
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.protected-change-finding {
+  width: 100%;
+  margin-top: 34px;
+}
+
+.protected-coverage-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(180px, 1fr);
+  gap: 42px;
+  align-items: center;
+  margin-top: 90px;
+}
+
+.protected-coverage-chart,
+.protected-coverage-finding {
+  min-width: 0;
+}
+
+.protected-coverage-chart {
+  width: 100%;
+}
+
+.protected-coverage-chart .vega-embed,
+.protected-coverage-chart .vega-embed > div {
   width: 100%;
   margin: 0;
+}
+
+.protected-coverage-finding {
+  width: 100%;
+}
+
+.protected-coverage-finding .key-finding {
+  width: 100%;
 }
 
 
@@ -474,7 +528,8 @@ body {
   .chart-layout-split,
   .demographic-row,
   .motivation-row,
-  .largest-parks-row {
+  .largest-parks-row,
+  .protected-coverage-row {
     grid-template-columns: minmax(0, 3fr) minmax(180px, 1fr);
     gap: 28px;
   }
@@ -482,13 +537,15 @@ body {
   .section-demographics,
   .section-states,
   .section-motivation,
-  .section-wild-places {
+  .section-wild-places,
+  .section-protected-coverage {
     padding-top: 85px;
   }
 
-  .protected-change-wrapper {
-    margin-top: 85px;
+  .protected-coverage-row {
+    margin-top: 80px;
   }
+
 }
 
 
@@ -499,7 +556,8 @@ body {
   .chart-layout-split,
   .demographic-row,
   .motivation-row,
-  .largest-parks-row {
+  .largest-parks-row,
+  .protected-coverage-row {
     grid-template-columns: 1fr;
     gap: 30px;
   }
@@ -520,10 +578,15 @@ body {
     margin-top: 70px;
   }
 
+  .protected-coverage-row {
+    margin-top: 70px;
+  }
+
   .finding-column,
   .demographic-finding,
   .motivation-finding,
-  .largest-parks-finding {
+  .largest-parks-finding,
+  .protected-coverage-finding {
     width: 100%;
   }
 
@@ -533,13 +596,15 @@ body {
 
   .demographic-chart,
   .motivation-chart,
-  .largest-parks-chart {
+  .largest-parks-chart,
+  .protected-coverage-chart {
     order: 1;
   }
 
   .demographic-finding,
   .motivation-finding,
-  .largest-parks-finding {
+  .largest-parks-finding,
+  .protected-coverage-finding {
     order: 2;
   }
 
@@ -548,18 +613,17 @@ body {
   }
 
   .state-map-wrapper,
-  .wild-map-wrapper {
+  .wild-map-wrapper,
+  .protected-change-wrapper {
     margin-top: 40px;
   }
 
   .state-finding,
-  .wild-map-finding {
+  .wild-map-finding,
+  .protected-change-finding {
     margin-top: 30px;
   }
 
-  .protected-change-wrapper {
-    margin-top: 75px;
-  }
 }
 
 
@@ -606,7 +670,8 @@ body {
   .section-demographics,
   .section-states,
   .section-motivation,
-  .section-wild-places {
+  .section-wild-places,
+  .section-protected-coverage {
     padding-top: 70px;
   }
 
@@ -654,12 +719,14 @@ body {
   }
 
   .state-map-wrapper,
-  .wild-map-wrapper {
+  .wild-map-wrapper,
+  .protected-change-wrapper {
     margin-top: 36px;
   }
 
   .state-finding,
-  .wild-map-finding {
+  .wild-map-finding,
+  .protected-change-finding {
     margin-top: 26px;
   }
 
@@ -671,8 +738,8 @@ body {
     margin-top: 64px;
   }
 
-  .protected-change-wrapper {
-    margin-top: 68px;
+  .protected-coverage-row {
+    margin-top: 64px;
   }
 
   .vega-bindings {
@@ -686,5 +753,5 @@ body {
     max-width: 100%;
     font-size: 13px;
   }
-}
 
+}

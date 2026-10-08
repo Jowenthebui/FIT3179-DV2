@@ -116,7 +116,13 @@
       "title": "Participation (%)",
 
       "scale": {
-        "scheme": "yellowgreenblue"
+        "range": [
+          "#F2E8A2",
+          "#C9D98B",
+          "#8DB77A",
+          "#4F7D5B",
+          "#244B36"
+        ]
       },
 
       "legend": {

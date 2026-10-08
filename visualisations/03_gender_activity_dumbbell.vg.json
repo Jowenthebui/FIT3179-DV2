@@ -1,17 +1,28 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "width": 500,
-  "height": 320,
+  "width": "container",
+  "height": 500,
+
+  "background": "transparent",
 
   "title": {
     "text": "Does Gender Shape How Australians Get Outdoors?",
-    "subtitle": "Male and female participation rates in selected outdoor activities, 2025",
+    "subtitle": "Male and female participation in selected activities, Australia, 2025",
     "anchor": "start",
-    "fontSize": 22,
-    "subtitleFontSize": 13,
+
+    "font": "Source Sans 3",
+    "fontSize": 24,
+    "fontWeight": 700,
+    "color": "#222222",
+
+    "subtitleFont": "Source Sans 3",
+    "subtitleFontSize": 14,
     "subtitleFontWeight": "normal",
-    "subtitlePadding": 8
+    "subtitleColor": "#666666",
+    "subtitlePadding": 8,
+
+    "offset": 16
   },
 
   "data": {
@@ -23,6 +34,7 @@
       "field": "activity",
       "type": "nominal",
       "title": null,
+
       "sort": [
         "Walking (Recreational)",
         "Bush walking",
@@ -33,11 +45,16 @@
         "Surfing",
         "Canoeing/Kayaking"
       ],
+
       "axis": {
         "domain": false,
         "ticks": false,
-        "labelFontSize": 12,
-        "labelPadding": 8,
+
+        "labelFont": "Source Sans 3",
+        "labelFontSize": 13,
+        "labelColor": "#333333",
+
+        "labelPadding": 10,
         "labelLimit": 220
       }
     }
@@ -56,15 +73,24 @@
           "field": "male",
           "type": "quantitative",
           "title": "Participation Rate (%)",
+
           "scale": {
             "domain": [0, 60]
           },
+
           "axis": {
             "grid": false,
             "tickCount": 7,
-            "labelFontSize": 11,
-            "titleFontSize": 12,
-            "titlePadding": 10
+
+            "labelFont": "Source Sans 3",
+            "labelFontSize": 12,
+            "labelColor": "#555555",
+
+            "titleFont": "Source Sans 3",
+            "titleFontSize": 13,
+            "titleFontWeight": 600,
+            "titleColor": "#333333",
+            "titlePadding": 12
           }
         },
 
@@ -122,6 +148,7 @@
         "color": {
           "field": "Gender",
           "type": "nominal",
+
           "scale": {
             "domain": [
               "Male",
@@ -132,15 +159,24 @@
               "#E78AC3"
             ]
           },
+
           "legend": {
             "title": "Gender",
             "orient": "right",
             "direction": "vertical",
+
             "symbolType": "circle",
             "symbolSize": 100,
-            "labelFontSize": 12,
-            "titleFontSize": 12,
-            "titleFontWeight": "bold",
+
+            "labelFont": "Source Sans 3",
+            "labelFontSize": 13,
+            "labelColor": "#333333",
+
+            "titleFont": "Source Sans 3",
+            "titleFontSize": 13,
+            "titleFontWeight": 600,
+            "titleColor": "#333333",
+
             "offset": 25,
             "padding": 10
           }
@@ -196,6 +232,6 @@
     "view": {
       "stroke": null
     },
-    "font": "Arial"
+    "font": "Source Sans 3"
   }
 }

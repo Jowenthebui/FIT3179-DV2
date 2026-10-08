@@ -154,7 +154,7 @@ body {
 }
 
 
-/* Section 1 */
+/* Story Sections */
 
 .story-section {
   width: 100%;
@@ -222,7 +222,7 @@ body {
 }
 
 
-/* 80 / 20 Chart Layout */
+/* Section 1 - 80 / 20 Chart Layout */
 
 .chart-layout-split {
   width: 100%;
@@ -241,12 +241,12 @@ body {
   min-width: 0;
 }
 
-
-/* Chart */
-
 .chart-column {
   width: 100%;
 }
+
+
+/* Visualisations */
 
 .visualisation {
   width: 100%;
@@ -313,6 +313,74 @@ body {
 }
 
 
+/* Section 2 */
+
+.section-demographics {
+  padding-top: 100px;
+}
+
+
+/* Section 2 - Alternating Chart Rows */
+
+.demographic-row {
+  width: 100%;
+
+  display: grid;
+  gap: 42px;
+
+  align-items: center;
+}
+
+
+/* Chart 2 - Finding Left */
+
+.demographic-row.finding-left {
+  grid-template-columns: minmax(180px, 1fr) minmax(0, 4fr);
+}
+
+
+/* Chart 3 - Finding Right */
+
+.demographic-row.finding-right {
+  grid-template-columns: minmax(0, 4fr) minmax(180px, 1fr);
+
+  margin-top: 85px;
+}
+
+
+/* Section 2 Columns */
+
+.demographic-chart,
+.demographic-finding {
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* Chart 4 - Full Width */
+
+.demographic-full {
+  width: 100%;
+
+  margin-top: 85px;
+}
+
+
+/* Chart 4 Key Finding */
+
+.demographic-full-finding {
+  width: 100%;
+
+  margin-top: 32px;
+}
+
+.demographic-full-finding .key-finding {
+  width: 100%;
+
+  padding: 24px 28px;
+}
+
+
 /* Tablet */
 
 @media (max-width: 900px) {
@@ -329,9 +397,34 @@ body {
     padding: 75px 7% 85px;
   }
 
+
+  /* Section 1 */
+
   .chart-layout-split {
     grid-template-columns: minmax(0, 3fr) minmax(180px, 1fr);
+
     gap: 28px;
+  }
+
+
+  /* Section 2 */
+
+  .demographic-row {
+    gap: 28px;
+  }
+
+  .demographic-row.finding-left {
+    grid-template-columns: minmax(170px, 1fr) minmax(0, 3fr);
+  }
+
+  .demographic-row.finding-right {
+    grid-template-columns: minmax(0, 3fr) minmax(170px, 1fr);
+
+    margin-top: 70px;
+  }
+
+  .demographic-full {
+    margin-top: 70px;
   }
 
 }
@@ -340,6 +433,8 @@ body {
 /* Mobile */
 
 @media (max-width: 700px) {
+
+  /* Section 1 */
 
   .chart-layout-split {
     grid-template-columns: 1fr;
@@ -357,10 +452,56 @@ body {
     width: 100%;
   }
 
+
+  /* Section 2 */
+
+  .demographic-row.finding-left,
+  .demographic-row.finding-right {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+
+  /* Chart 2 - Chart First on Mobile */
+
+  .demographic-row.finding-left .demographic-chart {
+    order: 1;
+  }
+
+  .demographic-row.finding-left .demographic-finding {
+    order: 2;
+  }
+
+
+  /* Chart 3 - Chart First on Mobile */
+
+  .demographic-row.finding-right .demographic-chart {
+    order: 1;
+  }
+
+  .demographic-row.finding-right .demographic-finding {
+    order: 2;
+  }
+
+  .demographic-row.finding-right {
+    margin-top: 60px;
+  }
+
+  .demographic-full {
+    margin-top: 60px;
+  }
+
+  .demographic-full-finding {
+    margin-top: 28px;
+  }
+
 }
 
 
 @media (max-width: 600px) {
+
+  /* Hero */
 
   .hero {
     padding: 48px 6% 44px;
@@ -397,7 +538,7 @@ body {
   }
 
 
-  /* Section 1 */
+  /* Story Sections */
 
   .story-section {
     padding: 60px 6% 70px;
@@ -418,6 +559,9 @@ body {
     font-size: 17px;
   }
 
+
+  /* Key Findings */
+
   .key-finding {
     padding: 20px 22px;
   }
@@ -425,6 +569,25 @@ body {
   .finding-text,
   .finding-support {
     font-size: 14px;
+  }
+
+
+  /* Section 2 */
+
+  .demographic-row.finding-right {
+    margin-top: 52px;
+  }
+
+  .demographic-full {
+    margin-top: 52px;
+  }
+
+  .demographic-full-finding {
+    margin-top: 24px;
+  }
+
+  .demographic-full-finding .key-finding {
+    padding: 20px 22px;
   }
 
 }

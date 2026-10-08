@@ -1,20 +1,28 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "width": 500,
-  "height": 420,
-  "background": "#FFFFFF",
+  "width": "container",
+  "height": 520,
+
+  "background": "transparent",
 
   "title": {
     "text": "Who Participates?",
     "subtitle": "Gender composition of Australian adult participants, 2025",
     "anchor": "start",
-    "fontSize": 22,
-    "fontWeight": "bold",
-    "subtitleFontSize": 13,
+
+    "font": "Source Sans 3",
+    "fontSize": 24,
+    "fontWeight": 700,
+    "color": "#222222",
+
+    "subtitleFont": "Source Sans 3",
+    "subtitleFontSize": 14,
     "subtitleFontWeight": "normal",
     "subtitleColor": "#666666",
-    "subtitlePadding": 8
+    "subtitlePadding": 8,
+
+    "offset": 16
   },
 
   "data": {
@@ -66,6 +74,7 @@
 
   "mark": {
     "type": "text",
+    "font": "Source Sans 3",
     "fontSize": 31
   },
 
@@ -112,8 +121,16 @@
         "title": "Gender",
         "orient": "right",
         "direction": "vertical",
+
+        "labelFont": "Source Sans 3",
         "labelFontSize": 13,
+        "labelColor": "#333333",
+
+        "titleFont": "Source Sans 3",
         "titleFontSize": 13,
+        "titleFontWeight": 600,
+        "titleColor": "#333333",
+
         "symbolSize": 180,
         "offset": 25
       }
@@ -144,6 +161,6 @@
     "view": {
       "stroke": null
     },
-    "font": "Arial"
+    "font": "Source Sans 3"
   }
 }

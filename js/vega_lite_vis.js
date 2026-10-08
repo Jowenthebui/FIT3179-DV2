@@ -45,19 +45,6 @@ vegaEmbed(
 ).catch(console.error);
 
 
-vegaEmbed(
-  "#state_profiles",
-  "visualisations/06_state_profiles.vg.json",
-  embedOptions
-).catch(console.error);
-
-vegaEmbed(
-  "#state_radar",
-  "visualisations/06_state_radar.vg.json",
-  embedOptions
-).catch(console.error);
-
-
 /* Section 4 - Why Do Australians Get Active? */
 
 vegaEmbed(

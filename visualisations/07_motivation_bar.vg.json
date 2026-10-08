@@ -1,17 +1,36 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "width": 500,
-  "height": 390,
+  "width": "container",
+  "height": 520,
+
+  "background": "transparent",
+
+  "padding": {
+    "left": 0,
+    "right": 60,
+    "top": 5,
+    "bottom": 5
+  },
 
   "title": {
     "text": "Why Do Australians Get Active?",
     "subtitle": "Motivations for sport and physical activity participation among Australian adults, 2025",
     "anchor": "start",
-    "fontSize": 22,
-    "subtitleFontSize": 13,
+
+    "font": "Source Sans 3",
+    "fontSize": 24,
+    "fontWeight": 700,
+    "color": "#222222",
+
+    "subtitleFont": "Source Sans 3",
+    "subtitleFontSize": 14,
     "subtitleFontWeight": "normal",
-    "subtitlePadding": 8
+    "subtitleColor": "#666666",
+    "subtitlePadding": 8,
+
+    "offset": 16,
+    "dx": -35
   },
 
   "data": {
@@ -34,6 +53,7 @@
       "field": "motivation_label",
       "type": "nominal",
       "title": null,
+
       "sort": [
         "Health & fitness",
         "Enjoyment",
@@ -49,9 +69,17 @@
         "Competition",
         "Transport"
       ],
+
       "axis": {
-        "labelLimit": 160,
-        "labelFontSize": 11
+        "labelLimit": 170,
+        "labelPadding": 8,
+
+        "labelFont": "Source Sans 3",
+        "labelFontSize": 13,
+        "labelColor": "#444444",
+
+        "ticks": false,
+        "domain": false
       }
     },
 
@@ -59,12 +87,39 @@
       "field": "participation_rate",
       "type": "quantitative",
       "title": "Adults reporting motivation (%)",
+
       "scale": {
         "domain": [0, 70]
       },
+
       "axis": {
         "grid": true,
-        "tickCount": 8
+        "gridColor": "#E5E3DC",
+        "gridWidth": 1,
+
+        "values": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70
+        ],
+
+        "labelFont": "Source Sans 3",
+        "labelFontSize": 12,
+        "labelColor": "#555555",
+
+        "titleFont": "Source Sans 3",
+        "titleFontSize": 13,
+        "titleFontWeight": 600,
+        "titleColor": "#333333",
+        "titlePadding": 12,
+
+        "domainColor": "#999999",
+        "tickColor": "#999999"
       }
     }
   },
@@ -73,6 +128,7 @@
     {
       "mark": {
         "type": "bar",
+        "size": 20,
         "cornerRadiusEnd": 3
       },
 
@@ -80,16 +136,19 @@
         "color": {
           "field": "motivation_type",
           "type": "nominal",
+
           "scale": {
             "domain": [
               "Outdoor motivation",
               "Other motivations"
             ],
+
             "range": [
-              "#2E7D32",
-              "#B8C7B8"
+              "#244B36",
+              "#B8C8B8"
             ]
           },
+
           "legend": null
         },
 
@@ -115,7 +174,7 @@
           "filter": "datum.motivation === 'To be outdoors / to enjoy nature'"
         },
         {
-          "calculate": "format(datum.participation_rate, '.1f') + '%  —  More than half cite nature and the outdoors'",
+          "calculate": "format(datum.participation_rate, '.1f') + '%  —  Nature motivates more than half'",
           "as": "annotation"
         }
       ],
@@ -124,10 +183,12 @@
         "type": "text",
         "align": "left",
         "baseline": "middle",
-        "dx": 8,
-        "fontSize": 10,
-        "fontWeight": "bold",
-        "color": "#2E7D32"
+        "dx": 9,
+
+        "font": "Source Sans 3",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#244B36"
       },
 
       "encoding": {
@@ -143,16 +204,11 @@
       "stroke": null
     },
 
-    "font": "Arial",
+    "font": "Source Sans 3",
 
     "axis": {
-      "titleFontSize": 12,
-      "labelFontSize": 11,
-      "labelColor": "#444444",
-      "titleColor": "#333333",
-      "gridColor": "#E5E7E2",
-      "domainColor": "#999999",
-      "tickColor": "#999999"
+      "labelFont": "Source Sans 3",
+      "titleFont": "Source Sans 3"
     }
   }
 }

@@ -7,12 +7,10 @@
 
   <title>The Great Australian Outdoors</title>
 
-  <!-- Vega & Vega-Lite -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -21,13 +19,13 @@
     rel="stylesheet"
   >
 
-  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
+
   <header class="hero">
 
     <div class="hero-content">
@@ -58,12 +56,12 @@
     </div>
 
   </header>
-  <!-- End Hero Section -->
 
 
   <main>
 
     <!-- Section 1 -->
+
     <section id="section-1" class="story-section">
 
       <div class="section-container">
@@ -123,15 +121,14 @@
       </div>
 
     </section>
-    <!-- End Section 1 -->
 
 
     <!-- Section 2 -->
+
     <section id="section-2" class="story-section section-demographics">
 
       <div class="section-container">
 
-        <!-- Section Header -->
         <div class="section-header">
 
           <p class="section-number">
@@ -151,6 +148,7 @@
 
 
         <!-- Chart 2 -->
+
         <div class="demographic-row finding-right">
 
           <div class="demographic-chart">
@@ -186,6 +184,7 @@
 
 
         <!-- Chart 3 -->
+
         <div class="demographic-row finding-right">
 
           <div class="demographic-chart">
@@ -222,6 +221,7 @@
 
 
         <!-- Chart 4 -->
+
         <div class="demographic-full">
 
           <div
@@ -232,7 +232,6 @@
         </div>
 
 
-        <!-- Chart 4 Key Finding -->
         <div class="demographic-full-finding">
 
           <div class="key-finding">
@@ -256,15 +255,14 @@
       </div>
 
     </section>
-    <!-- End Section 2 -->
 
 
     <!-- Section 3 -->
+
     <section id="section-3" class="story-section section-states">
 
       <div class="section-container">
 
-        <!-- Section Header -->
         <div class="section-header">
 
           <p class="section-number">
@@ -285,6 +283,7 @@
 
 
         <!-- Chart 5 -->
+
         <div class="state-map-wrapper">
 
           <div
@@ -295,7 +294,6 @@
         </div>
 
 
-        <!-- Chart 5 Key Finding -->
         <div class="state-finding">
 
           <div class="key-finding">
@@ -324,12 +322,75 @@
       </div>
 
     </section>
-    <!-- End Section 3 -->
+
+
+    <!-- Section 4 -->
+
+    <section id="section-4" class="story-section section-motivation">
+
+      <div class="section-container">
+
+        <div class="section-header">
+
+          <p class="section-number">
+            04 / WHY DO AUSTRALIANS GET ACTIVE?
+          </p>
+
+          <h2>
+            More Than Just<br>
+            Exercise
+          </h2>
+
+          <p class="section-intro">
+            <span>Health and fitness may lead the motivations.</span>
+            <span>But Australians are active for many different reasons.</span>
+          </p>
+
+        </div>
+
+
+        <!-- Chart 7 -->
+
+        <div class="motivation-row">
+
+          <div class="motivation-chart">
+
+            <div
+              id="motivation_bar"
+              class="visualisation">
+            </div>
+
+          </div>
+
+
+          <aside class="motivation-finding">
+
+            <div class="key-finding">
+
+              <p class="finding-label">
+                KEY FINDING
+              </p>
+
+              <p class="finding-text">
+                <strong>Nature is a major reason to get active.</strong>
+                More than half of Australian adults,
+                <strong>51.1%</strong>, cite being outdoors
+                or enjoying nature.
+              </p>
+
+            </div>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
 
   </main>
 
 
-  <!-- Vega-Lite Visualisation Embeds -->
   <script src="js/vega_lite_vis.js"></script>
 
 </body>

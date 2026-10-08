@@ -329,6 +329,41 @@ body {
 }
 
 
+/* Section 4 */
+
+.section-motivation {
+  padding-top: 100px;
+}
+
+.motivation-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(180px, 1fr);
+  gap: 42px;
+  align-items: center;
+  margin-top: 52px;
+}
+
+.motivation-chart,
+.motivation-finding {
+  min-width: 0;
+}
+
+.motivation-chart {
+  width: 100%;
+}
+
+.motivation-chart .vega-embed {
+  width: 100%;
+  margin: 0;
+}
+
+.motivation-chart .vega-embed > div {
+  width: 100%;
+  margin: 0;
+}
+
+
 /* Vega controls */
 
 .vega-bindings {
@@ -379,13 +414,15 @@ body {
   }
 
   .chart-layout-split,
-  .demographic-row {
+  .demographic-row,
+  .motivation-row {
     grid-template-columns: minmax(0, 3fr) minmax(180px, 1fr);
     gap: 28px;
   }
 
   .section-demographics,
-  .section-states {
+  .section-states,
+  .section-motivation {
     padding-top: 85px;
   }
 }
@@ -396,7 +433,8 @@ body {
 @media (max-width: 700px) {
 
   .chart-layout-split,
-  .demographic-row {
+  .demographic-row,
+  .motivation-row {
     grid-template-columns: 1fr;
     gap: 30px;
   }
@@ -409,8 +447,13 @@ body {
     margin-top: 64px;
   }
 
+  .motivation-row {
+    margin-top: 40px;
+  }
+
   .finding-column,
-  .demographic-finding {
+  .demographic-finding,
+  .motivation-finding {
     width: 100%;
   }
 
@@ -418,11 +461,13 @@ body {
     width: 100%;
   }
 
-  .demographic-chart {
+  .demographic-chart,
+  .motivation-chart {
     order: 1;
   }
 
-  .demographic-finding {
+  .demographic-finding,
+  .motivation-finding {
     order: 2;
   }
 
@@ -481,7 +526,8 @@ body {
   }
 
   .section-demographics,
-  .section-states {
+  .section-states,
+  .section-motivation {
     padding-top: 70px;
   }
 
@@ -534,6 +580,10 @@ body {
 
   .state-finding {
     margin-top: 26px;
+  }
+
+  .motivation-row {
+    margin-top: 36px;
   }
 
   .vega-bindings {

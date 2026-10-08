@@ -20,7 +20,7 @@
   },
 
   "data": {
-    "url": "data/state_activity_participation.csv"
+    "url": "../data/state_activity_participation.csv"
   },
 
   "transform": [

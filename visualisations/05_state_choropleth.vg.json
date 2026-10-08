@@ -48,7 +48,7 @@
   ],
 
   "data": {
-    "url": "data/australia_states.geojson",
+    "url": "../data/australia_states.geojson",
     "format": {
       "type": "json",
       "property": "features"
@@ -60,7 +60,7 @@
       "lookup": "properties.STATE_NAME",
       "from": {
         "data": {
-          "url": "data/state_activity_participation.csv"
+          "url": "../data/state_activity_participation.csv"
         },
         "key": "state",
         "fields": [

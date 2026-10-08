@@ -147,7 +147,7 @@ body {
 }
 
 .section-intro {
-  max-width: 650px;
+  max-width: 700px;
   margin: 26px 0 0;
   font-size: 19px;
   font-weight: 400;
@@ -313,11 +313,7 @@ body {
   width: 100%;
 }
 
-.state-map .vega-embed {
-  width: 100%;
-  margin: 0;
-}
-
+.state-map .vega-embed,
 .state-map .vega-embed > div {
   width: 100%;
   margin: 0;
@@ -353,12 +349,74 @@ body {
   width: 100%;
 }
 
-.motivation-chart .vega-embed {
+.motivation-chart .vega-embed,
+.motivation-chart .vega-embed > div {
   width: 100%;
   margin: 0;
 }
 
-.motivation-chart .vega-embed > div {
+
+/* Section 5 */
+
+.section-wild-places {
+  padding-top: 100px;
+}
+
+.wild-map-wrapper {
+  width: 100%;
+  margin-top: 52px;
+}
+
+.wild-map {
+  width: 100%;
+}
+
+.wild-map .vega-embed,
+.wild-map .vega-embed > div {
+  width: 100%;
+  margin: 0;
+}
+
+.wild-map-finding {
+  width: 100%;
+  margin-top: 34px;
+}
+
+.largest-parks-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(180px, 1fr);
+  gap: 42px;
+  align-items: center;
+  margin-top: 90px;
+}
+
+.largest-parks-chart,
+.largest-parks-finding {
+  min-width: 0;
+}
+
+.largest-parks-chart {
+  width: 100%;
+}
+
+.largest-parks-chart .vega-embed,
+.largest-parks-chart .vega-embed > div {
+  width: 100%;
+  margin: 0;
+}
+
+.protected-change-wrapper {
+  width: 100%;
+  margin-top: 100px;
+}
+
+.protected-change-chart {
+  width: 100%;
+}
+
+.protected-change-chart .vega-embed,
+.protected-change-chart .vega-embed > div {
   width: 100%;
   margin: 0;
 }
@@ -415,15 +473,21 @@ body {
 
   .chart-layout-split,
   .demographic-row,
-  .motivation-row {
+  .motivation-row,
+  .largest-parks-row {
     grid-template-columns: minmax(0, 3fr) minmax(180px, 1fr);
     gap: 28px;
   }
 
   .section-demographics,
   .section-states,
-  .section-motivation {
+  .section-motivation,
+  .section-wild-places {
     padding-top: 85px;
+  }
+
+  .protected-change-wrapper {
+    margin-top: 85px;
   }
 }
 
@@ -434,7 +498,8 @@ body {
 
   .chart-layout-split,
   .demographic-row,
-  .motivation-row {
+  .motivation-row,
+  .largest-parks-row {
     grid-template-columns: 1fr;
     gap: 30px;
   }
@@ -451,9 +516,14 @@ body {
     margin-top: 40px;
   }
 
+  .largest-parks-row {
+    margin-top: 70px;
+  }
+
   .finding-column,
   .demographic-finding,
-  .motivation-finding {
+  .motivation-finding,
+  .largest-parks-finding {
     width: 100%;
   }
 
@@ -462,12 +532,14 @@ body {
   }
 
   .demographic-chart,
-  .motivation-chart {
+  .motivation-chart,
+  .largest-parks-chart {
     order: 1;
   }
 
   .demographic-finding,
-  .motivation-finding {
+  .motivation-finding,
+  .largest-parks-finding {
     order: 2;
   }
 
@@ -475,12 +547,18 @@ body {
     margin-top: 70px;
   }
 
-  .state-map-wrapper {
+  .state-map-wrapper,
+  .wild-map-wrapper {
     margin-top: 40px;
   }
 
-  .state-finding {
+  .state-finding,
+  .wild-map-finding {
     margin-top: 30px;
+  }
+
+  .protected-change-wrapper {
+    margin-top: 75px;
   }
 }
 
@@ -527,7 +605,8 @@ body {
 
   .section-demographics,
   .section-states,
-  .section-motivation {
+  .section-motivation,
+  .section-wild-places {
     padding-top: 70px;
   }
 
@@ -574,16 +653,26 @@ body {
     margin-top: 26px;
   }
 
-  .state-map-wrapper {
+  .state-map-wrapper,
+  .wild-map-wrapper {
     margin-top: 36px;
   }
 
-  .state-finding {
+  .state-finding,
+  .wild-map-finding {
     margin-top: 26px;
   }
 
   .motivation-row {
     margin-top: 36px;
+  }
+
+  .largest-parks-row {
+    margin-top: 64px;
+  }
+
+  .protected-change-wrapper {
+    margin-top: 68px;
   }
 
   .vega-bindings {
@@ -598,3 +687,4 @@ body {
     font-size: 13px;
   }
 }
+

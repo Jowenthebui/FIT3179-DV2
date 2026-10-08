@@ -1,21 +1,34 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "width": 650,
-  "height": 520,
-  "background": "#FFFFFF",
+  "width": "container",
+  "height": 540,
+  "background": "transparent",
+
+  "padding": {
+    "left": 0,
+    "right": 30,
+    "top": 5,
+    "bottom": 5
+  },
 
   "title": {
     "text": "Australia's Wild Places",
     "subtitle": "Explore the 30 largest national parks by area, CAPAD 2024",
     "anchor": "start",
+
+    "font": "Source Sans 3",
     "fontSize": 24,
-    "fontWeight": "bold",
+    "fontWeight": 700,
     "color": "#222222",
-    "subtitleFontSize": 13,
+
+    "subtitleFont": "Source Sans 3",
+    "subtitleFontSize": 14,
     "subtitleFontWeight": "normal",
     "subtitleColor": "#666666",
-    "subtitlePadding": 8
+    "subtitlePadding": 8,
+
+    "offset": 16
   },
 
   "projection": {
@@ -56,7 +69,7 @@
 
       "mark": {
         "type": "geoshape",
-        "fill": "#F4F2EA",
+        "fill": "#F3F1E9",
         "stroke": "#FFFFFF",
         "strokeWidth": 1.2
       }
@@ -125,8 +138,8 @@
               36054
             ],
             "range": [
-              40,
-              2200
+              30,
+              1500
             ]
           },
 
@@ -141,20 +154,22 @@
 
             "format": ",.0f",
 
+            "titleFont": "Source Sans 3",
             "titleFontSize": 12,
-            "titleFontWeight": "bold",
+            "titleFontWeight": 700,
             "titleColor": "#333333",
             "titlePadding": 14,
 
+            "labelFont": "Source Sans 3",
             "labelFontSize": 11,
             "labelColor": "#555555",
             "labelOffset": 12,
 
-            "symbolFillColor": "#4F8A5B",
+            "symbolFillColor": "#4F7D5B",
             "symbolStrokeColor": "#FFFFFF",
             "symbolOpacity": 0.9,
 
-            "offset": 35
+            "offset": 30
           }
         },
 
@@ -162,7 +177,7 @@
           "condition": {
             "param": "hover",
             "empty": false,
-            "value": "#0B3D20"
+            "value": "#244B36"
           },
 
           "field": "ParkCategory",
@@ -176,9 +191,9 @@
             ],
 
             "range": [
-              "#145A32",
-              "#4F8A5B",
-              "#A8CBAA"
+              "#244B36",
+              "#4F7D5B",
+              "#A8C7A2"
             ]
           },
 
@@ -191,7 +206,7 @@
             "empty": false,
             "value": 1
           },
-          "value": 0.9
+          "value": 0.88
         },
 
         "strokeWidth": {
@@ -242,13 +257,15 @@
       "stroke": null
     },
 
-    "font": "Arial",
+    "font": "Source Sans 3",
 
     "legend": {
       "orient": "right",
       "direction": "vertical",
       "padding": 10,
+      "labelFont": "Source Sans 3",
       "labelFontSize": 11,
+      "titleFont": "Source Sans 3",
       "titleFontSize": 12
     }
   }

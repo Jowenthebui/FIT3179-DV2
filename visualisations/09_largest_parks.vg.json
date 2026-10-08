@@ -1,21 +1,35 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "width": 620,
-  "height": 520,
-  "background": "#FFFFFF",
+  "width": "container",
+  "height": 620,
+  "background": "transparent",
+
+  "padding": {
+    "left": 0,
+    "right": 70,
+    "top": 5,
+    "bottom": 5
+  },
 
   "title": {
     "text": "Australia's Largest National Parks",
     "subtitle": "Explore the largest national parks by area, CAPAD 2024",
     "anchor": "start",
+
+    "font": "Source Sans 3",
     "fontSize": 24,
-    "fontWeight": "bold",
+    "fontWeight": 700,
     "color": "#222222",
-    "subtitleFontSize": 13,
+
+    "subtitleFont": "Source Sans 3",
+    "subtitleFontSize": 14,
     "subtitleFontWeight": "normal",
     "subtitleColor": "#666666",
-    "subtitlePadding": 8
+    "subtitlePadding": 8,
+
+    "offset": 16,
+    "dx": -36
   },
 
   "data": {
@@ -76,17 +90,23 @@
         "y": {
           "field": "NAME",
           "type": "nominal",
+
           "sort": {
             "field": "AREA_KM2",
             "op": "max",
             "order": "descending"
           },
+
           "title": null,
+
           "axis": {
+            "labelFont": "Source Sans 3",
             "labelFontSize": 12,
-            "labelColor": "#333333",
-            "labelLimit": 230,
-            "labelPadding": 8,
+            "labelColor": "#444444",
+
+            "labelLimit": 320,
+            "labelPadding": 10,
+
             "ticks": false,
             "domain": false
           }
@@ -96,31 +116,53 @@
           "field": "AREA_KM2",
           "type": "quantitative",
           "title": "Park area (km²)",
+
           "scale": {
             "domain": [0, 38000]
           },
+
           "axis": {
-            "titleFontSize": 12,
-            "titleFontWeight": "normal",
-            "titleColor": "#555555",
+            "titleFont": "Source Sans 3",
+            "titleFontSize": 13,
+            "titleFontWeight": 600,
+            "titleColor": "#333333",
             "titlePadding": 12,
+
+            "labelFont": "Source Sans 3",
             "labelFontSize": 11,
-            "labelColor": "#666666",
+            "labelColor": "#555555",
+
             "format": ",.0f",
+
             "grid": true,
-            "gridColor": "#E8E8E8",
+            "gridColor": "#E5E3DC",
             "gridWidth": 1,
+
             "domain": false,
             "ticks": false
           }
         },
 
+        "size": {
+          "condition": [
+            {
+              "test": "TopN == 10",
+              "value": 35
+            },
+            {
+              "test": "TopN == 20",
+              "value": 22
+            }
+          ],
+          "value": 10
+        },
+
         "color": {
           "condition": {
             "test": "datum.ParkRank == 1",
-            "value": "#2E6B3E"
+            "value": "#244B36"
           },
-          "value": "#A8CBAA"
+          "value": "#A8C7A2"
         },
 
         "opacity": {
@@ -158,6 +200,10 @@
       "transform": [
         {
           "filter": "datum.ParkRank == 1"
+        },
+        {
+          "calculate": "format(datum.AREA_KM2, ',.0f') + ' km²'",
+          "as": "annotation"
         }
       ],
 
@@ -166,20 +212,24 @@
         "align": "left",
         "baseline": "middle",
         "dx": 10,
-        "fontSize": 12,
-        "fontWeight": "bold",
-        "color": "#2E6B3E"
+
+        "font": "Source Sans 3",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#244B36"
       },
 
       "encoding": {
         "y": {
           "field": "NAME",
           "type": "nominal",
+
           "sort": {
             "field": "AREA_KM2",
             "op": "max",
             "order": "descending"
           },
+
           "title": null
         },
 
@@ -189,9 +239,7 @@
         },
 
         "text": {
-          "field": "AREA_KM2",
-          "type": "quantitative",
-          "format": ",.0f"
+          "field": "annotation"
         }
       }
     }
@@ -202,11 +250,11 @@
       "stroke": null
     },
 
-    "font": "Arial",
+    "font": "Source Sans 3",
 
     "axis": {
-      "labelFont": "Arial",
-      "titleFont": "Arial"
+      "labelFont": "Source Sans 3",
+      "titleFont": "Source Sans 3"
     }
   }
 }

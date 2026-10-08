@@ -1,7 +1,206 @@
-.visualisation {
-  margin-bottom: 30px;
+/* Global */
+
+* {
+  box-sizing: border-box;
 }
 
-.insight-text {
-  margin-top: 80px;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  font-family: "Source Sans 3", Arial, sans-serif;
+
+  color: #222222;
+  background-color: #ffffff;
+}
+
+
+/* Hero Section */
+
+.hero {
+  width: 100%;
+
+  padding: 72px 8% 58px;
+
+  background-color: #244b36;
+  color: #ffffff;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+
+/* Hero Title */
+
+.hero-title {
+  margin: 0;
+
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 800;
+
+  line-height: 0.95;
+  letter-spacing: -2px;
+
+  color: #ffffff;
+}
+
+.title-first {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: clamp(42px, 4.5vw, 68px);
+  font-weight: 700;
+}
+
+.title-second {
+  display: block;
+
+  font-size: clamp(58px, 7vw, 100px);
+  font-weight: 800;
+
+  color: #ffffff;
+
+  white-space: nowrap;
+}
+
+
+/* Decorative Divider */
+
+.hero-divider {
+  width: 70px;
+  height: 4px;
+
+  margin-top: 38px;
+
+  background-color: #a8c7a2;
+  border-radius: 2px;
+}
+
+
+/* Hero Subtitle */
+
+.hero-subtitle {
+  max-width: 760px;
+
+  margin: 30px 0 0;
+
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.45;
+
+  color: #ffffff;
+}
+
+
+/* Hero Introduction */
+
+.hero-intro {
+  max-width: 720px;
+
+  margin: 22px 0 0;
+
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.6;
+
+  color: #dce7de;
+}
+
+.hero-intro span {
+  display: block;
+}
+
+
+/* Explore Link */
+
+.explore-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 32px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  opacity: 0.85;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.explore-link:hover {
+  opacity: 1;
+  transform: translateY(2px);
+}
+
+.explore-arrow {
+  color: #a8c7a2;
+  font-size: 18px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+  .hero {
+    padding: 64px 7% 52px;
+  }
+
+  .title-second {
+    white-space: normal;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .hero {
+    padding: 48px 6% 44px;
+  }
+
+  .title-first {
+    margin-bottom: 7px;
+
+    font-size: 38px;
+  }
+
+  .title-second {
+    font-size: 52px;
+    line-height: 1;
+  }
+
+  .hero-divider {
+    margin-top: 30px;
+  }
+
+  .hero-subtitle {
+    margin-top: 26px;
+
+    font-size: 18px;
+  }
+
+  .hero-intro {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .explore-link {
+    margin-top: 28px;
+  }
+
 }

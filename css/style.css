@@ -518,6 +518,47 @@ body {
   width: 100%;
 }
 
+/* Section 8 */
+
+.section-volunteering {
+  padding-top: 100px;
+}
+
+.volunteer-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(180px, 1fr);
+  gap: 42px;
+  align-items: center;
+  margin-top: 52px;
+}
+
+.volunteer-row + .volunteer-row {
+  margin-top: 90px;
+}
+
+.volunteer-chart,
+.volunteer-finding {
+  min-width: 0;
+}
+
+.volunteer-chart {
+  width: 100%;
+}
+
+.volunteer-chart .vega-embed,
+.volunteer-chart .vega-embed > div {
+  width: 100%;
+  margin: 0;
+}
+
+.volunteer-finding {
+  width: 100%;
+}
+
+.volunteer-finding .key-finding {
+  width: 100%;
+}
 
 /* Vega controls */
 

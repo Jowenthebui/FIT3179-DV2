@@ -1,27 +1,44 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "width": 620,
+  "width": "container",
   "height": 420,
-  "background": "#FFFFFF",
+  "background": "transparent",
+
+  "padding": {
+    "left": 0,
+    "right": 45,
+    "top": 5,
+    "bottom": 5
+  },
 
   "title": {
     "text": "How Do Australians Volunteer in Sport?",
     "subtitle": "Adult participation in non-playing volunteer roles, Australia, 2025",
     "anchor": "start",
+
+    "font": "Source Sans 3",
     "fontSize": 24,
-    "fontWeight": "bold",
+    "fontWeight": 700,
     "color": "#222222",
-    "subtitleFontSize": 13,
+
+    "subtitleFont": "Source Sans 3",
+    "subtitleFontSize": 14,
     "subtitleFontWeight": "normal",
     "subtitleColor": "#666666",
-    "subtitlePadding": 8
+    "subtitlePadding": 8,
+
+    "offset": 16,
+    "dx": -35,
+    "dy": -10
   },
 
   "data": {
     "url": "../data/volunteer_roles.csv",
+
     "format": {
       "type": "csv",
+
       "parse": {
         "participation_rate": "number"
       }
@@ -32,6 +49,7 @@
     {
       "filter": "datum.role != 'Other'"
     },
+
     {
       "calculate": "datum.role == 'Official' ? 'Referee / Official' : datum.role == 'Coach / instructor / trainer / teacher' ? 'Coach / Instructor' : datum.role == 'General / miscellaneous assistance' ? 'General Assistance' : datum.role == 'Administrator / committee member' ? 'Administrator' : datum.role == 'Team manager / coordinator' ? 'Team Manager' : datum.role == 'Driving team members' ? 'Driver' : datum.role == 'Medical support / health and safety' ? 'Medical / Safety' : datum.role == 'Financial support / helping pay for others' ? 'Financial Support' : datum.role",
       "as": "short_role"
@@ -43,13 +61,14 @@
       "mark": {
         "type": "bar",
         "cornerRadiusEnd": 4,
-        "height": 24
+        "size": 20
       },
 
       "encoding": {
         "y": {
           "field": "short_role",
           "type": "nominal",
+
           "sort": [
             "Referee / Official",
             "Coach / Instructor",
@@ -61,12 +80,16 @@
             "Medical / Safety",
             "Financial Support"
           ],
+
           "title": null,
+
           "axis": {
+            "labelFont": "Source Sans 3",
             "labelFontSize": 12,
             "labelColor": "#333333",
             "labelPadding": 10,
             "labelLimit": 180,
+
             "ticks": false,
             "domain": false
           }
@@ -76,21 +99,32 @@
           "field": "participation_rate",
           "type": "quantitative",
           "title": "Adult participation rate (%)",
+
           "scale": {
-            "domain": [0, 4.2]
+            "domain": [
+              0,
+              4.2
+            ]
           },
+
           "axis": {
+            "titleFont": "Source Sans 3",
             "titleFontSize": 12,
             "titleFontWeight": "normal",
             "titleColor": "#555555",
-            "titlePadding": 12,
+            "titlePadding": 14,
+
+            "labelFont": "Source Sans 3",
             "labelFontSize": 11,
             "labelColor": "#666666",
-            "format": ".1f",
+            "labelExpr": "format(datum.value, '.1f') + '%'",
+
             "tickCount": 5,
+
             "grid": true,
-            "gridColor": "#E8E8E8",
+            "gridColor": "#E5E3DC",
             "gridWidth": 1,
+
             "ticks": false,
             "domain": false
           }
@@ -101,6 +135,7 @@
             "test": "datum.short_role == 'Referee / Official'",
             "value": "#3F704D"
           },
+
           "value": "#8FB294"
         },
 
@@ -108,8 +143,9 @@
           {
             "field": "role",
             "type": "nominal",
-            "title": "AusPlay role"
+            "title": "Volunteer role"
           },
+
           {
             "field": "participation_rate",
             "type": "quantitative",
@@ -132,15 +168,18 @@
         "align": "left",
         "baseline": "middle",
         "dx": 8,
+
+        "font": "Source Sans 3",
         "fontSize": 12,
-        "fontWeight": "bold",
-        "color": "#3F704D"
+        "fontWeight": 700,
+        "color": "#244B36"
       },
 
       "encoding": {
         "y": {
           "field": "short_role",
           "type": "nominal",
+
           "sort": [
             "Referee / Official",
             "Coach / Instructor",
@@ -160,9 +199,7 @@
         },
 
         "text": {
-          "field": "participation_rate",
-          "type": "quantitative",
-          "format": ".1f"
+          "value": "3.8%"
         }
       }
     }
@@ -172,6 +209,16 @@
     "view": {
       "stroke": null
     },
-    "font": "Arial"
+
+    "font": "Source Sans 3",
+
+    "axis": {
+      "labelFont": "Source Sans 3",
+      "titleFont": "Source Sans 3"
+    },
+
+    "title": {
+      "font": "Source Sans 3"
+    }
   }
 }

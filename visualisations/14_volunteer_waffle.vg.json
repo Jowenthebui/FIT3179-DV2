@@ -1,74 +1,150 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "background": "#FFFFFF",
+  "background": "transparent",
 
   "title": {
     "text": "Sport Needs More Than Players",
-    "subtitle": "Around 12 in every 100 Australian adults volunteered in a non-playing role in 2025",
+    "subtitle": "Adult volunteering in non-playing sport roles, Australia, 2025",
     "anchor": "start",
+
+    "font": "Source Sans 3",
     "fontSize": 24,
-    "fontWeight": "bold",
+    "fontWeight": 700,
     "color": "#222222",
-    "subtitleFontSize": 13,
+
+    "subtitleFont": "Source Sans 3",
+    "subtitleFontSize": 14,
     "subtitleFontWeight": "normal",
     "subtitleColor": "#666666",
-    "subtitlePadding": 8
+    "subtitlePadding": 8,
+
+    "offset": 16,
+    "dx": -35,
+    "dy": -10
   },
 
-  "hconcat": [
+  "vconcat": [
     {
-      "vconcat": [
-        {
-          "width": 500,
-          "height": 420,
+      "width": 650,
+      "height": 380,
 
-          "data": {
-            "sequence": {
-              "start": 1,
-              "stop": 101,
-              "as": "person"
-            }
+      "data": {
+        "sequence": {
+          "start": 1,
+          "stop": 101,
+          "as": "person"
+        }
+      },
+
+      "transform": [
+        {
+          "calculate": "(datum.person - 1) % 10 + 1",
+          "as": "column"
+        },
+        {
+          "calculate": "floor((datum.person - 1) / 10) + 1",
+          "as": "row"
+        },
+        {
+          "calculate": "datum.person <= 12 ? 'Volunteer' : 'Other adults'",
+          "as": "status"
+        }
+      ],
+
+      "mark": {
+        "type": "circle",
+        "size": 900,
+        "opacity": 1
+      },
+
+      "encoding": {
+        "x": {
+          "field": "column",
+          "type": "ordinal",
+          "axis": null
+        },
+
+        "y": {
+          "field": "row",
+          "type": "ordinal",
+          "sort": "ascending",
+          "axis": null
+        },
+
+        "color": {
+          "field": "status",
+          "type": "nominal",
+
+          "scale": {
+            "domain": [
+              "Volunteer",
+              "Other adults"
+            ],
+            "range": [
+              "#4F7D5B",
+              "#E3E3DE"
+            ]
           },
 
-          "transform": [
-            {
-              "calculate": "(datum.person - 1) % 10 + 1",
-              "as": "column"
-            },
-            {
-              "calculate": "floor((datum.person - 1) / 10) + 1",
-              "as": "row"
-            },
-            {
-              "calculate": "datum.person <= 12 ? 'Volunteer' : 'Other adults'",
-              "as": "status"
-            }
-          ],
+          "legend": null
+        },
 
+        "tooltip": [
+          {
+            "field": "status",
+            "type": "nominal",
+            "title": "Representation"
+          }
+        ]
+      }
+    },
+
+    {
+      "width": 650,
+      "height": 32,
+
+      "data": {
+        "values": [
+          {
+            "status": "Volunteer",
+            "symbolX": 245,
+            "labelX": 260
+          },
+          {
+            "status": "Other adults",
+            "symbolX": 355,
+            "labelX": 370
+          }
+        ]
+      },
+
+      "layer": [
+        {
           "mark": {
             "type": "circle",
-            "size": 1100,
+            "size": 100,
             "opacity": 1
           },
 
           "encoding": {
             "x": {
-              "field": "column",
-              "type": "ordinal",
+              "field": "symbolX",
+              "type": "quantitative",
+              "scale": {
+                "domain": [0, 650]
+              },
               "axis": null
             },
 
             "y": {
-              "field": "row",
-              "type": "ordinal",
-              "sort": "ascending",
-              "axis": null
+              "value": 16
             },
 
             "color": {
               "field": "status",
               "type": "nominal",
+
               "scale": {
                 "domain": [
                   "Volunteer",
@@ -79,150 +155,8 @@
                   "#E3E3DE"
                 ]
               },
+
               "legend": null
-            },
-
-            "tooltip": [
-              {
-                "field": "status",
-                "type": "nominal",
-                "title": "Representation"
-              }
-            ]
-          }
-        },
-
-        {
-          "width": 500,
-          "height": 35,
-
-          "data": {
-            "values": [
-              {
-                "status": "Volunteer",
-                "symbolX": 20,
-                "labelX": 35
-              },
-              {
-                "status": "Other adults",
-                "symbolX": 130,
-                "labelX": 145
-              }
-            ]
-          },
-
-          "layer": [
-            {
-              "mark": {
-                "type": "circle",
-                "size": 110,
-                "opacity": 1
-              },
-
-              "encoding": {
-                "x": {
-                  "field": "symbolX",
-                  "type": "quantitative",
-                  "scale": {
-                    "domain": [0, 500]
-                  },
-                  "axis": null
-                },
-
-                "y": {
-                  "value": 17
-                },
-
-                "color": {
-                  "field": "status",
-                  "type": "nominal",
-                  "scale": {
-                    "domain": [
-                      "Volunteer",
-                      "Other adults"
-                    ],
-                    "range": [
-                      "#4F7D5B",
-                      "#E3E3DE"
-                    ]
-                  },
-                  "legend": null
-                }
-              }
-            },
-
-            {
-              "mark": {
-                "type": "text",
-                "align": "left",
-                "baseline": "middle",
-                "fontSize": 12,
-                "color": "#555555"
-              },
-
-              "encoding": {
-                "x": {
-                  "field": "labelX",
-                  "type": "quantitative",
-                  "scale": {
-                    "domain": [0, 500]
-                  },
-                  "axis": null
-                },
-
-                "y": {
-                  "value": 17
-                },
-
-                "text": {
-                  "field": "status"
-                }
-              }
-            }
-          ]
-        }
-      ],
-
-      "spacing": 8
-    },
-
-    {
-      "width": 230,
-      "height": 463,
-
-      "data": {
-        "values": [
-          {
-            "label": "12.1%",
-            "line1": "of Australian adults",
-            "line2": "volunteered in a",
-            "line3": "non-playing role in 2025"
-          }
-        ]
-      },
-
-      "layer": [
-        {
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "baseline": "middle",
-            "fontSize": 38,
-            "fontWeight": "bold",
-            "color": "#4F7D5B"
-          },
-
-          "encoding": {
-            "x": {
-              "value": 0
-            },
-
-            "y": {
-              "value": 180
-            },
-
-            "text": {
-              "field": "label"
             }
           }
         },
@@ -232,69 +166,28 @@
             "type": "text",
             "align": "left",
             "baseline": "middle",
-            "fontSize": 14,
+
+            "font": "Source Sans 3",
+            "fontSize": 12,
             "color": "#555555"
           },
 
           "encoding": {
             "x": {
-              "value": 0
+              "field": "labelX",
+              "type": "quantitative",
+              "scale": {
+                "domain": [0, 650]
+              },
+              "axis": null
             },
 
             "y": {
-              "value": 225
+              "value": 16
             },
 
             "text": {
-              "field": "line1"
-            }
-          }
-        },
-
-        {
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "baseline": "middle",
-            "fontSize": 14,
-            "color": "#555555"
-          },
-
-          "encoding": {
-            "x": {
-              "value": 0
-            },
-
-            "y": {
-              "value": 248
-            },
-
-            "text": {
-              "field": "line2"
-            }
-          }
-        },
-
-        {
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "baseline": "middle",
-            "fontSize": 14,
-            "color": "#555555"
-          },
-
-          "encoding": {
-            "x": {
-              "value": 0
-            },
-
-            "y": {
-              "value": 271
-            },
-
-            "text": {
-              "field": "line3"
+              "field": "status"
             }
           }
         }
@@ -302,13 +195,22 @@
     }
   ],
 
-  "spacing": 35,
+  "spacing": 12,
 
   "config": {
     "view": {
       "stroke": null
     },
 
-    "font": "Arial"
+    "font": "Source Sans 3",
+
+    "axis": {
+      "labelFont": "Source Sans 3",
+      "titleFont": "Source Sans 3"
+    },
+
+    "title": {
+      "font": "Source Sans 3"
+    }
   }
 }

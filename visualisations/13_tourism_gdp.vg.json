@@ -29,7 +29,9 @@
     "subtitleColor": "#666666",
     "subtitlePadding": 8,
 
-    "offset": 16
+    "offset": 16,
+    "dx": -35,
+    "dy": -10
   },
 
   "data": {
@@ -115,12 +117,12 @@
 
           "axis": {
             "labelFont": "Source Sans 3",
-            "labelFontSize": 11,
+            "labelFontSize": 10,
             "labelColor": "#555555",
-            "labelAngle": 0,
-            "labelPadding": 10,
-
-            "labelExpr": "indexof(['2004-05','2008-09','2012-13','2016-17','2020-21','2023-24'], datum.label) >= 0 ? datum.label : ''",
+            "labelAngle": -45,
+            "labelAlign": "right",
+            "labelPadding": 8,
+            "labelLimit": 70,
 
             "ticks": false,
             "domain": false
@@ -184,8 +186,8 @@
 
           "legend": {
             "title": null,
-            "orient": "top",
-            "direction": "horizontal",
+            "orient": "right",
+            "direction": "vertical",
 
             "labelFont": "Source Sans 3",
             "labelFontSize": 11,
@@ -194,7 +196,9 @@
             "symbolType": "square",
             "symbolSize": 100,
 
-            "offset": 8
+            "labelPadding": 6,
+            "rowPadding": 6,
+            "offset": 18
           }
         },
 
@@ -291,9 +295,8 @@
 
       "mark": {
         "type": "text",
-        "align": "right",
+        "align": "center",
         "baseline": "bottom",
-        "dx": -5,
         "dy": -12,
 
         "font": "Source Sans 3",
@@ -337,7 +340,7 @@
         },
 
         "text": {
-          "value": "2023–24: $78.1b"
+          "value": "$78.1b"
         }
       }
     }

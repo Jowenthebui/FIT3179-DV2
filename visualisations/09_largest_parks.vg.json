@@ -29,7 +29,8 @@
     "subtitlePadding": 8,
 
     "offset": 16,
-    "dx": -36
+    "dx": -35,
+    "dy": -10
   },
 
   "data": {

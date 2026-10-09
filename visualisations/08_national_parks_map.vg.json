@@ -94,10 +94,6 @@
       "transform": [
         {
           "filter": "StateSelection == 'All' || datum.STATE == StateSelection"
-        },
-        {
-          "calculate": "datum.AREA_KM2 > 30000 ? 'Largest park' : datum.AREA_KM2 >= 10000 ? 'Very large parks' : 'Other top 30 parks'",
-          "as": "ParkCategory"
         }
       ],
 
@@ -140,8 +136,8 @@
               36054
             ],
             "range": [
-              30,
-              1500
+              45,
+              1800
             ]
           },
 
@@ -150,7 +146,8 @@
             "orient": "right",
 
             "values": [
-              10000,
+              5000,
+              15000,
               30000
             ],
 
@@ -181,25 +178,7 @@
             "empty": false,
             "value": "#244B36"
           },
-
-          "field": "ParkCategory",
-          "type": "nominal",
-
-          "scale": {
-            "domain": [
-              "Largest park",
-              "Very large parks",
-              "Other top 30 parks"
-            ],
-
-            "range": [
-              "#244B36",
-              "#4F7D5B",
-              "#A8C7A2"
-            ]
-          },
-
-          "legend": null
+          "value": "#4F7D5B"
         },
 
         "opacity": {
@@ -208,7 +187,7 @@
             "empty": false,
             "value": 1
           },
-          "value": 0.88
+          "value": 0.84
         },
 
         "strokeWidth": {
@@ -265,8 +244,10 @@
       "orient": "right",
       "direction": "vertical",
       "padding": 10,
+
       "labelFont": "Source Sans 3",
       "labelFontSize": 11,
+
       "titleFont": "Source Sans 3",
       "titleFontSize": 12
     }

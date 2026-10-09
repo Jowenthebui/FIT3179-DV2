@@ -65,7 +65,7 @@ vegaEmbed(
 
 vegaEmbed(
   "#largest_parks",
-  "visualisations/09_largest_parks.vg.json",
+  "visualisations/09_largest_park_treemap.vg.json",
   embedOptions
 ).catch(console.error);
 

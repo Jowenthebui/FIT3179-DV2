@@ -32,24 +32,25 @@ body {
 
 .hero-title {
   margin: 0;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -2px;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1.8px;
   color: #ffffff;
 }
 
 .title-first {
   display: block;
-  margin-bottom: 10px;
-  font-size: clamp(42px, 4.5vw, 68px);
-  font-weight: 700;
+  margin-bottom: 12px;
+  font-size: clamp(40px, 4.4vw, 66px);
+  font-weight: 400;
 }
 
 .title-second {
   display: block;
-  font-size: clamp(58px, 7vw, 100px);
-  font-weight: 800;
+  font-size: clamp(56px, 6.8vw, 96px);
+  font-weight: 700;
+  line-height: 1.03;
   color: #ffffff;
   white-space: nowrap;
 }
@@ -140,11 +141,11 @@ body {
 
 .section-header h2 {
   margin: 0;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: clamp(40px, 5vw, 64px);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -1.5px;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(38px, 4.7vw, 60px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -1.2px;
   color: #244b36;
 }
 
@@ -368,28 +369,38 @@ body {
   margin-top: 34px;
 }
 
-.largest-parks-row {
-  width: 100%;
-  display: grid;
-  grid-template-columns: minmax(0, 4fr) minmax(180px, 1fr);
-  gap: 42px;
-  align-items: center;
-  margin-top: 90px;
-}
 
-.largest-parks-chart,
-.largest-parks-finding {
-  min-width: 0;
+/* Chart 9 */
+
+.largest-parks-wrapper {
+  width: 100%;
+  margin-top: 90px;
 }
 
 .largest-parks-chart {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .largest-parks-chart .vega-embed,
 .largest-parks-chart .vega-embed > div {
   width: 100%;
+  max-width: 100%;
   margin: 0;
+}
+
+.largest-parks-finding {
+  width: 100%;
+  margin-top: 34px;
+}
+
+.largest-parks-finding .key-finding {
+  width: 100%;
+}
+
+.largest-parks-finding .finding-narrow {
+  max-width: 820px;
 }
 
 
@@ -561,11 +572,11 @@ body {
 
 .conclusion-section h2 {
   margin: 0;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: clamp(48px, 6vw, 76px);
-  font-weight: 800;
-  line-height: 1.02;
-  letter-spacing: -1.5px;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(46px, 5.8vw, 72px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -1.3px;
   color: #ffffff;
 }
 
@@ -644,7 +655,7 @@ body {
 
 .footer-title {
   margin: 0;
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 18px;
   font-weight: 700;
   color: #ffffff;
@@ -747,6 +758,7 @@ body {
   color: #cbd9ce;
 }
 
+
 /* Hero entrance animation */
 
 .hero .title-first,
@@ -807,11 +819,9 @@ body {
 .reveal {
   opacity: 0;
   transform: translateY(28px);
-
   transition:
     opacity 0.7s ease,
     transform 0.7s ease;
-
   will-change: opacity, transform;
 }
 
@@ -877,7 +887,6 @@ body {
   .chart-layout-split,
   .demographic-row,
   .motivation-row,
-  .largest-parks-row,
   .protected-coverage-row,
   .economy-row,
   .volunteer-row {
@@ -885,7 +894,7 @@ body {
     gap: 28px;
   }
 
-  .largest-parks-row,
+  .largest-parks-wrapper,
   .protected-coverage-row,
   .economy-row + .economy-row,
   .volunteer-row + .volunteer-row {
@@ -921,7 +930,6 @@ body {
   .chart-layout-split,
   .demographic-row,
   .motivation-row,
-  .largest-parks-row,
   .protected-coverage-row,
   .economy-row,
   .volunteer-row {
@@ -944,7 +952,7 @@ body {
     margin-top: 64px;
   }
 
-  .largest-parks-row,
+  .largest-parks-wrapper,
   .protected-coverage-row,
   .economy-row + .economy-row,
   .volunteer-row + .volunteer-row {
@@ -967,7 +975,6 @@ body {
 
   .demographic-chart,
   .motivation-chart,
-  .largest-parks-chart,
   .protected-coverage-chart,
   .economy-chart,
   .volunteer-chart {
@@ -976,7 +983,6 @@ body {
 
   .demographic-finding,
   .motivation-finding,
-  .largest-parks-finding,
   .protected-coverage-finding,
   .economy-finding,
   .volunteer-finding {
@@ -1000,6 +1006,10 @@ body {
     margin-top: 30px;
   }
 
+  .largest-parks-finding {
+    margin-top: 30px;
+  }
+
   .footer-info {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -1016,13 +1026,13 @@ body {
   }
 
   .title-first {
-    margin-bottom: 7px;
-    font-size: 38px;
+    margin-bottom: 8px;
+    font-size: 35px;
   }
 
   .title-second {
-    font-size: 52px;
-    line-height: 1;
+    font-size: 47px;
+    line-height: 1.05;
   }
 
   .hero-divider {
@@ -1057,8 +1067,9 @@ body {
   }
 
   .section-header h2 {
-    font-size: 40px;
-    letter-spacing: -1px;
+    font-size: 37px;
+    line-height: 1.14;
+    letter-spacing: -0.8px;
   }
 
   .section-intro {
@@ -1111,11 +1122,15 @@ body {
     margin-top: 26px;
   }
 
-  .largest-parks-row,
+  .largest-parks-wrapper,
   .protected-coverage-row,
   .economy-row + .economy-row,
   .volunteer-row + .volunteer-row {
     margin-top: 64px;
+  }
+
+  .largest-parks-finding {
+    margin-top: 26px;
   }
 
   .vega-bindings {
@@ -1140,8 +1155,9 @@ body {
   }
 
   .conclusion-section h2 {
-    font-size: 44px;
-    letter-spacing: -1px;
+    font-size: 41px;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
   }
 
   .conclusion-content {
@@ -1236,5 +1252,4 @@ body {
     transform: none;
     transition: none;
   }
-
 }

@@ -21,13 +21,11 @@ vegaEmbed(
   embedOptions
 ).catch(console.error);
 
-
 vegaEmbed(
   "#gender_activity_dumbbell",
   "visualisations/03_gender_activity_dumbbell.vg.json",
   embedOptions
 ).catch(console.error);
-
 
 vegaEmbed(
   "#age_activity_heatmap",
@@ -62,7 +60,6 @@ vegaEmbed(
   embedOptions
 ).catch(console.error);
 
-
 vegaEmbed(
   "#largest_parks",
   "visualisations/09_largest_park_treemap.vg.json",
@@ -77,7 +74,6 @@ vegaEmbed(
   "visualisations/10_protected_area_change.vg.json",
   embedOptions
 ).catch(console.error);
-
 
 vegaEmbed(
   "#protected_area_comparison",
@@ -94,7 +90,6 @@ vegaEmbed(
   embedOptions
 ).catch(console.error);
 
-
 vegaEmbed(
   "#tourism_gdp",
   "visualisations/13_tourism_gdp.vg.json",
@@ -109,7 +104,6 @@ vegaEmbed(
   "visualisations/14_volunteer_waffle.vg.json",
   embedOptions
 ).catch(console.error);
-
 
 vegaEmbed(
   "#volunteer_roles",

@@ -1,21 +1,35 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "width": 700,
+  "width": "container",
   "height": 400,
-  "background": "#FFFFFF",
+
+  "background": "transparent",
+
+  "padding": {
+    "left": 0,
+    "right": 40,
+    "top": 5,
+    "bottom": 5
+  },
 
   "title": {
     "text": "Sports & Recreation Tourism Has Rebounded",
     "subtitle": "Tourism output from sports and recreation services, Australia, 2016–17 to 2023–24",
     "anchor": "start",
+
+    "font": "Source Sans 3",
     "fontSize": 24,
-    "fontWeight": "bold",
+    "fontWeight": 700,
     "color": "#222222",
-    "subtitleFontSize": 13,
+
+    "subtitleFont": "Source Sans 3",
+    "subtitleFontSize": 14,
     "subtitleFontWeight": "normal",
     "subtitleColor": "#666666",
-    "subtitlePadding": 8
+    "subtitlePadding": 8,
+
+    "offset": 16
   },
 
   "data": {
@@ -33,11 +47,12 @@
       "mark": {
         "type": "line",
         "strokeWidth": 3,
-        "color": "#3F704D",
+        "color": "#4F7D5B",
+
         "point": {
           "filled": true,
-          "fill": "#FFFFFF",
-          "stroke": "#3F704D",
+          "fill": "#FBFAF4",
+          "stroke": "#4F7D5B",
           "strokeWidth": 2,
           "size": 75
         }
@@ -48,6 +63,7 @@
           "field": "year",
           "type": "ordinal",
           "title": null,
+
           "sort": [
             "2016-17",
             "2017-18",
@@ -58,11 +74,13 @@
             "2022-23",
             "2023-24"
           ],
+
           "axis": {
+            "labelFont": "Source Sans 3",
             "labelFontSize": 11,
             "labelColor": "#555555",
             "labelAngle": 0,
-            "labelPadding": 8,
+            "labelPadding": 10,
             "ticks": false,
             "domain": false
           }
@@ -72,23 +90,30 @@
           "field": "tourism_output_million",
           "type": "quantitative",
           "title": "Tourism output ($ billion)",
+
           "scale": {
             "domain": [
               0,
               5500
             ]
           },
+
           "axis": {
+            "titleFont": "Source Sans 3",
             "titleFontSize": 12,
             "titleFontWeight": "normal",
             "titleColor": "#555555",
-            "titlePadding": 12,
+            "titlePadding": 14,
+
+            "labelFont": "Source Sans 3",
             "labelFontSize": 11,
             "labelColor": "#666666",
             "labelExpr": "'$' + format(datum.value / 1000, '.1f') + 'b'",
+
             "grid": true,
-            "gridColor": "#E8E8E8",
+            "gridColor": "#E5E3DC",
             "gridWidth": 1,
+
             "ticks": false,
             "domain": false
           }
@@ -120,7 +145,7 @@
       "mark": {
         "type": "point",
         "filled": true,
-        "size": 120,
+        "size": 130,
         "color": "#B26A4A"
       },
 
@@ -128,6 +153,7 @@
         "x": {
           "field": "year",
           "type": "ordinal",
+
           "sort": [
             "2016-17",
             "2017-18",
@@ -143,7 +169,21 @@
         "y": {
           "field": "tourism_output_million",
           "type": "quantitative"
-        }
+        },
+
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "tourism_output_million",
+            "type": "quantitative",
+            "title": "Tourism output ($m)",
+            "format": ",.0f"
+          }
+        ]
       }
     },
 
@@ -156,12 +196,13 @@
 
       "mark": {
         "type": "text",
-        "align": "right",
+        "align": "center",
         "baseline": "top",
-        "dx": -12,
         "dy": 18,
+
+        "font": "Source Sans 3",
         "fontSize": 11,
-        "fontWeight": "bold",
+        "fontWeight": 700,
         "color": "#8A523A"
       },
 
@@ -169,6 +210,7 @@
         "x": {
           "field": "year",
           "type": "ordinal",
+
           "sort": [
             "2016-17",
             "2017-18",
@@ -200,20 +242,75 @@
       ],
 
       "mark": {
-        "type": "text",
-        "align": "right",
-        "baseline": "bottom",
-        "dx": -8,
-        "dy": -12,
-        "fontSize": 11,
-        "fontWeight": "bold",
-        "color": "#2E6B3E"
+        "type": "point",
+        "filled": true,
+        "size": 125,
+        "color": "#244B36"
       },
 
       "encoding": {
         "x": {
           "field": "year",
           "type": "ordinal",
+
+          "sort": [
+            "2016-17",
+            "2017-18",
+            "2018-19",
+            "2019-20",
+            "2020-21",
+            "2021-22",
+            "2022-23",
+            "2023-24"
+          ]
+        },
+
+        "y": {
+          "field": "tourism_output_million",
+          "type": "quantitative"
+        },
+
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "tourism_output_million",
+            "type": "quantitative",
+            "title": "Tourism output ($m)",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.year == '2023-24'"
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": -10,
+        "dy": -14,
+
+        "font": "Source Sans 3",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#244B36"
+      },
+
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+
           "sort": [
             "2016-17",
             "2017-18",
@@ -232,7 +329,7 @@
         },
 
         "text": {
-          "value": "$5.06b"
+          "value": "2023–24: $5.06b"
         }
       }
     }
@@ -243,11 +340,15 @@
       "stroke": null
     },
 
-    "font": "Arial",
+    "font": "Source Sans 3",
 
     "axis": {
-      "labelFont": "Arial",
-      "titleFont": "Arial"
+      "labelFont": "Source Sans 3",
+      "titleFont": "Source Sans 3"
+    },
+
+    "title": {
+      "font": "Source Sans 3"
     }
   }
 }

@@ -1,21 +1,35 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "width": 700,
+  "width": "container",
   "height": 400,
-  "background": "#FFFFFF",
+
+  "background": "transparent",
+
+  "padding": {
+    "left": 0,
+    "right": 35,
+    "top": 5,
+    "bottom": 5
+  },
 
   "title": {
     "text": "Two Decades of Australian Tourism",
     "subtitle": "Year-to-year change in tourism GDP at current prices, Australia, 2004–05 to 2023–24",
     "anchor": "start",
+
+    "font": "Source Sans 3",
     "fontSize": 24,
-    "fontWeight": "bold",
+    "fontWeight": 700,
     "color": "#222222",
-    "subtitleFontSize": 13,
+
+    "subtitleFont": "Source Sans 3",
+    "subtitleFontSize": 14,
     "subtitleFontWeight": "normal",
     "subtitleColor": "#666666",
-    "subtitlePadding": 8
+    "subtitlePadding": 8,
+
+    "offset": 16
   },
 
   "data": {
@@ -66,7 +80,7 @@
     {
       "mark": {
         "type": "bar",
-        "size": 20,
+        "size": 16,
         "cornerRadius": 2
       },
 
@@ -75,6 +89,7 @@
           "field": "year",
           "type": "ordinal",
           "title": null,
+
           "sort": [
             "2004-05",
             "2005-06",
@@ -99,11 +114,14 @@
           ],
 
           "axis": {
+            "labelFont": "Source Sans 3",
             "labelFontSize": 11,
             "labelColor": "#555555",
-            "labelAngle": -45,
-            "labelPadding": 8,
+            "labelAngle": 0,
+            "labelPadding": 10,
+
             "labelExpr": "indexof(['2004-05','2008-09','2012-13','2016-17','2020-21','2023-24'], datum.label) >= 0 ? datum.label : ''",
+
             "ticks": false,
             "domain": false
           }
@@ -113,6 +131,7 @@
           "field": "bar_start",
           "type": "quantitative",
           "title": "Tourism GDP ($ billion)",
+
           "scale": {
             "domain": [
               0,
@@ -121,16 +140,21 @@
           },
 
           "axis": {
+            "titleFont": "Source Sans 3",
             "titleFontSize": 12,
             "titleFontWeight": "normal",
             "titleColor": "#555555",
-            "titlePadding": 12,
+            "titlePadding": 14,
+
+            "labelFont": "Source Sans 3",
             "labelFontSize": 11,
             "labelColor": "#666666",
             "labelExpr": "'$' + format(datum.value / 1000, '.0f') + 'b'",
+
             "grid": true,
-            "gridColor": "#E8E8E8",
+            "gridColor": "#E5E3DC",
             "gridWidth": 1,
+
             "ticks": false,
             "domain": false
           }
@@ -143,12 +167,14 @@
         "color": {
           "field": "direction",
           "type": "nominal",
+
           "scale": {
             "domain": [
               "Starting point",
               "Increase",
               "Decrease"
             ],
+
             "range": [
               "#7A7A72",
               "#4F7D5B",
@@ -160,8 +186,15 @@
             "title": null,
             "orient": "top",
             "direction": "horizontal",
+
+            "labelFont": "Source Sans 3",
             "labelFontSize": 11,
-            "labelColor": "#555555"
+            "labelColor": "#555555",
+
+            "symbolType": "square",
+            "symbolSize": 100,
+
+            "offset": 8
           }
         },
 
@@ -198,10 +231,11 @@
         "type": "text",
         "align": "center",
         "baseline": "top",
-        "dx": 0,
-        "dy": 10,
+        "dy": 12,
+
+        "font": "Source Sans 3",
         "fontSize": 11,
-        "fontWeight": "bold",
+        "fontWeight": 700,
         "color": "#8A523A"
       },
 
@@ -209,6 +243,7 @@
         "x": {
           "field": "year",
           "type": "ordinal",
+
           "sort": [
             "2004-05",
             "2005-06",
@@ -240,7 +275,7 @@
 
         "text": {
           "value": [
-            "Pandemic impact:",
+            "Pandemic impact",
             "$30.9b"
           ]
         }
@@ -256,19 +291,22 @@
 
       "mark": {
         "type": "text",
-        "align": "center",
+        "align": "right",
         "baseline": "bottom",
-        "dx": 0,
-        "dy": -10,
+        "dx": -5,
+        "dy": -12,
+
+        "font": "Source Sans 3",
         "fontSize": 11,
-        "fontWeight": "bold",
-        "color": "#2E6B3E"
+        "fontWeight": 700,
+        "color": "#244B36"
       },
 
       "encoding": {
         "x": {
           "field": "year",
           "type": "ordinal",
+
           "sort": [
             "2004-05",
             "2005-06",
@@ -299,7 +337,7 @@
         },
 
         "text": {
-          "value": "$78.1b"
+          "value": "2023–24: $78.1b"
         }
       }
     }
@@ -310,11 +348,20 @@
       "stroke": null
     },
 
-    "font": "Arial",
+    "font": "Source Sans 3",
 
     "axis": {
-      "labelFont": "Arial",
-      "titleFont": "Arial"
+      "labelFont": "Source Sans 3",
+      "titleFont": "Source Sans 3"
+    },
+
+    "legend": {
+      "labelFont": "Source Sans 3",
+      "titleFont": "Source Sans 3"
+    },
+
+    "title": {
+      "font": "Source Sans 3"
     }
   }
 }

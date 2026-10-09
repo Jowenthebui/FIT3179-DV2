@@ -476,6 +476,49 @@ body {
 }
 
 
+/* Section 7 */
+
+.section-outdoor-economy {
+  padding-top: 100px;
+}
+
+.economy-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(180px, 1fr);
+  gap: 42px;
+  align-items: center;
+  margin-top: 52px;
+}
+
+.economy-row + .economy-row {
+  margin-top: 90px;
+}
+
+.economy-chart,
+.economy-finding {
+  min-width: 0;
+}
+
+.economy-chart {
+  width: 100%;
+}
+
+.economy-chart .vega-embed,
+.economy-chart .vega-embed > div {
+  width: 100%;
+  margin: 0;
+}
+
+.economy-finding {
+  width: 100%;
+}
+
+.economy-finding .key-finding {
+  width: 100%;
+}
+
+
 /* Vega controls */
 
 .vega-bindings {
@@ -529,7 +572,8 @@ body {
   .demographic-row,
   .motivation-row,
   .largest-parks-row,
-  .protected-coverage-row {
+  .protected-coverage-row,
+  .economy-row {
     grid-template-columns: minmax(0, 3fr) minmax(180px, 1fr);
     gap: 28px;
   }
@@ -538,11 +582,16 @@ body {
   .section-states,
   .section-motivation,
   .section-wild-places,
-  .section-protected-coverage {
+  .section-protected-coverage,
+  .section-outdoor-economy {
     padding-top: 85px;
   }
 
   .protected-coverage-row {
+    margin-top: 80px;
+  }
+
+  .economy-row + .economy-row {
     margin-top: 80px;
   }
 
@@ -557,7 +606,8 @@ body {
   .demographic-row,
   .motivation-row,
   .largest-parks-row,
-  .protected-coverage-row {
+  .protected-coverage-row,
+  .economy-row {
     grid-template-columns: 1fr;
     gap: 30px;
   }
@@ -582,11 +632,20 @@ body {
     margin-top: 70px;
   }
 
+  .economy-row {
+    margin-top: 40px;
+  }
+
+  .economy-row + .economy-row {
+    margin-top: 70px;
+  }
+
   .finding-column,
   .demographic-finding,
   .motivation-finding,
   .largest-parks-finding,
-  .protected-coverage-finding {
+  .protected-coverage-finding,
+  .economy-finding {
     width: 100%;
   }
 
@@ -597,14 +656,16 @@ body {
   .demographic-chart,
   .motivation-chart,
   .largest-parks-chart,
-  .protected-coverage-chart {
+  .protected-coverage-chart,
+  .economy-chart {
     order: 1;
   }
 
   .demographic-finding,
   .motivation-finding,
   .largest-parks-finding,
-  .protected-coverage-finding {
+  .protected-coverage-finding,
+  .economy-finding {
     order: 2;
   }
 
@@ -671,7 +732,8 @@ body {
   .section-states,
   .section-motivation,
   .section-wild-places,
-  .section-protected-coverage {
+  .section-protected-coverage,
+  .section-outdoor-economy {
     padding-top: 70px;
   }
 
@@ -739,6 +801,14 @@ body {
   }
 
   .protected-coverage-row {
+    margin-top: 64px;
+  }
+
+  .economy-row {
+    margin-top: 36px;
+  }
+
+  .economy-row + .economy-row {
     margin-top: 64px;
   }
 

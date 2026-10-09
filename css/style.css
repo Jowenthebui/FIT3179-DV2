@@ -94,7 +94,9 @@ body {
   color: #ffffff;
   text-decoration: none;
   opacity: 0.85;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .explore-link:hover {
@@ -533,6 +535,7 @@ body {
   width: 100%;
 }
 
+
 /* Conclusion */
 
 .conclusion-section {
@@ -619,6 +622,7 @@ body {
   display: block;
 }
 
+
 /* Footer */
 
 .site-footer {
@@ -647,11 +651,21 @@ body {
 }
 
 .footer-meta {
-  margin: 8px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 20px;
+  row-gap: 8px;
+  margin: 10px 0 0;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
   color: #cbd9ce;
+}
+
+.footer-meta-divider {
+  color: #6f9278;
+  font-weight: 400;
 }
 
 .footer-divider {
@@ -698,7 +712,9 @@ body {
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-color: rgba(224, 236, 226, 0.4);
-  transition: color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
 }
 
 .footer-sources a:hover {
@@ -731,74 +747,83 @@ body {
   color: #cbd9ce;
 }
 
-.footer-text span {
-  display: block;
+/* Hero entrance animation */
+
+.hero .title-first,
+.hero .title-second,
+.hero .hero-divider,
+.hero .hero-subtitle,
+.hero .hero-intro,
+.hero .explore-link {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.hero .title-first {
+  animation: heroReveal 0.7s ease forwards;
+  animation-delay: 0.15s;
+}
+
+.hero .title-second {
+  animation: heroReveal 0.75s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.hero .hero-divider {
+  animation: heroReveal 0.65s ease forwards;
+  animation-delay: 0.48s;
+}
+
+.hero .hero-subtitle {
+  animation: heroReveal 0.7s ease forwards;
+  animation-delay: 0.62s;
+}
+
+.hero .hero-intro {
+  animation: heroReveal 0.7s ease forwards;
+  animation-delay: 0.76s;
+}
+
+.hero .explore-link {
+  animation: heroReveal 0.7s ease forwards;
+  animation-delay: 0.9s;
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
-/* Footer tablet */
+/* Scroll reveal animation */
 
-@media (max-width: 900px) {
-  .site-footer {
-    padding: 44px 7% 48px;
-  }
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
 
-  .footer-info {
-    gap: 40px;
-  }
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+
+  will-change: opacity, transform;
 }
 
-
-/* Footer small tablet */
-
-@media (max-width: 700px) {
-  .footer-info {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-
-/* Footer mobile */
-
-@media (max-width: 600px) {
-  .site-footer {
-    padding: 40px 6% 44px;
-  }
-
-  .footer-title {
-    font-size: 17px;
-  }
-
-  .footer-meta {
-    font-size: 13px;
-  }
-
-  .footer-divider {
-    margin: 24px 0;
-  }
-
-  .footer-info {
-    gap: 30px;
-  }
-
-  .footer-block-section + .footer-block-section {
-    margin-top: 30px;
-  }
-
-  .footer-sources a {
-    font-size: 12px;
-  }
-
-  .footer-sources p {
-    font-size: 12px;
-    margin-bottom: 15px;
-  }
-
-  .footer-text {
-    font-size: 12px;
-  }
+.reveal-delay-1 {
+  transition-delay: 0.12s;
 }
+
 
 /* Vega controls */
 
@@ -881,7 +906,7 @@ body {
 
   .footer-info {
     gap: 40px;
-}
+  }
 }
 
 
@@ -1150,24 +1175,9 @@ body {
   }
 
   .footer-meta {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    column-gap: 20px;
-    row-gap: 8px;
-
-    margin: 10px 0 0;
-
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.5;
-
-    color: #cbd9ce;
-  }
-
-  .footer-meta-divider {
-    color: #6f9278;
-    font-weight: 400;
+    column-gap: 12px;
+    row-gap: 6px;
+    font-size: 13px;
   }
 
   .footer-divider {
@@ -1178,7 +1188,53 @@ body {
     gap: 26px;
   }
 
+  .footer-block-section + .footer-block-section {
+    margin-top: 30px;
+  }
+
+  .footer-sources a {
+    font-size: 12px;
+  }
+
+  .footer-sources p {
+    margin-bottom: 15px;
+    font-size: 12px;
+  }
+
   .footer-text {
     font-size: 12px;
   }
+
+  .reveal {
+    transform: translateY(20px);
+  }
+}
+
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero .title-first,
+  .hero .title-second,
+  .hero .hero-divider,
+  .hero .hero-subtitle,
+  .hero .hero-intro,
+  .hero .explore-link {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .reveal,
+  .reveal.reveal-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
 }

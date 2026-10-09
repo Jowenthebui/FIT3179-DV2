@@ -112,7 +112,7 @@ body {
 
 .story-section {
   width: 100%;
-  padding: 90px 8% 100px;
+  padding: 100px 8%;
   background-color: #fbfaf4;
   overflow-x: hidden;
 }
@@ -246,7 +246,7 @@ body {
   grid-template-columns: minmax(0, 4fr) minmax(180px, 1fr);
   gap: 42px;
   align-items: center;
-  margin-top: 52px;
+  margin-top: 0;
 }
 
 .chart-column,
@@ -261,10 +261,6 @@ body {
 
 /* Section 2 */
 
-.section-demographics {
-  padding-top: 100px;
-}
-
 .demographic-row {
   width: 100%;
   display: grid;
@@ -275,7 +271,7 @@ body {
 }
 
 .demographic-row:first-of-type {
-  margin-top: 52px;
+  margin-top: 0;
 }
 
 .demographic-chart,
@@ -300,13 +296,9 @@ body {
 
 /* Section 3 */
 
-.section-states {
-  padding-top: 100px;
-}
-
 .state-map-wrapper {
   width: 100%;
-  margin-top: 52px;
+  margin-top: 0;
 }
 
 .state-map {
@@ -321,15 +313,11 @@ body {
 
 .state-finding {
   width: 100%;
-  margin-top: 36px;
+  margin-top: 34px;
 }
 
 
 /* Section 4 */
-
-.section-motivation {
-  padding-top: 100px;
-}
 
 .motivation-row {
   width: 100%;
@@ -337,7 +325,7 @@ body {
   grid-template-columns: minmax(0, 4fr) minmax(180px, 1fr);
   gap: 42px;
   align-items: center;
-  margin-top: 52px;
+  margin-top: 0;
 }
 
 .motivation-chart,
@@ -358,13 +346,9 @@ body {
 
 /* Section 5 */
 
-.section-wild-places {
-  padding-top: 100px;
-}
-
 .wild-map-wrapper {
   width: 100%;
-  margin-top: 52px;
+  margin-top: 0;
 }
 
 .wild-map {
@@ -409,13 +393,9 @@ body {
 
 /* Section 6 */
 
-.section-protected-coverage {
-  padding-top: 100px;
-}
-
 .protected-change-wrapper {
   width: 100%;
-  margin-top: 52px;
+  margin-top: 0;
   display: flex;
   justify-content: center;
 }
@@ -478,17 +458,13 @@ body {
 
 /* Section 7 */
 
-.section-outdoor-economy {
-  padding-top: 100px;
-}
-
 .economy-row {
   width: 100%;
   display: grid;
   grid-template-columns: minmax(0, 4fr) minmax(180px, 1fr);
   gap: 42px;
   align-items: center;
-  margin-top: 52px;
+  margin-top: 0;
 }
 
 .economy-row + .economy-row {
@@ -518,11 +494,8 @@ body {
   width: 100%;
 }
 
-/* Section 8 */
 
-.section-volunteering {
-  padding-top: 100px;
-}
+/* Section 8 */
 
 .volunteer-row {
   width: 100%;
@@ -530,7 +503,7 @@ body {
   grid-template-columns: minmax(0, 4fr) minmax(180px, 1fr);
   gap: 42px;
   align-items: center;
-  margin-top: 52px;
+  margin-top: 0;
 }
 
 .volunteer-row + .volunteer-row {
@@ -559,6 +532,7 @@ body {
 .volunteer-finding .key-finding {
   width: 100%;
 }
+
 
 /* Vega controls */
 
@@ -606,7 +580,7 @@ body {
   }
 
   .story-section {
-    padding: 75px 7% 85px;
+    padding: 85px 7%;
   }
 
   .chart-layout-split,
@@ -614,28 +588,22 @@ body {
   .motivation-row,
   .largest-parks-row,
   .protected-coverage-row,
-  .economy-row {
+  .economy-row,
+  .volunteer-row {
     grid-template-columns: minmax(0, 3fr) minmax(180px, 1fr);
     gap: 28px;
   }
 
-  .section-demographics,
-  .section-states,
-  .section-motivation,
-  .section-wild-places,
-  .section-protected-coverage,
-  .section-outdoor-economy {
-    padding-top: 85px;
-  }
-
-  .protected-coverage-row {
+  .largest-parks-row,
+  .protected-coverage-row,
+  .economy-row + .economy-row,
+  .volunteer-row + .volunteer-row {
     margin-top: 80px;
   }
 
-  .economy-row + .economy-row {
+  .demographic-full {
     margin-top: 80px;
   }
-
 }
 
 
@@ -643,41 +611,40 @@ body {
 
 @media (max-width: 700px) {
 
+  .section-header {
+    margin-bottom: 40px;
+  }
+
   .chart-layout-split,
   .demographic-row,
   .motivation-row,
   .largest-parks-row,
   .protected-coverage-row,
-  .economy-row {
+  .economy-row,
+  .volunteer-row {
     grid-template-columns: 1fr;
     gap: 30px;
   }
 
-  .chart-layout-split {
-    margin-top: 40px;
+  .chart-layout-split,
+  .motivation-row,
+  .economy-row,
+  .volunteer-row {
+    margin-top: 0;
+  }
+
+  .demographic-row:first-of-type {
+    margin-top: 0;
   }
 
   .demographic-row {
     margin-top: 64px;
   }
 
-  .motivation-row {
-    margin-top: 40px;
-  }
-
-  .largest-parks-row {
-    margin-top: 70px;
-  }
-
-  .protected-coverage-row {
-    margin-top: 70px;
-  }
-
-  .economy-row {
-    margin-top: 40px;
-  }
-
-  .economy-row + .economy-row {
+  .largest-parks-row,
+  .protected-coverage-row,
+  .economy-row + .economy-row,
+  .volunteer-row + .volunteer-row {
     margin-top: 70px;
   }
 
@@ -686,7 +653,8 @@ body {
   .motivation-finding,
   .largest-parks-finding,
   .protected-coverage-finding,
-  .economy-finding {
+  .economy-finding,
+  .volunteer-finding {
     width: 100%;
   }
 
@@ -698,7 +666,8 @@ body {
   .motivation-chart,
   .largest-parks-chart,
   .protected-coverage-chart,
-  .economy-chart {
+  .economy-chart,
+  .volunteer-chart {
     order: 1;
   }
 
@@ -706,7 +675,8 @@ body {
   .motivation-finding,
   .largest-parks-finding,
   .protected-coverage-finding,
-  .economy-finding {
+  .economy-finding,
+  .volunteer-finding {
     order: 2;
   }
 
@@ -717,15 +687,15 @@ body {
   .state-map-wrapper,
   .wild-map-wrapper,
   .protected-change-wrapper {
-    margin-top: 40px;
+    margin-top: 0;
   }
 
+  .demographic-full-finding,
   .state-finding,
   .wild-map-finding,
   .protected-change-finding {
     margin-top: 30px;
   }
-
 }
 
 
@@ -766,23 +736,15 @@ body {
   }
 
   .story-section {
-    padding: 60px 6% 70px;
-  }
-
-  .section-demographics,
-  .section-states,
-  .section-motivation,
-  .section-wild-places,
-  .section-protected-coverage,
-  .section-outdoor-economy {
-    padding-top: 70px;
+    padding: 70px 6%;
   }
 
   .section-header {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
   }
 
   .section-number {
+    margin-bottom: 16px;
     font-size: 12px;
   }
 
@@ -809,6 +771,17 @@ body {
     font-size: 13px;
   }
 
+  .chart-layout-split,
+  .motivation-row,
+  .economy-row,
+  .volunteer-row {
+    margin-top: 0;
+  }
+
+  .demographic-row:first-of-type {
+    margin-top: 0;
+  }
+
   .demographic-row {
     margin-top: 56px;
   }
@@ -817,39 +790,23 @@ body {
     margin-top: 64px;
   }
 
-  .demographic-full-finding {
-    margin-top: 26px;
-  }
-
   .state-map-wrapper,
   .wild-map-wrapper,
   .protected-change-wrapper {
-    margin-top: 36px;
+    margin-top: 0;
   }
 
+  .demographic-full-finding,
   .state-finding,
   .wild-map-finding,
   .protected-change-finding {
     margin-top: 26px;
   }
 
-  .motivation-row {
-    margin-top: 36px;
-  }
-
-  .largest-parks-row {
-    margin-top: 64px;
-  }
-
-  .protected-coverage-row {
-    margin-top: 64px;
-  }
-
-  .economy-row {
-    margin-top: 36px;
-  }
-
-  .economy-row + .economy-row {
+  .largest-parks-row,
+  .protected-coverage-row,
+  .economy-row + .economy-row,
+  .volunteer-row + .volunteer-row {
     margin-top: 64px;
   }
 
@@ -864,5 +821,4 @@ body {
     max-width: 100%;
     font-size: 13px;
   }
-
 }

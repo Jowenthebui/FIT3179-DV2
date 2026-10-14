@@ -72,7 +72,7 @@
 
             {
               "data": {
-                "url": "../data/capad_history/capad2008_australia.geojson",
+                "url": "data/capad_history/capad2008_australia.geojson",
                 "format": {
                   "type": "json",
                   "property": "geometries"
@@ -162,7 +162,7 @@
           "layer": [
             {
               "data": {
-                "url": "../data/australia_states.geojson",
+                "url": "data/australia_states.geojson",
                 "format": {
                   "type": "json",
                   "property": "features"
@@ -179,7 +179,7 @@
 
             {
               "data": {
-                "url": "../data/capad_history/capad2012_australia.geojson",
+                "url": "data/capad_history/capad2012_australia.geojson",
                 "format": {
                   "type": "json",
                   "property": "geometries"
@@ -269,7 +269,7 @@
           "layer": [
             {
               "data": {
-                "url": "../data/australia_states.geojson",
+                "url": "data/australia_states.geojson",
                 "format": {
                   "type": "json",
                   "property": "features"
@@ -286,7 +286,7 @@
 
             {
               "data": {
-                "url": "../data/capad_history/capad2016_australia.geojson",
+                "url": "data/capad_history/capad2016_australia.geojson",
                 "format": {
                   "type": "json",
                   "property": "geometries"
@@ -382,7 +382,7 @@
           "layer": [
             {
               "data": {
-                "url": "../data/australia_states.geojson",
+                "url": "data/australia_states.geojson",
                 "format": {
                   "type": "json",
                   "property": "features"
@@ -399,7 +399,7 @@
 
             {
               "data": {
-                "url": "../data/capad_history/capad2020_australia.geojson",
+                "url": "data/capad_history/capad2020_australia.geojson",
                 "format": {
                   "type": "json",
                   "property": "geometries"
@@ -489,7 +489,7 @@
           "layer": [
             {
               "data": {
-                "url": "../data/australia_states.geojson",
+                "url": "data/australia_states.geojson",
                 "format": {
                   "type": "json",
                   "property": "features"
@@ -506,7 +506,7 @@
 
             {
               "data": {
-                "url": "../data/capad_history/capad2022_australia.geojson",
+                "url": "data/capad_history/capad2022_australia.geojson",
                 "format": {
                   "type": "json",
                   "property": "geometries"
@@ -596,7 +596,7 @@
           "layer": [
             {
               "data": {
-                "url": "../data/australia_states.geojson",
+                "url": "data/australia_states.geojson",
                 "format": {
                   "type": "json",
                   "property": "features"
@@ -613,7 +613,7 @@
 
             {
               "data": {
-                "url": "../data/capad_history/capad2024_australia.geojson",
+                "url": "data/capad_history/capad2024_australia.geojson",
                 "format": {
                   "type": "json",
                   "property": "geometries"

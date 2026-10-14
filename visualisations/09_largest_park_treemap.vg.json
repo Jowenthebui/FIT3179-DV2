@@ -68,7 +68,7 @@
     {
       "name": "parks",
 
-      "url": "../data/national_parks_top30_capad2024.csv",
+      "url": "data/national_parks_top30_capad2024.csv",
 
       "format": {
         "type": "csv",

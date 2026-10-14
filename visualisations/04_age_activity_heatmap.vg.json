@@ -35,7 +35,7 @@
   },
 
   "data": {
-    "url": "../data/age_activity_participation.csv"
+    "url": "data/age_activity_participation.csv"
   },
 
   "params": [

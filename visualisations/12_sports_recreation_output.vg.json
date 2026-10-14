@@ -35,7 +35,7 @@
   },
 
   "data": {
-    "url": "../data/sports_recreation_tourism_output.csv",
+    "url": "data/sports_recreation_tourism_output.csv",
     "format": {
       "type": "csv",
       "parse": {

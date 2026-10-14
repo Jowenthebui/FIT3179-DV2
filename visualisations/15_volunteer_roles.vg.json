@@ -34,7 +34,7 @@
   },
 
   "data": {
-    "url": "../data/volunteer_roles.csv",
+    "url": "data/volunteer_roles.csv",
 
     "format": {
       "type": "csv",

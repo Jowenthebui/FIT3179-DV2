@@ -28,7 +28,7 @@
   },
 
   "data": {
-    "url": "../data/activity_participation.csv"
+    "url": "data/activity_participation.csv"
   },
 
   "encoding": {

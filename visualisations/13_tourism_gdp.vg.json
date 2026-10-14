@@ -35,7 +35,7 @@
   },
 
   "data": {
-    "url": "../data/tourism_gdp.csv",
+    "url": "data/tourism_gdp.csv",
     "format": {
       "type": "csv",
       "parse": {

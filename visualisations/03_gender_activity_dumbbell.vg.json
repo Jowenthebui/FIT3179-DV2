@@ -35,7 +35,7 @@
   },
 
   "data": {
-    "url": "../data/gender_activity_participation.csv"
+    "url": "data/gender_activity_participation.csv"
   },
 
   "encoding": {

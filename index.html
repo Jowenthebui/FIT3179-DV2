@@ -1,34 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>The Great Australian Outdoors</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-  href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"
-  rel="stylesheet">
-
-  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- Hero -->
-
-  <header class="hero">
-
+  <section class="hero">
     <div class="hero-content">
-
       <h1 class="hero-title">
         <span class="title-first">The Great</span>
         <span class="title-second">Australian Outdoors</span>
@@ -37,1056 +23,646 @@
       <div class="hero-divider"></div>
 
       <p class="hero-subtitle">
-        How participation, place and community shape Australia's outdoor life
+        How Australians move, explore, protect and contribute.
       </p>
 
       <p class="hero-intro">
-        <span>Australia's outdoor culture extends beyond organised sport.</span>
-        <span>From everyday activity to national parks and tourism,</span>
-        <span>Australians connect with the outdoors in different ways.</span>
-        <span>This story explores participation, motivation and place,</span>
-        <span>alongside the systems supporting Australia's outdoor life.</span>
+        <span>From everyday exercise to vast protected landscapes,</span>
+        <span>outdoor life takes many forms across Australia.</span>
+        <span>This story follows who participates and where.</span>
+        <span>It explores why the outdoors matters.</span>
+        <span>It also shows what the outdoors supports.</span>
       </p>
 
-      <a class="explore-link" href="#section-1">
-        Explore more <span class="explore-arrow">↓</span>
+      <a href="#section-1" class="explore-link">
+        Explore the story
+        <span class="explore-arrow">↓</span>
       </a>
-
     </div>
-
-  </header>
-
-
-  <main>
-
-    <!-- Section 1 -->
-
-    <section id="section-1" class="story-section">
-
-      <div class="section-container">
-
-        <div class="section-header">
-
-          <p class="section-number">
-            01 / AUSTRALIA'S OUTDOOR LIFESTYLE
-          </p>
-
-          <h2>
-            How Do Australians<br>
-            Get Active?
-          </h2>
-
-          <p class="section-intro">
-            <span>Australians participate in many forms of physical activity.</span>
-            <span>But participation is far from evenly distributed.</span>
-          </p>
-
-        </div>
-
-
-        <div class="chart-layout-split">
-
-          <div class="chart-column">
-
-            <div
-              id="activity_lollipop"
-              class="visualisation">
-            </div>
-
-          </div>
-
-
-          <aside class="finding-column">
-
-            <div class="key-finding">
-
-              <p class="finding-label">
-                KEY FINDING
-              </p>
-
-              <p class="finding-text">
-                <strong>Walking leads the way.</strong>
-                Recreational walking is by far the most popular activity,
-                with <strong>50.2% of Australian adults participating</strong>—well
-                ahead of bush walking, running and swimming.
-              </p>
-
-            </div>
-
-          </aside>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- Section 2 -->
-
-    <section id="section-2" class="story-section section-demographics">
-
-      <div class="section-container">
-
-        <div class="section-header">
-
-          <p class="section-number">
-            02 / WHO GETS OUTDOORS?
-          </p>
-
-          <h2>
-            Who Gets Outdoors?
-          </h2>
-
-          <p class="section-intro">
-            <span>Overall participation is almost evenly split by gender.</span>
-            <span>But activity choices reveal a different story.</span>
-          </p>
-
-        </div>
-
-
-        <!-- Chart 2 -->
-
-        <div class="demographic-row">
-
-          <div class="demographic-chart">
-
-            <div
-              id="gender_pictogram"
-              class="visualisation">
-            </div>
-
-          </div>
-
-
-          <aside class="demographic-finding">
-
-            <div class="key-finding">
-
-              <p class="finding-label">
-                KEY FINDING
-              </p>
-
-              <p class="finding-text">
-                <strong>Participation is almost evenly split by gender.</strong>
-                Women represent <strong>50.3%</strong> of Australian adult
-                participants, while men account for a similar
-                <strong>49.7%</strong>.
-              </p>
-
-            </div>
-
-          </aside>
-
-        </div>
-
-
-        <!-- Chart 3 -->
-
-        <div class="demographic-row">
-
-          <div class="demographic-chart">
-
-            <div
-              id="gender_activity_dumbbell"
-              class="visualisation">
-            </div>
-
-          </div>
-
-
-          <aside class="demographic-finding">
-
-            <div class="key-finding">
-
-              <p class="finding-label">
-                KEY FINDING
-              </p>
-
-              <p class="finding-text">
-                <strong>Gender differences depend on the activity.</strong>
-                Women participate more in recreational walking, while men
-                record higher participation in running, cycling and golf.
-                The largest gap appears in walking, at
-                <strong>57.8% for females compared with 42.5% for males</strong>.
-              </p>
-
-            </div>
-
-          </aside>
-
-        </div>
-
-
-        <!-- Chart 4 -->
-
-        <div class="demographic-full">
-
-          <div
-            id="age_activity_heatmap"
-            class="visualisation">
-          </div>
-
-        </div>
-
-
-        <div class="demographic-full-finding">
-
-          <div class="key-finding">
-
-            <p class="finding-label">
-              KEY FINDING
-            </p>
-
-            <p class="finding-text finding-narrow">
-              <strong>Outdoor habits shift with age.</strong> Running is strongest among<br>
-              younger Australians, but declines substantially with age.<br>
-              Recreational walking grows more prominent with age,<br>
-              peaking at <strong>66.0% among those aged 55–64</strong>.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- Section 3 -->
-
-    <section id="section-3" class="story-section section-states">
-
-      <div class="section-container">
-
-        <div class="section-header">
-
-          <p class="section-number">
-            03 / ONE COUNTRY, DIFFERENT WAYS TO GET OUTSIDE
-          </p>
-
-          <h2>
-            One Country,<br>
-            Different Ways to Get Outside
-          </h2>
-
-          <p class="section-intro">
-            <span>Outdoor participation varies across Australia.</span>
-            <span>Different activities reveal different regional patterns.</span>
-          </p>
-
-        </div>
-
-
-        <!-- Chart 5 -->
-
-        <div class="state-map-wrapper">
-
-          <div
-            id="state_activity_map"
-            class="visualisation state-map">
-          </div>
-
-        </div>
-
-
-        <div class="state-finding">
-
-          <div class="key-finding">
-
-            <p class="finding-label">
-              KEY FINDING
-            </p>
-
-            <p class="finding-text finding-narrow">
-              <strong>Where Australians live shapes outdoor participation.</strong><br>
-              Tasmania leads bush walking participation at
-              <strong>27.5%</strong>.<br>
-              The ACT follows closely behind at
-              <strong>26.8%</strong>.<br>
-              Patterns shift as different activities are selected.
-            </p>
-
-            <p class="finding-instruction">
-              Select an activity and hover for exact rates.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- Section 4 -->
-
-    <section id="section-4" class="story-section section-motivation">
-
-      <div class="section-container">
-
-        <div class="section-header">
-
-          <p class="section-number">
-            04 / WHY DO AUSTRALIANS GET ACTIVE?
-          </p>
-
-          <h2>
-            More Than<br>
-            Just Exercise
-          </h2>
-
-          <p class="section-intro">
-            <span>Health and fitness may lead the motivations.</span>
-            <span>But Australians are active for many different reasons.</span>
-          </p>
-
-        </div>
-
-
-        <!-- Chart 7 -->
-
-        <div class="motivation-row">
-
-          <div class="motivation-chart">
-
-            <div
-              id="motivation_bar"
-              class="visualisation">
-            </div>
-
-          </div>
-
-
-          <aside class="motivation-finding">
-
-            <div class="key-finding">
-
-              <p class="finding-label">
-                KEY FINDING
-              </p>
-
-              <p class="finding-text">
-                <strong>Nature is a major reason to get active.</strong>
-                More than half of Australian adults,
-                <strong>51.1%</strong>, cite being outdoors
-                or enjoying nature.
-              </p>
-
-            </div>
-
-          </aside>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- Section 5 -->
-
-    <section id="section-5" class="story-section section-wild-places">
-
-      <div class="section-container">
-
-        <div class="section-header">
-
-          <p class="section-number">
-            05 / INTO AUSTRALIA'S WILD PLACES
-          </p>
-
-          <h2>
-            Where the Outdoors<br>
-            Gets Wild
-          </h2>
-
-          <p class="section-intro">
-            <span>Australia's outdoor life extends into vast protected landscapes.</span>
-            <span>National parks vary dramatically in both location and scale.</span>
-          </p>
-
-        </div>
-
-
-        <!-- Chart 8 -->
-
-        <div class="wild-map-wrapper">
-
-          <div
-            id="national_parks_map"
-            class="visualisation wild-map">
-          </div>
-
-        </div>
-
-
-        <div class="wild-map-finding">
-
-          <div class="key-finding">
-
-            <p class="finding-label">
-              KEY FINDING
-            </p>
-
-            <p class="finding-text finding-narrow">
-              Australia's largest national parks span vast landscapes. The 30 largest<br>
-              parks are distributed across the country, with substantial differences in<br>
-              both location and area.
-            </p>
-
-            <p class="finding-instruction">
-              Filter by state and hover over a park for exact details.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- Chart 9 -->
-
-        <div class="largest-parks-wrapper">
-
-          <div
-            id="largest_parks"
-            class="visualisation largest-parks-chart">
-          </div>
-
-        </div>
-
-
-        <div class="largest-parks-finding">
-
-          <div class="key-finding">
-
-            <p class="finding-label">
-              KEY FINDING
-            </p>
-
-            <p class="finding-text finding-narrow">
-              <strong>One park dominates by area.</strong><br>
-              Munga-Thirri–Simpson Desert National Park spans
-              <strong>36,054 km²</strong>, <br>over twice the area
-              of the next-largest park shown.
-            </p>
-
-            <p class="finding-instruction">
-              Change the number of parks and hover for details.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- Section 6 -->
-
-    <section id="section-6" class="story-section section-protected-coverage">
-
-      <div class="section-container">
-
-        <div class="section-header">
-
-          <p class="section-number">
-            06 / AUSTRALIA'S PROTECTED OUTDOORS
-          </p>
-
-          <h2>
-            Protection Has Grown,<br>
-            But Not Equally
-          </h2>
-
-          <p class="section-intro">
-            <span>Australia's protected landscape has expanded over time.</span>
-            <span>But the scale of change differs across states and territories.</span>
-          </p>
-
-        </div>
-
-
-        <!-- Chart 10 -->
-
-        <div class="protected-change-wrapper">
-
-          <div
-            id="protected_area_change"
-            class="visualisation protected-change-chart">
-          </div>
-
-        </div>
-
-
-        <div class="protected-change-finding">
-
-          <div class="key-finding">
-
-            <p class="finding-label">
-              KEY FINDING
-            </p>
-
-            <p class="finding-text finding-narrow">
-              <strong>Australia's protected landscape has expanded over time.</strong><br>
-              Across the CAPAD snapshots, the terrestrial protected-area footprint<br>
-              becomes visibly more extensive between <strong>2008 and 2024</strong>.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- Chart 11 -->
-
-        <div class="protected-coverage-row">
-
-          <div class="protected-coverage-chart">
-
-            <div
-              id="protected_area_comparison"
-              class="visualisation">
-            </div>
-
-          </div>
-
-
-          <aside class="protected-coverage-finding">
-
-            <div class="key-finding">
-
-              <p class="finding-label">
-                KEY FINDING
-              </p>
-
-              <p class="finding-text">
-                <strong>Western Australia recorded the largest increase.</strong>
-                Protected terrestrial coverage rose from
-                <strong>14.5% in 2008</strong> to
-                <strong>31.1% in 2024</strong>,
-                an increase of approximately
-                <strong>16.7 percentage points</strong>.
-              </p>
-
-            </div>
-
-          </aside>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- Section 7 -->
-
-    <section id="section-7" class="story-section section-outdoor-economy">
-
-      <div class="section-container">
-
-        <div class="section-header">
-
-          <p class="section-number">
-            07 / THE ECONOMIC SIDE OF THE OUTDOORS
-          </p>
-
-          <h2>
-            The Outdoors<br>
-            Drives Activity
-          </h2>
-
-          <p class="section-intro">
-            <span>Outdoor recreation also contributes to Australia's tourism activity.</span>
-            <span>Sports and recreation services reveal a strong post-pandemic recovery.</span>
-          </p>
-
-        </div>
-
-
-        <!-- Chart 12 -->
-
-        <div class="economy-row">
-
-          <div class="economy-chart">
-
-            <div
-              id="sports_recreation_output"
-              class="visualisation">
-            </div>
-
-          </div>
-
-
-          <aside class="economy-finding">
-
-            <div class="key-finding">
-
-              <p class="finding-label">
-                KEY FINDING
-              </p>
-
-              <p class="finding-text">
-                <strong>Sports and recreation tourism has rebounded strongly.</strong>
-                Tourism output from these services fell to
-                <strong>$2.36 billion in 2020–21</strong>,
-                before climbing to
-                <strong>$5.06 billion in 2023–24</strong>.
-              </p>
-
-            </div>
-
-          </aside>
-
-        </div>
-
-
-        <!-- Chart 13 -->
-
-        <div class="economy-row">
-
-          <div class="economy-chart">
-
-            <div
-              id="tourism_gdp"
-              class="visualisation">
-            </div>
-
-          </div>
-
-
-          <aside class="economy-finding">
-
-            <div class="key-finding">
-
-              <p class="finding-label">
-                KEY FINDING
-              </p>
-
-              <p class="finding-text">
-                <strong>Australia's wider tourism economy has also recovered strongly.</strong>
-                Tourism GDP reached
-                <strong>$78.1 billion in 2023–24</strong>,
-                following the sharp pandemic-era decline.
-              </p>
-
-            </div>
-
-          </aside>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- Section 8 -->
-
-    <section id="section-8" class="story-section section-volunteering">
-
-      <div class="section-container">
-
-        <div class="section-header">
-
-          <p class="section-number">
-            08 / MORE THAN JUST RECREATION
-          </p>
-
-          <h2>
-            Behind Every Game,<br>
-            People Make It Happen
-          </h2>
-
-          <p class="section-intro">
-            <span>Australia's active lifestyle depends on more than participants.</span>
-            <span>Volunteers help keep sport and recreation running.</span>
-          </p>
-
-        </div>
-
-
-        <!-- Chart 14 -->
-
-        <div class="volunteer-row">
-
-          <div class="volunteer-chart">
-
-            <div
-              id="volunteer_waffle"
-              class="visualisation">
-            </div>
-
-          </div>
-
-
-          <aside class="volunteer-finding">
-
-            <div class="key-finding">
-
-              <p class="finding-label">
-                KEY FINDING
-              </p>
-
-              <p class="finding-text">
-                <strong>Around one in eight Australian adults volunteers in sport.</strong>
-                In 2025, <strong>12.1%</strong> participated in a
-                non-playing volunteer role supporting sporting activity.
-              </p>
-
-            </div>
-
-          </aside>
-
-        </div>
-
-
-        <!-- Chart 15 -->
-
-        <div class="volunteer-row">
-
-          <div class="volunteer-chart">
-
-            <div
-              id="volunteer_roles"
-              class="visualisation">
-            </div>
-
-          </div>
-
-
-          <aside class="volunteer-finding">
-
-            <div class="key-finding">
-
-              <p class="finding-label">
-                KEY FINDING
-              </p>
-
-              <p class="finding-text">
-                <strong>Officials and coaches are the most common volunteer roles.</strong>
-                Around <strong>3.8%</strong> of Australian adults volunteer
-                as officials, while <strong>3.6%</strong> contribute as
-                coaches, instructors, trainers or teachers.
-              </p>
-
-              <p class="finding-instruction">
-                Adults may volunteer in more than one role, so role percentages
-                are not mutually exclusive.
-              </p>
-
-            </div>
-
-          </aside>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- Conclusion -->
-
-    <section id="conclusion" class="conclusion-section">
-
-      <div class="conclusion-container">
-
-        <p class="conclusion-eyebrow">
-          THE GREAT AUSTRALIAN OUTDOORS
+  </section>
+
+  <section id="section-1" class="story-section">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-number">01 / AUSTRALIA GETS MOVING</p>
+        <h2>Australia Gets<br>Moving</h2>
+        <p class="section-intro">
+          <span>Outdoor life begins with how Australians stay active.</span>
+          <span>Yet one everyday activity clearly dominates participation.</span>
+          <span>This begins the story of who gets active.</span>
         </p>
+      </div>
 
-        <h2>
-          More Than<br>
-          Just a Place
-        </h2>
+      <div class="chart-layout-split">
+        <div class="chart-column reveal">
+          <div id="activity_lollipop" class="visualisation"></div>
+        </div>
 
-        <div class="conclusion-content">
+        <div class="finding-column reveal reveal-delay-1">
+          <div class="key-finding">
+            <p class="finding-label">KEY FINDING</p>
+            <p class="finding-text">
+              <span><strong>Walking leads participation at 50.2%.</strong></span>
+              <span>It sits well ahead of bush walking,</span>
+              <span>running and swimming.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <p class="conclusion-lead">
+  <section id="section-2" class="story-section">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-number">02 / WHO GETS OUTDOORS?</p>
+        <h2>Who Gets Outdoors?</h2>
+        <p class="section-intro">
+          <span>Overall participation looks remarkably balanced by gender.</span>
+          <span>Look closer, and those similarities begin disappearing.</span>
+          <span>Activity choices differ between men and women.</span>
+          <span>Age reshapes participation even further.</span>
+        </p>
+      </div>
+
+      <div class="demographic-row">
+        <div class="demographic-chart reveal">
+          <div id="gender_pictogram" class="visualisation"></div>
+        </div>
+
+        <div class="demographic-finding reveal reveal-delay-1">
+          <div class="key-finding">
+            <p class="finding-label">KEY FINDING</p>
+            <p class="finding-text">
+              <span><strong>Overall participation is remarkably balanced.</strong></span>
+              <span>Women represent <strong>50.3%</strong> of participants.</span>
+              <span>Men account for a similar <strong>49.7%</strong>.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="demographic-row">
+        <div class="demographic-chart reveal">
+          <div id="gender_activity_dumbbell" class="visualisation"></div>
+        </div>
+
+        <div class="demographic-finding reveal reveal-delay-1">
+          <div class="key-finding">
+            <p class="finding-label">KEY FINDING</p>
+            <p class="finding-text">
+              <span><strong>Walking shows the largest gender gap.</strong></span>
+              <span>Women record <strong>57.8%</strong> participation in walking.</span>
+              <span>Men record <strong>42.5%</strong> participation in walking.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="demographic-full reveal">
+        <div id="age_activity_heatmap" class="visualisation"></div>
+      </div>
+
+      <div class="demographic-full-finding reveal reveal-delay-1">
+        <div class="key-finding">
+          <p class="finding-label">KEY FINDING</p>
+          <p class="finding-text finding-narrow">
+            <span><strong>Outdoor habits shift with age.</strong></span><br>
+            <span>Running is strongest among younger Australians.</span><br>
+            <span>Recreational walking becomes stronger with age.</span><br>
+            <span>It peaks at <strong>66.0% among ages 55–64</strong>.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-3" class="story-section">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-number">
+          03 / ONE COUNTRY, DIFFERENT WAYS TO GET OUTSIDE
+        </p>
+        <h2>One Country,<br>Different Ways to Get Outside</h2>
+        <p class="section-intro">
+          <span>People are only one part of the story.</span>
+          <span>Place shapes outdoor participation too.</span>
+          <span>Across Australia, activities show different regional patterns.</span>
+          <span>Explore the map to see where participation changes.</span>
+        </p>
+      </div>
+
+      <div class="state-map-wrapper reveal">
+        <div id="state_activity_map" class="visualisation state-map"></div>
+      </div>
+
+      <div class="state-finding reveal reveal-delay-1">
+        <div class="key-finding">
+          <p class="finding-label">KEY FINDING</p>
+          <p class="finding-text finding-narrow">
+            <span><strong>Bush walking is strongest in Tasmania.</strong></span><br>
+            <span>Tasmania records <strong>27.5%</strong> participation.</span><br>
+            <span>The ACT follows closely at <strong>26.8%</strong>.</span><br>
+            <span>Patterns shift across selected activities.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-4" class="story-section">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-number">
+          04 / WHY DO AUSTRALIANS GET ACTIVE?
+        </p>
+        <h2>More Than<br>Just Exercise</h2>
+        <p class="section-intro">
+          <span>Participation changes across people and places.</span>
+          <span>But another question remains: why get active?</span>
+          <span>Fitness matters, but it is not everything.</span>
+          <span>Nature itself is part of the motivation.</span>
+        </p>
+      </div>
+
+      <div class="motivation-row">
+        <div class="motivation-chart reveal">
+          <div id="motivation_bar" class="visualisation"></div>
+        </div>
+
+        <div class="motivation-finding reveal reveal-delay-1">
+          <div class="key-finding">
+            <p class="finding-label">KEY FINDING</p>
+            <p class="finding-text">
+              <span><strong>Nature motivates more than half.</strong></span>
+              <span><strong>51.1%</strong> identify nature as a motivation.</span>
+              <span>The environment itself encourages participation.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-5" class="story-section">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-number">
+          05 / INTO AUSTRALIA'S WILD PLACES
+        </p>
+        <h2>Where the Outdoors<br>Gets Wild</h2>
+        <p class="section-intro">
+          <span>Nature is more than a motivation for activity.</span>
+          <span>It leads Australians into extraordinary protected landscapes.</span>
+          <span>These places stretch across an entire continent.</span>
+          <span>Their scale, however, varies enormously.</span>
+        </p>
+      </div>
+
+      <div class="wild-map-wrapper reveal">
+        <div id="national_parks_map" class="visualisation wild-map"></div>
+      </div>
+
+      <div class="wild-map-finding reveal reveal-delay-1">
+        <div class="key-finding">
+          <p class="finding-label">KEY FINDING</p>
+          <p class="finding-text finding-narrow">
+            <span>Australia's largest national parks span vast landscapes.</span><br>
+            <span>The 30 largest parks cross the country.</span><br>
+            <span>Their locations and areas differ substantially.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="largest-parks-wrapper reveal">
+        <div
+          id="largest_parks"
+          class="visualisation largest-parks-chart">
+        </div>
+      </div>
+
+      <div class="largest-parks-finding reveal reveal-delay-1">
+        <div class="key-finding">
+          <p class="finding-label">KEY FINDING</p>
+          <p class="finding-text finding-narrow">
+            <span><strong>One park dominates by area.</strong></span><br>
             <span>
-              Australia's outdoors shapes how people
-              <strong>move, connect and contribute.</strong>
+              Munga-Thirri–Simpson Desert spans
+              <strong>36,054 km²</strong>.
+            </span><br>
+            <span>It exceeds twice the next-largest park shown.</span>
+          </p>
+
+          <p class="finding-instruction">
+            Change the number of parks and hover for details.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-6" class="story-section">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-number">
+          06 / AUSTRALIA'S PROTECTED OUTDOORS
+        </p>
+        <h2>Protection Has Grown,<br>But Not Equally</h2>
+        <p class="section-intro">
+          <span>These wild places are not static landscapes.</span>
+          <span>Australia's protected footprint has expanded over time.</span>
+          <span>But that growth has been far from uniform.</span>
+          <span>Some regions changed much more than others.</span>
+        </p>
+      </div>
+
+      <div class="protected-change-wrapper reveal">
+        <div
+          id="protected_area_change"
+          class="visualisation protected-change-chart">
+        </div>
+      </div>
+
+      <div class="protected-change-finding reveal reveal-delay-1">
+        <div class="key-finding">
+          <p class="finding-label">KEY FINDING</p>
+          <p class="finding-text finding-narrow">
+            <span>
+              <strong>Australia's protected footprint has expanded.</strong>
+            </span><br>
+            <span>
+              CAPAD snapshots show increasingly extensive protected land.
+            </span><br>
+            <span>
+              The change is visible from
+              <strong>2008 to 2024</strong>.
             </span>
           </p>
+        </div>
+      </div>
 
-          <p class="conclusion-text">
-            <span>From everyday walking to vast national parks,</span>
-            <span>the outdoors reaches far beyond recreation.</span>
-            <span>Participation differs across people and places,</span>
-            <span>while protected landscapes continue to grow.</span>
-            <span>Tourism and volunteering extend its impact further.</span>
-          </p>
-
+      <div class="protected-coverage-row">
+        <div class="protected-coverage-chart reveal">
+          <div
+            id="protected_area_comparison"
+            class="visualisation">
+          </div>
         </div>
 
-        <div class="conclusion-divider"></div>
+        <div class="protected-coverage-finding reveal reveal-delay-1">
+          <div class="key-finding">
+            <p class="finding-label">KEY FINDING</p>
+            <p class="finding-text">
+              <span>
+                <strong>
+                  Western Australia recorded the largest increase.
+                </strong>
+              </span>
+              <span>
+                Coverage rose from <strong>14.5% in 2008</strong>.
+              </span>
+              <span>
+                It reached <strong>31.1% in 2024</strong>.
+              </span>
+              <span>
+                That is a <strong>16.7 percentage-point</strong> increase.
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <p class="conclusion-closing">
-          <span>The outdoors is more than somewhere Australians go.</span>
+  <section id="section-7" class="story-section">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-number">
+          07 / THE OUTDOORS AND THE ECONOMY
+        </p>
+        <h2>The Outdoors and<br>the Economy</h2>
+        <p class="section-intro">
+          <span>Outdoor life also intersects with Australia's economy.</span>
+          <span>Sports and recreation contribute to tourism activity.</span>
+          <span>After the pandemic, that activity recovered strongly.</span>
+          <span>The wider tourism economy followed a similar rebound.</span>
+        </p>
+      </div>
+
+      <div class="economy-row">
+        <div class="economy-chart reveal">
+          <div
+            id="sports_recreation_output"
+            class="visualisation">
+          </div>
+        </div>
+
+        <div class="economy-finding reveal reveal-delay-1">
+          <div class="key-finding">
+            <p class="finding-label">KEY FINDING</p>
+            <p class="finding-text">
+              <span>
+                <strong>
+                  Sports and recreation tourism rebounded strongly.
+                </strong>
+              </span>
+              <span>
+                Output fell to <strong>$2.36 billion</strong> in 2020–21.
+              </span>
+              <span>
+                It reached <strong>$5.06 billion</strong> in 2023–24.
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="economy-row">
+        <div class="economy-chart reveal">
+          <div id="tourism_gdp" class="visualisation"></div>
+        </div>
+
+        <div class="economy-finding reveal reveal-delay-1">
+          <div class="key-finding">
+            <p class="finding-label">KEY FINDING</p>
+            <p class="finding-text">
+              <span>
+                <strong>
+                  Australia's wider tourism economy recovered strongly.
+                </strong>
+              </span>
+              <span>
+                Tourism GDP fell sharply during the pandemic.
+              </span>
+              <span>
+                It reached <strong>$78.1 billion in 2023–24</strong>.
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-8" class="story-section">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-number">
+          08 / MORE THAN JUST RECREATION
+        </p>
+        <h2>Behind Every Game,<br>People Make It Happen</h2>
+        <p class="section-intro">
+          <span>The outdoors creates activity beyond participation itself.</span>
+          <span>But money alone does not keep sport running.</span>
+          <span>People do.</span>
+          <span>Volunteers contribute across many essential roles.</span>
+        </p>
+      </div>
+
+      <div class="volunteer-row">
+        <div class="volunteer-chart reveal">
+          <div id="volunteer_waffle" class="visualisation"></div>
+        </div>
+
+        <div class="volunteer-finding reveal reveal-delay-1">
+          <div class="key-finding">
+            <p class="finding-label">KEY FINDING</p>
+            <p class="finding-text">
+              <span>
+                <strong>
+                  12.1% of adults hold non-playing volunteer roles.
+                </strong>
+              </span>
+              <span>
+                These roles support sporting activity across Australia.
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="volunteer-row">
+        <div class="volunteer-chart reveal">
+          <div id="volunteer_roles" class="visualisation"></div>
+        </div>
+
+        <div class="volunteer-finding reveal reveal-delay-1">
+          <div class="key-finding">
+            <p class="finding-label">KEY FINDING</p>
+            <p class="finding-text">
+              <span>
+                <strong>
+                  Officials are the most common volunteer role.
+                </strong>
+              </span>
+              <span>
+                <strong>3.8%</strong> of Australian adults volunteer as officials.
+              </span>
+              <span>
+                Coaching-related roles follow at <strong>3.6%</strong>.
+              </span>
+            </p>
+
+            <p class="finding-instruction">
+              <span>Adults may volunteer in more than one role.</span>
+              <span>Role percentages are not mutually exclusive.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="conclusion" class="conclusion-section">
+    <div class="conclusion-container reveal">
+      <p class="conclusion-eyebrow">
+        THE GREAT AUSTRALIAN OUTDOORS
+      </p>
+
+      <h2>
+        More Than<br>
+        Just a Place
+      </h2>
+
+      <div class="conclusion-content">
+        <p class="conclusion-lead">
           <span>
-            <strong>It is part of how Australia lives.</strong>
+            Australians experience the outdoors in different ways.
           </span>
         </p>
 
+        <p class="conclusion-text">
+          <span>It shapes how people move and connect.</span>
+          <span>It stretches across landscapes worth protecting.</span>
+          <span>It supports economic and community activity.</span>
+        </p>
       </div>
 
-    </section>
+      <div class="conclusion-divider"></div>
 
+      <p class="conclusion-closing">
+        <span>The outdoors is more than a destination.</span>
+        <span>
+          <strong>It is part of how Australia lives.</strong>
+        </span>
+      </p>
+    </div>
+  </section>
 
-    <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-main">
+        <p class="footer-title">
+          The Great Australian Outdoors
+        </p>
 
-    <footer class="site-footer">
+        <p class="footer-meta">
+          <span>King Wen Joo</span>
+          <span class="footer-meta-divider">|</span>
+          <span>33940282</span>
+          <span class="footer-meta-divider">|</span>
+          <span>8 October 2026</span>
+        </p>
+      </div>
 
-      <div class="footer-container">
+      <div class="footer-divider"></div>
 
-        <div class="footer-main">
-
-          <p class="footer-title">
-            The Great Australian Outdoors
+      <div class="footer-info">
+        <div class="footer-block">
+          <p class="footer-label">
+            DATA &amp; GEOGRAPHIC SOURCES
           </p>
 
-          <p class="footer-meta">
-            <span>King Wen Joo</span>
-            <span class="footer-meta-divider">|</span>
-            <span>33940282</span>
-            <span class="footer-meta-divider">|</span>
-            <span>8 October 2026</span>
-          </p>
+          <div class="footer-sources">
+            <a
+              href="https://www.ausport.gov.au/participating/ausplay/results"
+              target="_blank"
+              rel="noopener noreferrer">
+              Australian Sports Commission — AusPlay Data Tables
+            </a>
 
+            <p>
+              Participation, gender, age, motivation and volunteering data.
+            </p>
+
+            <a
+              href="https://www.dcceew.gov.au/environment/land/nrs/science/capad"
+              target="_blank"
+              rel="noopener noreferrer">
+              DCCEEW — Collaborative Australian Protected Areas Database
+            </a>
+
+            <p>
+              National parks and protected-area spatial data.
+            </p>
+
+            <a
+              href="https://www.dcceew.gov.au/environment/land/nrs/science/capad/2012"
+              target="_blank"
+              rel="noopener noreferrer">
+              DCCEEW — CAPAD 2012
+            </a>
+
+            <p>
+              Historical protected-area data.
+            </p>
+
+            <a
+              href="https://www.abs.gov.au/statistics/industry/tourism-and-transport/tourism-satellite-account/latest-release"
+              target="_blank"
+              rel="noopener noreferrer">
+              Australian Bureau of Statistics — Tourism Satellite Account
+            </a>
+
+            <p>
+              Tourism GDP and tourism-related economic data.
+            </p>
+
+            <a
+              href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/boundary-files"
+              target="_blank"
+              rel="noopener noreferrer">
+              Australian Bureau of Statistics — Digital Boundary Files
+            </a>
+
+            <p>
+              Australian geographic boundary reference data.
+            </p>
+
+            <a
+              href="https://github.com/rowanhogan/australian-states"
+              target="_blank"
+              rel="noopener noreferrer">
+              Rowan Hogan — Australian States GeoJSON
+            </a>
+
+            <p>
+              Australian state boundary GeoJSON.
+            </p>
+          </div>
         </div>
 
-
-        <div class="footer-divider"></div>
-
-
-        <div class="footer-info">
-
-          <div class="footer-block">
-
+        <div class="footer-block">
+          <div class="footer-block-section">
             <p class="footer-label">
-              DATA &amp; GEOGRAPHIC SOURCES
+              SUPPORTING RESEARCH
             </p>
 
             <div class="footer-sources">
-
               <a
-                href="https://www.ausport.gov.au/clearinghouse/research/ausplay/results/data-tables"
+                href="https://www.abs.gov.au/articles/how-australian-generations-spent-their-time-recreation-and-leisure"
                 target="_blank"
                 rel="noopener noreferrer">
-                Australian Sports Commission — AusPlay Data Tables
+                ABS — Australian Generations and Leisure
               </a>
 
               <p>
-                Participation, demographics, motivation and volunteering
+                Context on Australian recreation and leisure patterns.
               </p>
-
-
-              <a
-                href="https://www.dcceew.gov.au/environment/land/nrs/science/capad"
-                target="_blank"
-                rel="noopener noreferrer">
-                DCCEEW — Collaborative Australian Protected Areas Database
-              </a>
-
-              <p>
-                National parks and protected-area data, 2008–2024
-              </p>
-
-
-              <a
-                href="https://www.dcceew.gov.au/environment/land/nrs/science/capad/2012"
-                target="_blank"
-                rel="noopener noreferrer">
-                DCCEEW — CAPAD 2012
-              </a>
-
-              <p>
-                Historical protected-area records
-              </p>
-
-
-              <a
-                href="https://gis.environment.gov.au/gispubmap/rest/services/ogc_services/CAPAD/FeatureServer/0/query"
-                target="_blank"
-                rel="noopener noreferrer">
-                DCCEEW — CAPAD ArcGIS Feature Service
-              </a>
-
-              <p>
-                Protected-area spatial data
-              </p>
-
-
-              <a
-                href="https://www.abs.gov.au/statistics/economy/national-accounts/tourism-satellite-account/2023-24"
-                target="_blank"
-                rel="noopener noreferrer">
-                ABS — Tourism Satellite Account 2023–24
-              </a>
-
-              <p>
-                Tourism GDP and sports and recreation tourism output
-              </p>
-
-
-              <a
-                href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files"
-                target="_blank"
-                rel="noopener noreferrer">
-                ABS — Digital Boundary Files
-              </a>
-
-              <p>
-                Australian geographic boundaries
-              </p>
-
-
-              <a
-                href="https://github.com/rowanhogan/australian-states"
-                target="_blank"
-                rel="noopener noreferrer">
-                Rowan Hogan — Australian States GeoJSON
-              </a>
-
-              <p>
-                Australian state and territory map geometry
-              </p>
-
             </div>
-
           </div>
 
+          <div class="footer-block-section">
+            <p class="footer-label">
+              AI ACKNOWLEDGEMENT
+            </p>
 
-          <div class="footer-block">
-
-            <div class="footer-block-section">
-
-              <p class="footer-label">
-                SUPPORTING RESEARCH
-              </p>
-
-              <div class="footer-sources">
-
-                <a
-                  href="https://www.abs.gov.au/articles/how-australian-generations-spent-their-time-recreation-and-leisure"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  ABS — Australian Generations and Leisure
-                </a>
-
-                <p>
-                  Generational recreation and leisure context
-                </p>
-
-
-                <a
-                  href="https://www.dcceew.gov.au/sites/default/files/documents/dnp-annual-report-2024-25.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  Director of National Parks — Annual Report 2024–25
-                </a>
-
-                <p>
-                  National park management and conservation context
-                </p>
-
-              </div>
-
-            </div>
-
-
-            <div class="footer-block-section">
-
-              <p class="footer-label">
-                AI ACKNOWLEDGEMENT
-              </p>
-
-              <p class="footer-text">
-                ChatGPT was used to refine sentence wording,
-                check grammar and typographical errors,
-                and assist with CSS styling and webpage animations.
-              </p>
-
-            </div>
-
+            <p class="footer-text">
+              ChatGPT was used to refine sentence wording,
+              check grammar and typographical errors,
+              and assist with CSS styling and webpage animations.
+            </p>
           </div>
-
         </div>
-
       </div>
-
-    </footer>
-
-  </main>
-
-
-  <!-- Vega-Lite visualisations -->
+    </div>
+  </footer>
 
   <script src="js/vega_lite_vis.js"></script>
 
-
-  <!-- Scroll reveal animation -->
-
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-
-      const revealElements = document.querySelectorAll(
-        ".section-header, " +
-        ".visualisation, " +
-        ".key-finding, " +
-        ".conclusion-container"
-      );
-
-      revealElements.forEach((element) => {
-        element.classList.add("reveal");
-      });
-
-
-      /* Key findings appear slightly after charts */
-
-      document.querySelectorAll(".key-finding").forEach((element) => {
-        element.classList.add("reveal-delay-1");
-      });
-
-
-      /* Respect reduced-motion preferences */
-
-      const prefersReducedMotion = window.matchMedia(
+    document.addEventListener("DOMContentLoaded", function () {
+      const reduceMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)"
       ).matches;
 
-      if (prefersReducedMotion) {
-        revealElements.forEach((element) => {
+      const revealElements = document.querySelectorAll(".reveal");
+
+      if (reduceMotion) {
+        revealElements.forEach(function (element) {
           element.classList.add("reveal-visible");
         });
-
         return;
       }
 
-
-      /* Reveal elements as they enter the viewport */
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-
-          entries.forEach((entry) => {
-
+      const revealObserver = new IntersectionObserver(
+        function (entries, observer) {
+          entries.forEach(function (entry) {
             if (entry.isIntersecting) {
               entry.target.classList.add("reveal-visible");
-
-              /* Animate only once */
               observer.unobserve(entry.target);
             }
-
           });
-
         },
         {
           threshold: 0.12,
@@ -1094,14 +670,11 @@
         }
       );
 
-
-      revealElements.forEach((element) => {
-        observer.observe(element);
+      revealElements.forEach(function (element) {
+        revealObserver.observe(element);
       });
-
     });
   </script>
 
 </body>
-
 </html>

@@ -123,16 +123,18 @@
         "direction": "vertical",
 
         "labelFont": "Source Sans 3",
-        "labelFontSize": 13,
+        "labelFontSize": 14,
         "labelColor": "#333333",
 
         "titleFont": "Source Sans 3",
         "titleFontSize": 13,
         "titleFontWeight": 600,
         "titleColor": "#333333",
+        "titlePadding": 12, 
 
         "symbolSize": 180,
-        "offset": 25
+        "offset": 25,
+        "padding": 10
       }
     },
 

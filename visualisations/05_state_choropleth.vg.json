@@ -7,9 +7,9 @@
   "background": "transparent",
 
   "padding": {
-    "left": 0,
+    "left": 20,
     "right": 20,
-    "top": 5,
+    "top": 10,
     "bottom": 5
   },
 
@@ -37,8 +37,7 @@
   "projection": {
     "type": "mercator",
     "center": [134, -28],
-    "scale": 780,
-    "translate": [470, 300]
+    "scale": 950
   },
 
   "params": [
@@ -130,22 +129,18 @@
       "legend": {
         "orient": "right",
         "direction": "vertical",
-
-        "gradientLength": 220,
-        "gradientThickness": 14,
-
-        "offset": 24,
-
+        "gradientLength": 300,
+        "gradientThickness": 22,
+        "offset": 30,
         "titleFont": "Source Sans 3",
-        "titleFontSize": 13,
+        "titleFontSize": 16,
         "titleFontWeight": 600,
         "titleColor": "#333333",
-        "titlePadding": 10,
-
+        "titlePadding": 12,
         "labelFont": "Source Sans 3",
-        "labelFontSize": 12,
+        "labelFontSize": 14,
         "labelColor": "#555555",
-        "labelOffset": 6
+        "labelOffset": 8
       }
     },
 

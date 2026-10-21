@@ -144,24 +144,23 @@
         ]
       },
 
-      "legend": {
-        "orient": "right",
-        "direction": "vertical",
+    "legend": {
+      "orient": "right",
+      "direction": "vertical",
+      "gradientLength": 300,
+      "gradientThickness": 22,
+      "offset": 30,
+      "titleFont": "Source Sans 3",
+      "titleFontSize": 16,
+      "titleFontWeight": 600,
+      "titleColor": "#333333",
+      "titlePadding": 12,
+      "labelFont": "Source Sans 3",
+      "labelFontSize": 14,
+      "labelColor": "#555555",
+      "labelOffset": 8
+    }
 
-        "gradientLength": 220,
-        "gradientThickness": 14,
-
-        "offset": 18,
-
-        "titleFont": "Source Sans 3",
-        "titleFontSize": 13,
-        "titleFontWeight": 600,
-        "titleColor": "#333333",
-
-        "labelFont": "Source Sans 3",
-        "labelFontSize": 12,
-        "labelColor": "#555555"
-      }
     },
 
     "stroke": {

@@ -2,14 +2,14 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "width": "container",
-  "height": 540,
+  "height": 650,
   "background": "transparent",
 
   "padding": {
-    "left": 0,
-    "right": 30,
-    "top": 5,
-    "bottom": 5
+    "left": 20,
+    "right": 45,
+    "top": 20,
+    "bottom": 35
   },
 
   "title": {
@@ -28,13 +28,13 @@
     "subtitleColor": "#666666",
     "subtitlePadding": 8,
 
-    "offset": 16,
-    "dx": -35,
-    "dy": -10
+    "offset": 16
   },
 
   "projection": {
-    "type": "mercator"
+    "type": "mercator",
+    "center": [134, -28],
+    "scale": 850
   },
 
   "params": [
@@ -136,39 +136,31 @@
               36054
             ],
             "range": [
-              45,
-              1800
+              65,
+              2200
             ]
           },
 
           "legend": {
             "title": "Park area (km²)",
             "orient": "right",
-
-            "values": [
-              5000,
-              15000,
-              30000
-            ],
-
+            "direction": "vertical",
+            "values": [5000, 15000, 30000],
             "format": ",.0f",
-
             "titleFont": "Source Sans 3",
-            "titleFontSize": 12,
-            "titleFontWeight": 700,
+            "titleFontSize": 16,
+            "titleFontWeight": 600,
             "titleColor": "#333333",
-            "titlePadding": 14,
-
+            "titlePadding": 12,
             "labelFont": "Source Sans 3",
-            "labelFontSize": 11,
+            "labelFontSize": 14,
             "labelColor": "#555555",
             "labelOffset": 12,
-
             "symbolFillColor": "#4F7D5B",
             "symbolStrokeColor": "#FFFFFF",
             "symbolOpacity": 0.9,
-
-            "offset": 30
+            "offset": 12,
+            "padding": 10
           }
         },
 

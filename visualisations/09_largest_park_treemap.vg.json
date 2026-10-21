@@ -1,90 +1,73 @@
+
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-
   "description": "Interactive treemap of Australia's largest national parks.",
-
-  "width": 1050,
   "height": 560,
-
   "autosize": {
     "type": "fit",
-    "contains": "padding"
+    "contains": "padding",
+    "resize": true
   },
-
   "padding": {
     "left": 5,
     "right": 5,
     "top": 70,
     "bottom": 20
   },
-
   "background": "transparent",
-
   "title": {
     "text": "One Park Dominates the Landscape",
     "subtitle": "Area of Australia's largest national parks, CAPAD 2024",
-
     "anchor": "start",
-
     "font": "Source Sans 3",
     "fontSize": 24,
     "fontWeight": 700,
     "color": "#222222",
-
     "subtitleFont": "Source Sans 3",
     "subtitleFontSize": 14,
     "subtitleFontWeight": "normal",
     "subtitleColor": "#666666",
     "subtitlePadding": 8,
-
     "offset": 18
   },
-
   "signals": [
+    {
+      "name": "width",
+      "init": "max(280, containerSize()[0] - 20)",
+      "on": [
+        {
+          "events": "window:resize",
+          "update": "max(280, containerSize()[0] - 20)"
+        }
+      ]
+    },
     {
       "name": "TopN",
       "value": 30,
-
       "bind": {
         "input": "select",
         "name": "Show parks: ",
-
-        "options": [
-          10,
-          20,
-          30
-        ],
-
-        "labels": [
-          "Top 10",
-          "Top 20",
-          "Top 30"
-        ]
+        "options": [10, 20, 30],
+        "labels": ["Top 10", "Top 20", "Top 30"]
       }
     }
   ],
-
   "data": [
     {
       "name": "parks",
-
       "url": "data/national_parks_top30_capad2024.csv",
-
       "format": {
         "type": "csv",
-
         "parse": {
           "RANK": "number",
           "AREA_KM2": "number"
         }
       },
-
       "transform": [
         {
           "type": "filter",
           "expr": "datum.RANK <= TopN"
         },
-
         {
           "type": "formula",
           "expr": "datum.AREA_KM2 >= 20000 ? 'Very large' : datum.AREA_KM2 >= 10000 ? 'Large' : datum.AREA_KM2 >= 5000 ? 'Medium' : 'Smaller'",
@@ -92,36 +75,25 @@
         }
       ]
     },
-
     {
       "name": "tree",
-
       "source": "parks",
-
       "transform": [
         {
           "type": "nest",
           "generate": true
         },
-
         {
           "type": "treemap",
-
           "field": "AREA_KM2",
-
           "sort": {
             "field": "value",
             "order": "descending"
           },
-
           "method": "squarify",
-
           "ratio": 1.6,
-
           "round": true,
-
           "paddingInner": 4,
-
           "size": [
             {
               "signal": "width"
@@ -133,12 +105,9 @@
         }
       ]
     },
-
     {
       "name": "leaves",
-
       "source": "tree",
-
       "transform": [
         {
           "type": "filter",
@@ -147,20 +116,16 @@
       ]
     }
   ],
-
   "scales": [
     {
       "name": "sizeColor",
-
       "type": "ordinal",
-
       "domain": [
         "Smaller",
         "Medium",
         "Large",
         "Very large"
       ],
-
       "range": [
         "#E8DFA3",
         "#A8C79F",
@@ -173,25 +138,24 @@
   "legends": [
     {
       "fill": "sizeColor",
-
       "title": "Park area",
-
       "orient": "bottom",
-
       "direction": "horizontal",
-
+      "columns": 4,
+      "columnPadding": 35,
+      "rowPadding": 10,
+      "offset": 20,
       "titleFont": "Source Sans 3",
-      "titleFontSize": 12,
+      "titleFontSize": 16,
       "titleFontWeight": 600,
       "titleColor": "#333333",
-
+      "titlePadding": 12,
       "labelFont": "Source Sans 3",
-      "labelFontSize": 11,
+      "labelFontSize": 14,
       "labelColor": "#555555",
-
       "symbolType": "square",
-      "symbolSize": 130,
-
+      "symbolSize": 180,
+      "symbolOffset": 8,
       "encode": {
         "labels": {
           "update": {
@@ -203,63 +167,49 @@
       }
     }
   ],
-
   "marks": [
     {
       "type": "rect",
-
       "name": "park_rectangles",
-
       "from": {
         "data": "leaves"
       },
-
       "encode": {
         "enter": {
           "stroke": {
             "value": "#FBFAF4"
           },
-
           "strokeWidth": {
             "value": 2
           },
-
           "cornerRadius": {
             "value": 3
           }
         },
-
         "update": {
           "x": {
             "field": "x0"
           },
-
           "y": {
             "field": "y0"
           },
-
           "x2": {
             "field": "x1"
           },
-
           "y2": {
             "field": "y1"
           },
-
           "fill": {
             "scale": "sizeColor",
             "field": "SIZE_GROUP"
           },
-
           "fillOpacity": {
             "value": 0.95
           },
-
           "tooltip": {
             "signal": "{'Rank': datum.RANK, 'National Park': datum.NAME, 'State / Territory': datum.STATE, 'Area (km²)': format(datum.AREA_KM2, ',.0f'), 'Size category': datum.SIZE_GROUP}"
           }
         },
-
         "hover": {
           "fillOpacity": {
             "value": 0.72
@@ -267,62 +217,47 @@
         }
       }
     },
-
     {
       "type": "text",
-
       "name": "park_names",
-
       "interactive": false,
-
       "from": {
         "data": "leaves"
       },
-
       "encode": {
         "enter": {
           "align": {
             "value": "left"
           },
-
           "baseline": {
             "value": "bottom"
           },
-
           "font": {
             "value": "Source Sans 3"
           },
-
           "fontWeight": {
             "value": 400
           }
         },
-
         "update": {
           "x": {
             "signal": "datum.x0 + 7"
           },
-
           "y": {
             "signal": "datum.y1 - 7"
           },
-
           "text": {
             "field": "NAME"
           },
-
           "fontSize": {
             "signal": "TopN == 10 ? 11 : TopN == 20 ? 10 : 9"
           },
-
           "fill": {
             "signal": "datum.SIZE_GROUP == 'Smaller' ? '#333333' : '#FFFFFF'"
           },
-
           "limit": {
             "signal": "max(0, datum.x1 - datum.x0 - 14)"
           },
-
           "opacity": {
             "value": 1
           }
@@ -330,7 +265,6 @@
       }
     }
   ],
-
   "config": {
     "font": "Source Sans 3"
   }

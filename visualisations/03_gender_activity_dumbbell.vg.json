@@ -2,15 +2,15 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "width": "container",
-  "height": 320,
+  "height": 480,
 
   "background": "transparent",
 
   "padding": {
-    "left": 0,
+    "left": 20,
     "right": 10,
-    "top": 5,
-    "bottom": 5
+    "top": 10,
+    "bottom": 10
   },
 
   "title": {
@@ -29,9 +29,7 @@
     "subtitleColor": "#666666",
     "subtitlePadding": 8,
 
-    "offset": 16,
-    "dx": -35,
-    "dy": -10
+    "offset": 16
   },
 
   "data": {
@@ -39,11 +37,11 @@
   },
 
   "encoding": {
+    
     "y": {
       "field": "activity",
       "type": "nominal",
       "title": null,
-
       "sort": [
         "Walking (Recreational)",
         "Bush walking",
@@ -54,17 +52,15 @@
         "Surfing",
         "Canoeing/Kayaking"
       ],
-
       "axis": {
         "domain": false,
         "ticks": false,
-
         "labelFont": "Source Sans 3",
         "labelFontSize": 13,
         "labelColor": "#333333",
-
         "labelPadding": 10,
-        "labelLimit": 220
+        "labelLimit": 180,
+        "labelAlign": "right"
       }
     }
   },
@@ -146,7 +142,7 @@
       "mark": {
         "type": "point",
         "filled": true,
-        "size": 130
+        "size": 180
       },
 
       "encoding": {
@@ -211,9 +207,9 @@
         "size": {
           "condition": {
             "param": "hover",
-            "value": 190
+            "value": 240
           },
-          "value": 130
+          "value": 180
         },
 
         "tooltip": [

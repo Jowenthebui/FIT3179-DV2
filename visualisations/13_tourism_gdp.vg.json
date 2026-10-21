@@ -1,39 +1,30 @@
+
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
   "width": "container",
-  "height": 400,
-
+  "height": 450,
   "background": "transparent",
-
   "padding": {
-    "left": 0,
-    "right": 35,
-    "top": 5,
-    "bottom": 5
+    "left": 10,
+    "right": 20,
+    "top": 10,
+    "bottom": 10
   },
-
   "title": {
     "text": "Two Decades of Australian Tourism",
     "subtitle": "Year-to-year change in tourism GDP at current prices, Australia, 2004–05 to 2023–24",
     "anchor": "start",
-
     "font": "Source Sans 3",
     "fontSize": 24,
     "fontWeight": 700,
     "color": "#222222",
-
     "subtitleFont": "Source Sans 3",
     "subtitleFontSize": 14,
     "subtitleFontWeight": "normal",
     "subtitleColor": "#666666",
     "subtitlePadding": 8,
-
-    "offset": 16,
-    "dx": -35,
-    "dy": -10
+    "offset": 16
   },
-
   "data": {
     "url": "data/tourism_gdp.csv",
     "format": {
@@ -43,7 +34,6 @@
       }
     }
   },
-
   "transform": [
     {
       "window": [
@@ -77,131 +67,112 @@
       "as": "direction"
     }
   ],
-
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": null,
+      "sort": [
+        "2004-05",
+        "2005-06",
+        "2006-07",
+        "2007-08",
+        "2008-09",
+        "2009-10",
+        "2010-11",
+        "2011-12",
+        "2012-13",
+        "2013-14",
+        "2014-15",
+        "2015-16",
+        "2016-17",
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "axis": {
+        "labelFont": "Source Sans 3",
+        "labelFontSize": 12,
+        "labelColor": "#555555",
+        "labelAngle": -45,
+        "labelAlign": "right",
+        "labelPadding": 10,
+        "labelLimit": 80,
+        "ticks": false,
+        "domain": false
+      }
+    },
+    "y": {
+      "field": "bar_start",
+      "type": "quantitative",
+      "title": "Tourism GDP ($ billion)",
+      "scale": {
+        "domain": [0, 85000],
+        "nice": false
+      },
+      "axis": {
+        "titleFont": "Source Sans 3",
+        "titleFontSize": 14,
+        "titleFontWeight": 600,
+        "titleColor": "#333333",
+        "titlePadding": 16,
+        "labelFont": "Source Sans 3",
+        "labelFontSize": 12,
+        "labelColor": "#555555",
+        "labelExpr": "'$' + format(datum.value / 1000, '.0f') + 'b'",
+        "grid": true,
+        "gridColor": "#E5E3DC",
+        "gridWidth": 1,
+        "ticks": false,
+        "domain": false
+      }
+    }
+  },
   "layer": [
     {
       "mark": {
         "type": "bar",
-        "size": 16,
+        "size": 18,
         "cornerRadius": 2
       },
-
       "encoding": {
-        "x": {
-          "field": "year",
-          "type": "ordinal",
-          "title": null,
-
-          "sort": [
-            "2004-05",
-            "2005-06",
-            "2006-07",
-            "2007-08",
-            "2008-09",
-            "2009-10",
-            "2010-11",
-            "2011-12",
-            "2012-13",
-            "2013-14",
-            "2014-15",
-            "2015-16",
-            "2016-17",
-            "2017-18",
-            "2018-19",
-            "2019-20",
-            "2020-21",
-            "2021-22",
-            "2022-23",
-            "2023-24"
-          ],
-
-          "axis": {
-            "labelFont": "Source Sans 3",
-            "labelFontSize": 10,
-            "labelColor": "#555555",
-            "labelAngle": -45,
-            "labelAlign": "right",
-            "labelPadding": 8,
-            "labelLimit": 70,
-
-            "ticks": false,
-            "domain": false
-          }
-        },
-
-        "y": {
-          "field": "bar_start",
-          "type": "quantitative",
-          "title": "Tourism GDP ($ billion)",
-
-          "scale": {
-            "domain": [
-              0,
-              80000
-            ]
-          },
-
-          "axis": {
-            "titleFont": "Source Sans 3",
-            "titleFontSize": 12,
-            "titleFontWeight": "normal",
-            "titleColor": "#555555",
-            "titlePadding": 14,
-
-            "labelFont": "Source Sans 3",
-            "labelFontSize": 11,
-            "labelColor": "#666666",
-            "labelExpr": "'$' + format(datum.value / 1000, '.0f') + 'b'",
-
-            "grid": true,
-            "gridColor": "#E5E3DC",
-            "gridWidth": 1,
-
-            "ticks": false,
-            "domain": false
-          }
-        },
-
         "y2": {
           "field": "bar_end"
         },
-
         "color": {
           "field": "direction",
           "type": "nominal",
-
           "scale": {
             "domain": [
               "Starting point",
               "Increase",
               "Decrease"
             ],
-
             "range": [
               "#7A7A72",
               "#4F7D5B",
               "#B26A4A"
             ]
           },
-
           "legend": {
             "title": null,
             "orient": "right",
             "direction": "vertical",
-
             "labelFont": "Source Sans 3",
-            "labelFontSize": 11,
+            "labelFontSize": 14,
             "labelColor": "#555555",
-
             "symbolType": "square",
-            "symbolSize": 100,
-
-            "labelPadding": 6,
-            "rowPadding": 6,
-            "offset": 18
+            "symbolSize": 180,
+            "labelPadding": 10,
+            "rowPadding": 12,
+            "offset": 20,
+            "padding": 10
           }
         },
-
         "tooltip": [
           {
             "field": "year",
@@ -223,146 +194,111 @@
         ]
       }
     },
-
     {
       "transform": [
         {
           "filter": "datum.year == '2020-21'"
+        },
+        {
+          "calculate": "'Pandemic impact'",
+          "as": "annotation_line1"
+        },
+        {
+          "calculate": "'$' + format(datum.tourism_gdp_million / 1000, '.1f') + 'b'",
+          "as": "annotation_line2"
         }
       ],
-
       "mark": {
         "type": "text",
         "align": "center",
         "baseline": "top",
-        "dy": 12,
-
+        "dy": 16,
+        "lineHeight": 19,
         "font": "Source Sans 3",
-        "fontSize": 11,
+        "fontSize": 15,
         "fontWeight": 700,
         "color": "#8A523A"
       },
-
       "encoding": {
-        "x": {
-          "field": "year",
-          "type": "ordinal",
-
-          "sort": [
-            "2004-05",
-            "2005-06",
-            "2006-07",
-            "2007-08",
-            "2008-09",
-            "2009-10",
-            "2010-11",
-            "2011-12",
-            "2012-13",
-            "2013-14",
-            "2014-15",
-            "2015-16",
-            "2016-17",
-            "2017-18",
-            "2018-19",
-            "2019-20",
-            "2020-21",
-            "2021-22",
-            "2022-23",
-            "2023-24"
-          ]
-        },
-
-        "y": {
-          "field": "bar_start",
-          "type": "quantitative"
-        },
-
         "text": {
-          "value": [
-            "Pandemic impact",
-            "$30.9b"
-          ]
+          "field": "annotation_line1",
+          "type": "nominal"
         }
       }
     },
-
+    {
+      "transform": [
+        {
+          "filter": "datum.year == '2020-21'"
+        },
+        {
+          "calculate": "'$' + format(datum.tourism_gdp_million / 1000, '.1f') + 'b'",
+          "as": "annotation"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "top",
+        "dy": 36,
+        "font": "Source Sans 3",
+        "fontSize": 15,
+        "fontWeight": 700,
+        "color": "#8A523A"
+      },
+      "encoding": {
+        "text": {
+          "field": "annotation",
+          "type": "nominal"
+        }
+      }
+    },
     {
       "transform": [
         {
           "filter": "datum.year == '2023-24'"
+        },
+        {
+          "calculate": "'$' + format(datum.tourism_gdp_million / 1000, '.1f') + 'b'",
+          "as": "annotation"
         }
       ],
-
       "mark": {
         "type": "text",
-        "align": "center",
+        "align": "right",
         "baseline": "bottom",
-        "dy": -12,
-
+        "dx": -4,
+        "dy": -14,
         "font": "Source Sans 3",
-        "fontSize": 11,
+        "fontSize": 15,
         "fontWeight": 700,
         "color": "#244B36"
       },
-
       "encoding": {
-        "x": {
-          "field": "year",
-          "type": "ordinal",
-
-          "sort": [
-            "2004-05",
-            "2005-06",
-            "2006-07",
-            "2007-08",
-            "2008-09",
-            "2009-10",
-            "2010-11",
-            "2011-12",
-            "2012-13",
-            "2013-14",
-            "2014-15",
-            "2015-16",
-            "2016-17",
-            "2017-18",
-            "2018-19",
-            "2019-20",
-            "2020-21",
-            "2021-22",
-            "2022-23",
-            "2023-24"
-          ]
-        },
-
         "y": {
           "field": "bar_end",
           "type": "quantitative"
         },
-
         "text": {
-          "value": "$78.1b"
+          "field": "annotation",
+          "type": "nominal"
         }
       }
     }
   ],
-
   "config": {
     "view": {
       "stroke": null
     },
-
     "font": "Source Sans 3",
-
     "axis": {
       "labelFont": "Source Sans 3",
       "titleFont": "Source Sans 3"
     },
-
     "legend": {
       "labelFont": "Source Sans 3",
       "titleFont": "Source Sans 3"
     },
-
     "title": {
       "font": "Source Sans 3"
     }

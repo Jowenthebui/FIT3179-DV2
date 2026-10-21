@@ -1,39 +1,30 @@
+
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
   "width": "container",
-  "height": 430,
-
+  "height": 480,
   "background": "transparent",
-
   "padding": {
     "left": 0,
-    "right": 35,
-    "top": 5,
-    "bottom": 5
+    "right": 30,
+    "top": 10,
+    "bottom": 10
   },
-
   "title": {
     "text": "How Has Protected Coverage Changed Across Australia?",
     "subtitle": "Protected terrestrial area by state and territory, 2008 vs 2024",
     "anchor": "start",
-
     "font": "Source Sans 3",
     "fontSize": 24,
     "fontWeight": 700,
     "color": "#222222",
-
     "subtitleFont": "Source Sans 3",
     "subtitleFontSize": 14,
     "subtitleFontWeight": "normal",
     "subtitleColor": "#666666",
     "subtitlePadding": 8,
-
-    "offset": 16,
-    "dx": -35,
-    "dy": -10
+    "offset": 16
   },
-
   "data": {
     "url": "data/protected_area_by_state.csv",
     "format": {
@@ -44,124 +35,94 @@
       }
     }
   },
-
   "transform": [
     {
       "calculate": "datum['2024'] - datum['2008']",
       "as": "Change"
     },
     {
-      "fold": [
-        "2008",
-        "2024"
-      ],
-      "as": [
-        "Year",
-        "Protected"
-      ]
+      "fold": ["2008", "2024"],
+      "as": ["Year", "Protected"]
     }
   ],
-
   "layer": [
     {
       "mark": {
         "type": "bar",
         "cornerRadiusEnd": 3,
-        "size": 14,
-        "tooltip": true
+        "size": 18
       },
-
       "encoding": {
         "y": {
           "field": "state",
           "type": "nominal",
           "title": null,
-
           "sort": {
             "field": "Change",
             "op": "max",
             "order": "descending"
           },
-
           "axis": {
             "labelFont": "Source Sans 3",
-            "labelFontSize": 12,
+            "labelFontSize": 14,
             "labelColor": "#333333",
-            "labelLimit": 210,
-            "labelPadding": 10,
+            "labelLimit": 230,
+            "labelPadding": 12,
             "ticks": false,
             "domain": false
           }
         },
-
         "yOffset": {
-          "field": "Year"
+          "field": "Year",
+          "sort": ["2008", "2024"]
         },
-
         "x": {
           "field": "Protected",
           "type": "quantitative",
           "title": "Protected terrestrial area (%)",
-
           "scale": {
-            "domain": [
-              0,
-              60
-            ]
+            "domain": [0, 60],
+            "nice": false
           },
-
           "axis": {
             "titleFont": "Source Sans 3",
-            "titleFontSize": 12,
-            "titleFontWeight": "normal",
-            "titleColor": "#555555",
+            "titleFontSize": 14,
+            "titleFontWeight": 600,
+            "titleColor": "#333333",
             "titlePadding": 14,
-
             "labelFont": "Source Sans 3",
-            "labelFontSize": 11,
-            "labelColor": "#666666",
+            "labelFontSize": 13,
+            "labelColor": "#555555",
             "labelExpr": "datum.value + '%'",
-
+            "tickCount": 11,
             "grid": true,
             "gridColor": "#E5E3DC",
             "gridWidth": 1,
-
             "domain": false,
             "ticks": false
           }
         },
-
         "color": {
           "field": "Year",
           "type": "nominal",
-
           "scale": {
-            "domain": [
-              "2008",
-              "2024"
-            ],
-            "range": [
-              "#B8CEB6",
-              "#3F704D"
-            ]
+            "domain": ["2008", "2024"],
+            "range": ["#B8CEB6", "#3F704D"]
           },
-
           "legend": {
             "title": null,
             "orient": "right",
             "direction": "vertical",
-
             "labelFont": "Source Sans 3",
-            "labelFontSize": 11,
+            "labelFontSize": 14,
             "labelColor": "#333333",
-
             "symbolType": "square",
-            "symbolSize": 110,
-
-            "offset": 15
+            "symbolSize": 180,
+            "offset": 20,
+            "padding": 10,
+            "rowPadding": 10
           }
         },
-
         "tooltip": [
           {
             "field": "state",
@@ -176,83 +137,76 @@
           {
             "field": "Protected",
             "type": "quantitative",
-            "title": "Protected area",
+            "title": "Protected area (%)",
             "format": ".1f"
           },
           {
             "field": "Change",
             "type": "quantitative",
-            "title": "2008–2024 change",
+            "title": "2008–2024 change (pp)",
             "format": "+.1f"
           }
         ]
       }
     },
-
     {
       "transform": [
         {
           "filter": "datum.state == 'Western Australia' && datum.Year == '2024'"
+        },
+        {
+          "calculate": "'+' + format(datum.Change, '.1f') + ' pp'",
+          "as": "annotation"
         }
       ],
-
       "mark": {
         "type": "text",
         "align": "left",
         "baseline": "middle",
-        "dx": 9,
-
+        "dx": 14,
         "font": "Source Sans 3",
-        "fontSize": 11,
+        "fontSize": 16,
         "fontWeight": 700,
         "color": "#244B36"
       },
-
       "encoding": {
         "y": {
           "field": "state",
           "type": "nominal",
-
           "sort": {
             "field": "Change",
             "op": "max",
             "order": "descending"
           }
         },
-
         "yOffset": {
-          "field": "Year"
+          "field": "Year",
+          "sort": ["2008", "2024"]
         },
-
         "x": {
           "field": "Protected",
           "type": "quantitative"
         },
-
         "text": {
-          "value": "+16.7 pp"
+          "field": "annotation",
+          "type": "nominal"
         }
       }
     }
   ],
-
   "config": {
     "view": {
       "stroke": null
     },
-
     "font": "Source Sans 3",
-
     "axis": {
       "labelFont": "Source Sans 3",
       "titleFont": "Source Sans 3"
     },
-
     "legend": {
       "labelFont": "Source Sans 3",
       "titleFont": "Source Sans 3"
     },
-
     "title": {
       "font": "Source Sans 3"
     }

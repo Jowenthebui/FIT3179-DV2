@@ -392,14 +392,21 @@ select:focus-visible {
 }
 
 /* Section 3 */
-.state-map {
+#section-3 .dashboard-chart-area {
+  display: block;
   width: 100%;
   min-width: 0;
 }
-#section-3 .dashboard-chart-area,
-#section-3 .state-map,
+#section-3 .state-map {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
 #section-3 .state-map .vega-embed {
-  overflow: visible;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
 }
 
 /* Section 5 */
@@ -409,9 +416,7 @@ select:focus-visible {
   gap: 18px;
 }
 #section-5 .dashboard-chart-area {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  display: block;
   width: 100%;
   min-width: 0;
   overflow: visible;
@@ -423,9 +428,10 @@ select:focus-visible {
   overflow: visible;
 }
 #section-5 .wild-map .vega-embed {
+  display: block;
   width: 100%;
   max-width: 100%;
-  margin-bottom: 0;
+  margin: 0;
   overflow: visible;
 }
 #section-5 .wild-map .vega-embed > div {
@@ -445,6 +451,7 @@ select:focus-visible {
   min-width: 0;
 }
 #section-5 .largest-parks-chart .vega-embed {
+  display: block;
   width: 100%;
   max-width: 100%;
 }
@@ -458,13 +465,32 @@ select:focus-visible {
 }
 
 /* Section 6 */
-.protected-change-chart {
+#section-6 .dashboard-chart-area {
+  display: block;
   width: 100%;
   min-width: 0;
 }
-.protected-change-chart .vega-embed {
-  margin-inline: auto;
+#section-6 .protected-change-chart {
+  display: block;
+  width: 100%;
+  min-width: 0;
 }
+#section-6 .protected-change-chart .vega-embed {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+#section-6 .protected-change-chart .vega-embed > div {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+#section-6 .protected-change-chart svg {
+  display: block;
+  margin: 0;
+}
+
 
 /* Section 7 */
 #section-7 .dashboard-two-column .dashboard-chart-area {
@@ -782,12 +808,8 @@ select:focus-visible {
   #section-7 .dashboard-two-column .dashboard-chart-area {
     min-height: 0;
   }
-  #section-5 .dashboard-chart-area {
-    align-items: stretch;
-  }
   #section-5 .wild-map,
   #section-5 .largest-parks-chart {
-    display: block;
     width: 100%;
     max-width: 100%;
   }

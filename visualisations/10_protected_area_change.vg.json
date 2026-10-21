@@ -1,57 +1,60 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
   "background": "transparent",
-
   "padding": {
     "left": 0,
     "right": 0,
-    "top": 5,
-    "bottom": 5
+    "top": 10,
+    "bottom": 10
   },
-
   "title": {
     "text": "Australia's Protected Landscape Over Time",
     "subtitle": "CAPAD snapshots show the changing footprint of terrestrial protected areas, 2008–2024",
     "anchor": "start",
-
     "font": "Source Sans 3",
     "fontSize": 24,
     "fontWeight": 700,
     "color": "#222222",
-
     "subtitleFont": "Source Sans 3",
     "subtitleFontSize": 14,
     "subtitleFontWeight": "normal",
     "subtitleColor": "#666666",
     "subtitlePadding": 8,
-
     "offset": 16,
     "dx": -35,
     "dy": -10
   },
-
   "vconcat": [
     {
       "hconcat": [
         {
-          "width": 330,
-          "height": 250,
-
+          "width": 70,
+          "height": 325,
+          "data": {
+            "values": [
+              {}
+            ]
+          },
+          "mark": {
+            "type": "point",
+            "opacity": 0
+          }
+        },
+        {
+          "width": 390,
+          "height": 325,
           "title": {
             "text": "2008",
             "font": "Source Sans 3",
-            "fontSize": 16,
+            "fontSize": 19,
             "fontWeight": 700,
             "color": "#244B36",
             "anchor": "middle",
             "offset": 8
           },
-
           "projection": {
             "type": "mercator"
           },
-
           "layer": [
             {
               "data": {
@@ -61,7 +64,6 @@
                   "property": "features"
                 }
               },
-
               "mark": {
                 "type": "geoshape",
                 "fill": "#F3F1E9",
@@ -69,7 +71,6 @@
                 "strokeWidth": 0.8
               }
             },
-
             {
               "data": {
                 "url": "data/capad_history/capad2008_australia.geojson",
@@ -78,7 +79,6 @@
                   "property": "geometries"
                 }
               },
-
               "transform": [
                 {
                   "calculate": "'2008'",
@@ -89,7 +89,6 @@
                   "as": "AreaType"
                 }
               ],
-
               "params": [
                 {
                   "name": "hover2008",
@@ -100,11 +99,9 @@
                   }
                 }
               ],
-
               "mark": {
                 "type": "geoshape"
               },
-
               "encoding": {
                 "color": {
                   "condition": {
@@ -114,7 +111,6 @@
                   },
                   "value": "#4F7D5B"
                 },
-
                 "opacity": {
                   "condition": {
                     "param": "hover2008",
@@ -123,7 +119,6 @@
                   },
                   "value": 0.9
                 },
-
                 "tooltip": [
                   {
                     "field": "Year",
@@ -140,25 +135,21 @@
             }
           ]
         },
-
         {
-          "width": 330,
-          "height": 250,
-
+          "width": 390,
+          "height": 325,
           "title": {
             "text": "2012",
             "font": "Source Sans 3",
-            "fontSize": 16,
+            "fontSize": 19,
             "fontWeight": 700,
             "color": "#244B36",
             "anchor": "middle",
             "offset": 8
           },
-
           "projection": {
             "type": "mercator"
           },
-
           "layer": [
             {
               "data": {
@@ -168,7 +159,6 @@
                   "property": "features"
                 }
               },
-
               "mark": {
                 "type": "geoshape",
                 "fill": "#F3F1E9",
@@ -176,7 +166,6 @@
                 "strokeWidth": 0.8
               }
             },
-
             {
               "data": {
                 "url": "data/capad_history/capad2012_australia.geojson",
@@ -185,7 +174,6 @@
                   "property": "geometries"
                 }
               },
-
               "transform": [
                 {
                   "calculate": "'2012'",
@@ -196,7 +184,6 @@
                   "as": "AreaType"
                 }
               ],
-
               "params": [
                 {
                   "name": "hover2012",
@@ -207,11 +194,9 @@
                   }
                 }
               ],
-
               "mark": {
                 "type": "geoshape"
               },
-
               "encoding": {
                 "color": {
                   "condition": {
@@ -221,7 +206,6 @@
                   },
                   "value": "#4F7D5B"
                 },
-
                 "opacity": {
                   "condition": {
                     "param": "hover2012",
@@ -230,7 +214,6 @@
                   },
                   "value": 0.9
                 },
-
                 "tooltip": [
                   {
                     "field": "Year",
@@ -247,25 +230,21 @@
             }
           ]
         },
-
         {
-          "width": 330,
-          "height": 250,
-
+          "width": 390,
+          "height": 325,
           "title": {
             "text": "2016",
             "font": "Source Sans 3",
-            "fontSize": 16,
+            "fontSize": 19,
             "fontWeight": 700,
             "color": "#244B36",
             "anchor": "middle",
             "offset": 8
           },
-
           "projection": {
             "type": "mercator"
           },
-
           "layer": [
             {
               "data": {
@@ -275,7 +254,6 @@
                   "property": "features"
                 }
               },
-
               "mark": {
                 "type": "geoshape",
                 "fill": "#F3F1E9",
@@ -283,7 +261,6 @@
                 "strokeWidth": 0.8
               }
             },
-
             {
               "data": {
                 "url": "data/capad_history/capad2016_australia.geojson",
@@ -292,7 +269,6 @@
                   "property": "geometries"
                 }
               },
-
               "transform": [
                 {
                   "calculate": "'2016'",
@@ -303,7 +279,6 @@
                   "as": "AreaType"
                 }
               ],
-
               "params": [
                 {
                   "name": "hover2016",
@@ -314,11 +289,9 @@
                   }
                 }
               ],
-
               "mark": {
                 "type": "geoshape"
               },
-
               "encoding": {
                 "color": {
                   "condition": {
@@ -328,7 +301,6 @@
                   },
                   "value": "#4F7D5B"
                 },
-
                 "opacity": {
                   "condition": {
                     "param": "hover2016",
@@ -337,7 +309,6 @@
                   },
                   "value": 0.9
                 },
-
                 "tooltip": [
                   {
                     "field": "Year",
@@ -355,30 +326,39 @@
           ]
         }
       ],
-
-      "spacing": 24
+      "spacing": 56,
+      "bounds": "full"
     },
-
     {
       "hconcat": [
         {
-          "width": 330,
-          "height": 250,
-
+          "width": 70,
+          "height": 325,
+          "data": {
+            "values": [
+              {}
+            ]
+          },
+          "mark": {
+            "type": "point",
+            "opacity": 0
+          }
+        },
+        {
+          "width": 390,
+          "height": 325,
           "title": {
             "text": "2020",
             "font": "Source Sans 3",
-            "fontSize": 16,
+            "fontSize": 19,
             "fontWeight": 700,
             "color": "#244B36",
             "anchor": "middle",
             "offset": 8
           },
-
           "projection": {
             "type": "mercator"
           },
-
           "layer": [
             {
               "data": {
@@ -388,7 +368,6 @@
                   "property": "features"
                 }
               },
-
               "mark": {
                 "type": "geoshape",
                 "fill": "#F3F1E9",
@@ -396,7 +375,6 @@
                 "strokeWidth": 0.8
               }
             },
-
             {
               "data": {
                 "url": "data/capad_history/capad2020_australia.geojson",
@@ -405,7 +383,6 @@
                   "property": "geometries"
                 }
               },
-
               "transform": [
                 {
                   "calculate": "'2020'",
@@ -416,7 +393,6 @@
                   "as": "AreaType"
                 }
               ],
-
               "params": [
                 {
                   "name": "hover2020",
@@ -427,11 +403,9 @@
                   }
                 }
               ],
-
               "mark": {
                 "type": "geoshape"
               },
-
               "encoding": {
                 "color": {
                   "condition": {
@@ -441,7 +415,6 @@
                   },
                   "value": "#4F7D5B"
                 },
-
                 "opacity": {
                   "condition": {
                     "param": "hover2020",
@@ -450,7 +423,6 @@
                   },
                   "value": 0.9
                 },
-
                 "tooltip": [
                   {
                     "field": "Year",
@@ -467,25 +439,21 @@
             }
           ]
         },
-
         {
-          "width": 330,
-          "height": 250,
-
+          "width": 390,
+          "height": 325,
           "title": {
             "text": "2022",
             "font": "Source Sans 3",
-            "fontSize": 16,
+            "fontSize": 19,
             "fontWeight": 700,
             "color": "#244B36",
             "anchor": "middle",
             "offset": 8
           },
-
           "projection": {
             "type": "mercator"
           },
-
           "layer": [
             {
               "data": {
@@ -495,7 +463,6 @@
                   "property": "features"
                 }
               },
-
               "mark": {
                 "type": "geoshape",
                 "fill": "#F3F1E9",
@@ -503,7 +470,6 @@
                 "strokeWidth": 0.8
               }
             },
-
             {
               "data": {
                 "url": "data/capad_history/capad2022_australia.geojson",
@@ -512,7 +478,6 @@
                   "property": "geometries"
                 }
               },
-
               "transform": [
                 {
                   "calculate": "'2022'",
@@ -523,7 +488,6 @@
                   "as": "AreaType"
                 }
               ],
-
               "params": [
                 {
                   "name": "hover2022",
@@ -534,11 +498,9 @@
                   }
                 }
               ],
-
               "mark": {
                 "type": "geoshape"
               },
-
               "encoding": {
                 "color": {
                   "condition": {
@@ -548,7 +510,6 @@
                   },
                   "value": "#4F7D5B"
                 },
-
                 "opacity": {
                   "condition": {
                     "param": "hover2022",
@@ -557,7 +518,6 @@
                   },
                   "value": 0.9
                 },
-
                 "tooltip": [
                   {
                     "field": "Year",
@@ -574,25 +534,21 @@
             }
           ]
         },
-
         {
-          "width": 330,
-          "height": 250,
-
+          "width": 390,
+          "height": 325,
           "title": {
             "text": "2024",
             "font": "Source Sans 3",
-            "fontSize": 16,
+            "fontSize": 19,
             "fontWeight": 700,
             "color": "#244B36",
             "anchor": "middle",
             "offset": 8
           },
-
           "projection": {
             "type": "mercator"
           },
-
           "layer": [
             {
               "data": {
@@ -602,7 +558,6 @@
                   "property": "features"
                 }
               },
-
               "mark": {
                 "type": "geoshape",
                 "fill": "#F3F1E9",
@@ -610,7 +565,6 @@
                 "strokeWidth": 0.8
               }
             },
-
             {
               "data": {
                 "url": "data/capad_history/capad2024_australia.geojson",
@@ -619,7 +573,6 @@
                   "property": "geometries"
                 }
               },
-
               "transform": [
                 {
                   "calculate": "'2024'",
@@ -630,7 +583,6 @@
                   "as": "AreaType"
                 }
               ],
-
               "params": [
                 {
                   "name": "hover2024",
@@ -641,11 +593,9 @@
                   }
                 }
               ],
-
               "mark": {
                 "type": "geoshape"
               },
-
               "encoding": {
                 "color": {
                   "condition": {
@@ -655,7 +605,6 @@
                   },
                   "value": "#4F7D5B"
                 },
-
                 "opacity": {
                   "condition": {
                     "param": "hover2024",
@@ -664,7 +613,6 @@
                   },
                   "value": 0.9
                 },
-
                 "tooltip": [
                   {
                     "field": "Year",
@@ -682,14 +630,12 @@
           ]
         }
       ],
-
-      "spacing": 24
+      "spacing": 56,
+      "bounds": "full"
     },
-
     {
-      "width": 1038,
-      "height": 34,
-
+      "width": 1348,
+      "height": 48,
       "data": {
         "values": [
           {
@@ -698,58 +644,56 @@
           }
         ]
       },
-
       "layer": [
         {
           "mark": {
             "type": "square",
-            "size": 120,
+            "size": 250,
             "color": "#4F7D5B"
           },
-
           "encoding": {
             "x": {
               "field": "x",
               "type": "quantitative",
               "axis": null,
               "scale": {
-                "domain": [0, 100]
+                "domain": [
+                  0,
+                  100
+                ]
               }
             },
-
             "y": {
-              "value": 17
+              "value": 24
             }
           }
         },
-
         {
           "mark": {
             "type": "text",
             "align": "left",
             "baseline": "middle",
-            "dx": 13,
-
+            "dx": 18,
             "font": "Source Sans 3",
-            "fontSize": 12,
+            "fontSize": 16,
             "fontWeight": 600,
             "color": "#555555"
           },
-
           "encoding": {
             "x": {
               "field": "x",
               "type": "quantitative",
               "axis": null,
               "scale": {
-                "domain": [0, 100]
+                "domain": [
+                  0,
+                  100
+                ]
               }
             },
-
             "y": {
-              "value": 17
+              "value": 24
             },
-
             "text": {
               "field": "label"
             }
@@ -758,16 +702,12 @@
       ]
     }
   ],
-
-  "spacing": 22,
-
+  "spacing": 26,
   "config": {
     "view": {
       "stroke": null
     },
-
     "font": "Source Sans 3",
-
     "title": {
       "font": "Source Sans 3"
     }

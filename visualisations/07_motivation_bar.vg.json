@@ -8,7 +8,7 @@
 
   "padding": {
     "left": 0,
-    "right": 60,
+    "right": 100,
     "top": 5,
     "bottom": 5
   },
@@ -175,7 +175,7 @@
           "filter": "datum.motivation === 'To be outdoors / to enjoy nature'"
         },
         {
-          "calculate": "format(datum.participation_rate, '.1f') + '%  —  Nature motivates more than half'",
+          "calculate": "format(datum.participation_rate, '.1f') + '%  —  Nature motivates over half'",
           "as": "annotation"
         }
       ],
@@ -184,10 +184,9 @@
         "type": "text",
         "align": "left",
         "baseline": "middle",
-        "dx": 9,
-
+        "dx": 14,
         "font": "Source Sans 3",
-        "fontSize": 11,
+        "fontSize": 16,
         "fontWeight": 700,
         "color": "#244B36"
       },

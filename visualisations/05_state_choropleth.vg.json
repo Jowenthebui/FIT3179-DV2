@@ -2,15 +2,15 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "width": "container",
-  "height": 570,
+  "height": 650,
 
   "background": "transparent",
 
   "padding": {
     "left": 20,
-    "right": 20,
-    "top": 10,
-    "bottom": 5
+    "right": 45,
+    "top": 20,
+    "bottom": 35
   },
 
   "title": {
@@ -29,9 +29,7 @@
     "subtitleColor": "#666666",
     "subtitlePadding": 8,
 
-    "offset": 16,
-    "dx": -35,
-    "dy": -10
+    "offset": 16
   },
 
   "projection": {
